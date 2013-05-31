@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!ELEMENT DistributionConfiguration (letters)>
+
+<!ELEMENT letter EMPTY >
+<!ATTLIST letter
+          name CDATA #REQUIRED
+          value CDATA #REQUIRED
+          number CDATA #REQUIRED>
+
+<!ELEMENT letters ( letter, letter, letter, letter, letter, letter, letter, letter, letter, letter, letter, letter, letter, letter, letter, letter, letter, letter, letter, letter, letter, letter, letter, letter, letter, letter, letter ) >
+

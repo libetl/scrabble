@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE DistributionConfiguration PUBLIC "-//http://libe.toile-libre.org//FR" "dist.dtd">
+<letters>
+	<letter name="A" value="1" number="9"/>
+	<letter name="B" value="3" number="2"/>
+	<letter name="C" value="3" number="2"/>
+	<letter name="D" value="2" number="4"/>
+	<letter name="E" value="1" number="12"/>
+	<letter name="F" value="4" number="2"/>
+	<letter name="G" value="2" number="3"/>
+	<letter name="H" value="4" number="2"/>
+	<letter name="I" value="1" number="9"/>
+	<letter name="J" value="8" number="1"/>
+	<letter name="K" value="5" number="1"/>
+	<letter name="L" value="1" number="4"/>
+	<letter name="M" value="3" number="2"/>
+	<letter name="N" value="1" number="6"/>
+	<letter name="O" value="1" number="8"/>
+	<letter name="P" value="3" number="2"/>
+	<letter name="Q" value="10" number="1"/>
+	<letter name="R" value="1" number="6"/>
+	<letter name="S" value="1" number="4"/>
+	<letter name="T" value="1" number="6"/>
+	<letter name="U" value="1" number="4"/>
+	<letter name="V" value="4" number="2"/>
+	<letter name="W" value="4" number="2"/>
+	<letter name="X" value="8" number="1"/>
+	<letter name="Y" value="4" number="2"/>
+	<letter name="Z" value="10" number="1"/>
+	<letter name=" " value="0" number="2"/>
+</letters>

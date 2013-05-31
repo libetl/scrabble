@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!ELEMENT UserInteractionsConfiguration (userinteractions)>
+
+<!ELEMENT userinteractions ((bean | action)*, callback) >
+
+<!ELEMENT bean EMPTY >
+<!ATTLIST bean
+          name CDATA #REQUIRED
+          impl CDATA #REQUIRED>
+
+<!ELEMENT action (listener | timer)* >
+<!ATTLIST action
+          bean CDATA #REQUIRED
+          impl CDATA #REQUIRED>
+
+<!ELEMENT listener EMPTY >
+<!ATTLIST listener
+          id CDATA #REQUIRED
+          type CDATA #REQUIRED
+          event CDATA #IMPLIED
+          events CDATA #IMPLIED
+          method CDATA #REQUIRED>
+
+<!ELEMENT timer EMPTY >
+<!ATTLIST timer
+          name CDATA #REQUIRED
+          delay CDATA #REQUIRED
+          method CDATA #REQUIRED>
+          
+<!ELEMENT callback EMPTY >
+<!ATTLIST callback
+          impl CDATA #REQUIRED
+          method CDATA #REQUIRED>

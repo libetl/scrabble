@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE UserInteractionsConfiguration PUBLIC "-//http://libe.toile-libre.org//FR" "./ui.dtd">
+<userinteractions>
+
+ <bean name="gameBean" impl="org.toilelibre.libe.scrabble.applicationlayer.beans.GameBean"/>
+ <bean name="newPartyBean" impl="org.toilelibre.libe.scrabble.applicationlayer.beans.party.NewPartyBean"/>
+ <bean name="changeTurnBean" impl="org.toilelibre.libe.scrabble.applicationlayer.beans.party.ChangeTurnBean"/>
+ 
+ <action bean="gameBean" impl="org.toilelibre.libe.scrabble.applicationlayer.actions.GameAction">
+ 	<listener id="sc3d" type="MouseListener" events="pressed, released" method="startStopMove"/>
+ 	<listener id="sc3d" type="MouseMotionListener" events="moved, dragged" method="updateMousePosition"/>
+ 	<listener id="sc3d" type="MouseWheelListener" events="wheelMoved" method="forwardBackward"/>
+ 	<listener id="exitButton" type="ActionListener" event="actionPerformed" method="exit"/>
+  	<listener id="newPartyButton" type="ActionListener" event="actionPerformed" method="newParty"/>
+  	<listener id="validateButton" type="ActionListener" event="actionPerformed" method="validate"/> 
+  	<listener id="skinCbx" type="ActionListener" event="actionPerformed" method="changeSkin"/> 
+ 	<timer name="movement" delay="0" method="movement"/>
+ </action>
+ 
+ <action bean="newPartyBean" impl="org.toilelibre.libe.scrabble.applicationlayer.actions.party.NewPartyAction">
+  	<listener id="startNewPartyButton" type="ActionListener" event="actionPerformed" method="execute"/>
+
+ 	<timer name="movement" delay="0" method="movement"/>
+ </action>
+
+ <action bean="changeTurnBean" impl="org.toilelibre.libe.scrabble.applicationlayer.actions.party.ChangeTurnAction">
+ 	<timer name="movement" delay="0" method="movement"/>
+ 	<timer name="movementLetter" delay="1" method="movementLetter"/>
+ </action>
+
+ <callback impl="org.toilelibre.libe.scrabble.gui.ScrabbleGUI" method="redirect"/>
+</userinteractions>

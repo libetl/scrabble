@@ -1,0 +1,116 @@
+#!/bin/sh
+
+# PARAMETRES - PARTIE A EDITER
+APPLICATION_NAME="Scrabble"
+MINIMAL_JAVA_VERSION='1.5'
+APPLICATION_FOLDERS="ScrabbleCommons ScrabbleComponents Scrabble3D ScrabbleJ3D ScrabbleMain ScrabbleUI UserInteractions"
+APPLICATION_BIN_FOLDERS="bin bin bin bin bin bin bin"
+APPLICATION_NATIVE_LIBS_FOLDERS="ScrabbleMain/lib/$(uname -m)/"
+APPLICATION_JAR_FOLDERS="ScrabbleCommons/lib ScrabbleComponents/lib Scrabble3D/lib ScrabbleJ3D/lib ScrabbleMain/lib/jar ScrabbleJ3D/lib UserInteractions/lib"
+RSRC_CLASSPATH="ScrabbleMain/res/:ScrabbleMain/res/logging"
+JAVACLASS="org.toilelibre.libe.scrabble.ScrabbleMain"
+
+
+# INITIALISATION DU SCRIPT
+HASNT_ALREADY_JAVA='1'
+HASNT_ALREADY_JAVA_IN_PATH=$(which java >/dev/null;echo $?)
+HASNT_ALREADY_JAVA_WITH_JAVA_HOME=$(which $JAVA_HOME/bin/java >/dev/null;echo $?)
+JAVA_VERSION='0'
+JAVA_PROVIDER="unknown"
+GOOD_JAVA_VERSION='0'
+JAVA_BIN="java"
+ARGS=$*
+
+formatText ()
+{
+  TEXT=$2
+  TEXT="[$1] $(date +%H:%M:%S) : $TEXT"
+  echo $TEXT
+}
+
+logInfo ()
+{
+  formatText "INFO" "$1" $2
+}
+
+logStop ()
+{
+  formatText "STOP" "$1" $2
+}
+
+logInfo "Starting $APPLICATION_NAME"
+
+if [ $HASNT_ALREADY_JAVA_WITH_JAVA_HOME = '0' ]; then
+  JAVA_BIN="$JAVA_HOME/bin/$JAVA_BIN"
+fi
+
+if [ $HASNT_ALREADY_JAVA_IN_PATH = '0' ] || [ $HASNT_ALREADY_JAVA_WITH_JAVA_HOME = '0' ]; then
+  HASNT_ALREADY_JAVA='0'
+fi
+
+if [ $HASNT_ALREADY_JAVA = '0' ]; then
+  JAVA_VERSION_TEXT=$($JAVA_BIN -version 2>&1)
+  if [ $? = '0' ] && [ ! -z "$JAVA_VERSION_TEXT" ];then 
+    JAVA_VERSION=$(echo $JAVA_VERSION_TEXT | cut -d \" -f 2 | cut -d . -f 1,2)
+    JAVA_EXACT_VERSION="$(echo $JAVA_VERSION_TEXT | cut -d \" -f 2)"
+    JAVA_PROVIDER="$($JAVA_BIN -version 2>&1 | head -n 3 | tail -n 1 | cut -d ' ' -f 1)"
+  fi
+fi
+
+GOOD_JAVA_VERSION=$(echo | awk 'javaVersion >= minimalVersion { print "1";} javaVersion < minimalVersion { print "0";}' javaVersion=$JAVA_VERSION minimalVersion=$MINIMAL_JAVA_VERSION)
+
+if [ $GOOD_JAVA_VERSION = '0' ]; then
+
+  PROVIDED='';
+  
+  if [ $JAVA_VERSION != '0' ]; then
+    PROVIDED="(Java $JAVA_VERSION provided)"
+  fi
+  
+  logStop "$APPLICATION_NAME requires Java $MINIMAL_JAVA_VERSION to work. $PROVIDED\nPlease declare a JAVA_HOME variable in your environment with the command export\nClue : JAVA_HOME must be one of these values :"
+  echo "$(locate -r "^/usr.*/bin/java$" | sed "s/\/bin\/java/\//g" | sed "s/^\/usr\/$/ /g")"
+  exit 1
+fi
+
+logInfo "Java $JAVA_VERSION installed ($JAVA_PROVIDER $JAVA_EXACT_VERSION)"
+logInfo "Setting library path for native libraries"
+for FOLDER in $APPLICATION_NATIVE_LIBS_FOLDERS; do
+  if [ ! -d $FOLDER ]; then
+    logStop "$APPLICATION_NAME is not correctly installed. Native Libs Folder $FOLDER is missing"
+    exit 1
+  fi
+  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$FOLDER
+done
+
+logInfo "Setting classpath" 93
+CLASSPATH=$RSRC_CLASSPATH
+INDEX=1
+for FOLDER in $APPLICATION_FOLDERS; do
+  BIN_FOLDER=$(echo $APPLICATION_BIN_FOLDERS | cut -d ' ' -f $INDEX)
+  PROJECT_FOLDERS_NOT_EXIST=$([ -d $FOLDER ] && [ -d $FOLDER/$BIN_FOLDER ];echo $?)
+  if [ $PROJECT_FOLDERS_NOT_EXIST = '1' ]; then
+    logStop "$APPLICATION_NAME is not correctly installed. $FOLDER or $FOLDER/$BIN_FOLDER is missing"
+    exit 1
+  fi
+  CLASSPATH="$CLASSPATH:$FOLDER/$BIN_FOLDER"
+  INDEX=$(expr $INDEX + 1)
+done
+
+logInfo "Adding libraries to classpath"
+for FOLDER in $APPLICATION_JAR_FOLDERS; do
+  if [ ! -d $FOLDER ]; then
+    logStop "$APPLICATION_NAME is not correctly installed. JAR Folder $FOLDER is missing"
+    exit 1
+  fi
+  for file in $FOLDER/*; do
+    CLASSPATH="$CLASSPATH:$file"
+  done
+done
+
+logInfo "Launching Java" 115
+
+$JAVA_BIN -cp $CLASSPATH $JAVACLASS $ARGS
+
+RETURN_CODE=$?
+logInfo "Java exited with code $RETURN_CODE"
+exit $RETURN_CODE

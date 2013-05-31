@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/log4j.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/UserInteractions"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ScrabbleCommons"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Scrabble3D"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ScrabbleComponents"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ScrabbleMain"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

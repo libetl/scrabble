@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE synth PUBLIC "-//http://java.sun.org//EN" "./synth.dtd">
+<synth>
+	<style id="backingStyle">
+		<font name="Dialog" size="12" />
+		<state>
+			<imagePainter method="RootPaneBackground" path="/img/degrade.png"
+				sourceInsets="45 0 100 0" />
+			<color value="#000000" type="BACKGROUND" />
+			<color value="WHITE" type="FOREGROUND" />
+		</state>
+	</style>
+	<style id="buttonStyle">
+		<property key="Button.textShiftOffset" type="integer" value="1" />
+		<insets top="0" left="20" right="20" bottom="0" />
+		<state>
+			<font name="Fantasy" size="24" style="BOLD" />
+			<color value="WHITE" type="TEXT_FOREGROUND" />
+			<imagePainter method="buttonBackground" path="/img/button.png"
+				sourceInsets="15 20 20 10" />
+		</state>
+		<state value="PRESSED">
+			<color value="BLACK" type="TEXT_FOREGROUND" />
+			<imagePainter method="buttonBackground" path="/img/buttonPressed.png"
+				sourceInsets="15 10 10 10" />
+		</state>
+		<state value="MOUSE_OVER">
+			<imagePainter method="buttonBackground" path="/img/buttonActive.png"
+				sourceInsets="15 20 20 10" />
+		</state>
+	</style>
+	<style id="textfieldStyle">
+		<insets top="20" left="20" right="20" bottom="20" />
+		<state>
+			<imagePainter method="textFieldBackground" path="/img/textfield.png"
+				sourceInsets="13 10 10 13" />
+		</state>
+		<state value="FOCUSED">
+			<imagePainter method="textFieldBackground" path="/img/textfieldActive.png"
+				sourceInsets="13 10 10 13" />
+		</state>
+	</style>
+	<style id="checkboxStyle">
+		<insets top="20" left="20" right="20" bottom="20" />
+		<state>
+			<imagePainter method="checkboxBackground" path="/img/checkbox.png"
+				sourceInsets="10 10 10 10" />
+		</state>
+		<state value="SELECTED">
+			<imagePainter method="checkboxBackground" path="/img/checkboxChecked.png"
+				sourceInsets="10 10 10 10" />
+		</state>
+		<state value="PRESSED">
+			<imagePainter method="checkboxBackground" path="/img/checkboxOver.png"
+				sourceInsets="10 10 10 10" />
+		</state>
+	</style>
+	<style id="tabStyle">
+		<property key="TabbedPane.textIconGap" type="integer" value="20" />
+		<state>
+			<color value="#D0D0D0" type="TEXT_FOREGROUND" />
+			<font name="Fantasy" size="20" style="BOLD" />
+			<imagePainter method="tabbedPaneTabBackground" path="/img/tab.png"
+				sourceInsets="10 10 10 10" />
+		</state>
+		<state value="SELECTED">
+			<color value="BLACK" type="TEXT_FOREGROUND" />
+			<font name="Fantasy" size="20" style="BOLD" />
+			<imagePainter method="tabbedPaneTabBackground" path="/img/tabActive.png"
+				sourceInsets="10 10 10 10" />
+		</state>
+	</style>
+	<style id="tabbedPaneTabAreaStyle">
+		<imagePainter method="tabbedPaneTabAreaBorder" path="/img/tab.png"
+			sourceInsets="10 10 10 10" />
+	</style>
+	<bind style="tabStyle" type="NAME" key="jtp" />
+	<bind style="tabbedPaneTabAreaStyle" type="REGION" key="tabbedPaneTabArea" />
+	<bind style="textfieldStyle" type="REGION" key="textField" />
+	<bind style="checkboxStyle" type="REGION" key="checkbox" />
+	<bind style="buttonStyle" type="REGION" key="button" />
+	<bind style="backingStyle" type="REGION" key=".*" />
+</synth>

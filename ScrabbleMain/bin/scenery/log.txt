@@ -1,0 +1,175 @@
+******** NODE ***********
+Transform:
+1.000000	0.000000	0.000000	0.000000	
+0.000000	1.000000	0.000000	0.000000	
+0.000000	0.000000	1.000000	0.000000	
+0.000000	0.000000	0.000000	1.000000	
+******** NODE ***********
+Transform:
+1.000000	0.000000	0.000000	0.000000	
+0.000000	1.000000	0.000000	0.000000	
+0.000000	0.000000	1.000000	0.000000	
+0.000000	0.000000	0.000000	1.000000	
+******** NODE ***********
+Transform:
+1.000000	0.000000	0.000000	0.000000	
+0.000000	1.000000	0.000000	0.000000	
+0.000000	0.000000	1.000000	0.000000	
+0.000000	0.000000	0.000000	1.000000	
+******** NODE ***********
+Transform:
+1.000000	0.000000	0.000000	0.000000	
+0.000000	1.000000	0.000000	0.000000	
+0.000000	0.000000	1.000000	0.000000	
+0.000000	0.000000	0.000000	1.000000	
+******** NODE ***********
+Transform:
+1.000000	0.000000	0.000000	0.000000	
+0.000000	1.000000	0.000000	0.000000	
+0.000000	0.000000	1.000000	0.000000	
+0.000000	0.000000	0.000000	1.000000	
+******** NODE ***********
+Transform:
+1.000000	0.000000	0.000000	0.000000	
+0.000000	1.000000	0.000000	0.000000	
+0.000000	0.000000	1.000000	0.000000	
+0.000000	0.000000	0.000000	1.000000	
+******** NODE ***********
+Transform:
+1.000000	0.000000	0.000000	0.000000	
+0.000000	1.000000	0.000000	0.000000	
+0.000000	0.000000	1.000000	0.000000	
+0.000000	0.000000	0.000000	1.000000	
+******** NODE ***********
+Transform:
+1.000000	0.000000	0.000000	0.000000	
+0.000000	1.000000	0.000000	0.000000	
+0.000000	0.000000	1.000000	0.000000	
+0.000000	0.000000	0.000000	1.000000	
+******** NODE ***********
+Transform:
+1.000000	0.000000	0.000000	0.000000	
+0.000000	1.000000	0.000000	0.000000	
+0.000000	0.000000	1.000000	0.000000	
+0.000000	0.000000	0.000000	1.000000	
+******** NODE ***********
+Transform:
+1.000000	0.000000	0.000000	0.000000	
+0.000000	1.000000	0.000000	0.000000	
+0.000000	0.000000	1.000000	0.000000	
+0.000000	0.000000	0.000000	1.000000	
+******** NODE ***********
+Transform:
+1.000000	0.000000	0.000000	0.000000	
+0.000000	1.000000	0.000000	0.000000	
+0.000000	0.000000	1.000000	0.000000	
+0.000000	0.000000	0.000000	1.000000	
+******** NODE ***********
+Transform:
+1.000000	0.000000	0.000000	0.000000	
+0.000000	1.000000	0.000000	0.000000	
+0.000000	0.000000	1.000000	0.000000	
+0.000000	0.000000	0.000000	1.000000	
+******** NODE ***********
+Transform:
+1.000000	0.000000	0.000000	0.000000	
+0.000000	1.000000	0.000000	0.000000	
+0.000000	0.000000	1.000000	0.000000	
+0.000000	0.000000	0.000000	1.000000	
+******** NODE ***********
+Transform:
+1.000000	0.000000	0.000000	0.000000	
+0.000000	1.000000	0.000000	0.000000	
+0.000000	0.000000	1.000000	0.000000	
+0.000000	0.000000	0.000000	1.000000	
+******** NODE ***********
+Transform:
+1.000000	0.000000	0.000000	0.000000	
+0.000000	1.000000	0.000000	0.000000	
+0.000000	0.000000	1.000000	0.000000	
+0.000000	0.000000	0.000000	1.000000	
+******** NODE ***********
+Transform:
+1.000000	0.000000	0.000000	0.000000	
+0.000000	1.000000	0.000000	0.000000	
+0.000000	0.000000	1.000000	0.000000	
+0.000000	0.000000	0.000000	1.000000	
+******** NODE ***********
+Transform:
+1.000000	0.000000	0.000000	0.000000	
+0.000000	1.000000	0.000000	0.000000	
+0.000000	0.000000	1.000000	0.000000	
+0.000000	0.000000	0.000000	1.000000	
+******** NODE ***********
+Transform:
+1.000000	0.000000	0.000000	0.000000	
+0.000000	1.000000	0.000000	0.000000	
+0.000000	0.000000	1.000000	0.000000	
+0.000000	0.000000	0.000000	1.000000	
+0 Light_1  
+1 anisotropic1_4  
+2 blinn1_6  
+3 bottomCap1  
+4 bottomCap1GeoPoints  
+5 bottomCap1_0Geo  
+6 bottomnurbsCube1  
+7 lambert1_3  
+8 lambert8_5  
+9 nurbsCylinder2  
+10 nurbsCylinder2GeoPoints  
+11 nurbsCylinder2_0Geo  
+12 nurbsPlane1  
+13 nurbsSphere1  
+14 nurbsSphere1GeoPoints  
+15 nurbsSphere1_0Geo  
+16 pCube4  
+17 pCylinder5  
+18 pCylinder5GeoPoints  
+19 pCylinder5_0Geo  
+20 pasted__lambert4_7  
+21 pasted__pCube4  
+22 pasted__pCube4GeoPoints  
+23 pasted__pCube4_0  
+24 pasted__pCube4_0Geo  
+25 pasted__pCube4_1GeoPoints  
+26 pasted__pCube4_1_0Geo  
+27 pasted__pCube4_2GeoPoints  
+28 pasted__pCube4_2_0Geo  
+29 pasted__pCylinder5GeoPoints  
+30 pasted__pCylinder5_0  
+31 pasted__pCylinder5_0Geo  
+32 pasted__pCylinder5_0GeoPoints  
+33 pasted__pCylinder5_0_0Geo  
+34 pasted__pasted__pCube2  
+35 pasted__pasted__pCube2GeoPoints  
+36 pasted__pasted__pCube2_0Geo  
+37 pasted__pasted__pCube2_0GeoPoints  
+38 pasted__pasted__pCube2_0_0Geo  
+39 pasted__pasted__pCube4GeoPoints  
+40 pasted__pasted__pCube4_0  
+41 pasted__pasted__pCube4_0Geo  
+42 pasted__pasted__pCube4_1  
+43 pasted__pasted__pCube4_2GeoPoints  
+44 pasted__pasted__pCube4_2_0Geo  
+45 pasted__pasted__pCube4_3  
+46 pasted__pasted__pCylinder5  
+47 pasted__pasted__pCylinder5GeoPoints  
+48 pasted__pasted__pCylinder5_0Geo  
+49 pasted__pasted__pasted__pCube4  
+50 pasted__pasted__pasted__pCube4_0GeoPoints  
+51 pasted__pasted__pasted__pCube4_0_0Geo  
+52 pasted__pasted__polySurface18  
+53 pasted__pasted__polySurface18GeoPoints  
+54 pasted__pasted__polySurface18_0  
+55 pasted__pasted__polySurface18_0Geo  
+56 pasted__pasted__polySurface18_0GeoPoints  
+57 pasted__pasted__polySurface18_0_0Geo  
+58 pasted__polySurface18  
+59 pasted__polySurface18GeoPoints  
+60 pasted__polySurface18_0Geo  
+61 persp  
+62 plateau_scrabble_1  
+63 polySurface18GeoPoints  
+64 polySurface18_0Geo  
+65 sable_2  
+66 vert_chevalet_0  

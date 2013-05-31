@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<panel id="game" xmlns="http://www.swixml.org/2007/Swixml"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.swixml.org/2007/Swixml swixml.xsd">
+	<panel layout="GridBagLayout" bounds="0, 50, 1024, 768">
+		<panel border="TitledBorder(game.label.scene)" constraints="BorderLayout.EAST">
+			<canvas3d id="sc3d" bounds="0,140,800,600" loader="xj3dloader.clazz"
+				scenery="scenery.impl" name="canvas3d" />
+		</panel>
+		<panel constraints="BorderLayout.WEST">
+			<vbox>
+				<vbox border="TitledBorder(game.label.commands)">
+					<button id="newPartyButton" text="game.newgame.button" name="new game"
+						preferredsize="220,80" font="Fantasy-BOLD-22" />
+					<button id="validateButton" text="game.validate.button"
+						name="validate" preferredsize="180,80" font="Fantasy-BOLD-22" />
+					<button id="abortButton" text="game.abort.button" name="abort"
+						preferredsize="180,80" font="Fantasy-BOLD-22" />
+					<button id="exitButton" text="game.exit.button" name="exit"
+						preferredsize="180,80" font="Fantasy-BOLD-22" />
+					<glue />
+				</vbox>
+				<vbox border="TitledBorder(game.label.scores)">
+					<scrollpane preferredsize="150,230">
+						<table id="scoresTable"  preferredsize="250,230">
+							<tableheader resizingallowed="true" visible="true" 
+							             updatetableinrealtime="true">
+							</tableheader>
+						</table>
+					</scrollpane>
+					<glue />
+				</vbox>
+			</vbox>
+			<gridbagconstraints insets="2,2,2,2" gridx="1"
+				gridy="0" ipadx="15" ipady="15" weightx="1" weighty="1" />
+		</panel>
+	</panel>
+</panel>

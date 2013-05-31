@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<panel id="logs" xmlns="http://www.swixml.org/2007/Swixml"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.swixml.org/2007/Swixml swixml.xsd">
+	<panel layout="FlowLayout">
+		<scrollpane>
+			<list id="console" autoscrolls="true"/>
+		</scrollpane>
+	</panel>
+</panel>

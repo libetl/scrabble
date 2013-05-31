@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<panel id="settings" xmlns="http://www.swixml.org/2007/Swixml"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.swixml.org/2007/Swixml swixml.xsd">
+	<panel layout="GridBagLayout" bounds="0, 50, 1024, 768">
+		<panel border="TitledBorder(game.settings.appearance)"
+			constraints="BorderLayout.EAST">
+
+			<label labelfor="skinCbx" font="Comic Sans MS-BOLD-12" text="game.settings.skin" />
+			<combobox id="skinCbx" preferredsize="400,40"
+				prototypedisplayvalue="name" />
+
+		</panel>
+	</panel>
+</panel>

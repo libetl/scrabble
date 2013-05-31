@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame size="600,400" title="newparty.title.window" iconimage="window.icon" visible="true" bundle="properties.scrabble"
+xmlns="http://www.swixml.org/2007/Swixml"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.swixml.org/2007/Swixml swixml.xsd">
+	<panel>
+		<vbox>
+			<label text="newparty.title.label" foreground="000000" font="Fantasy-BOLD-36"/>
+			
+			<panel>
+				<label labelfor="jN1" font="Fantasy-BOLD-12" foreground="000000" text="newparty.form.player1.label"/>
+				<textfield id="jN1" columns="20" preferredsize="400,40"/>
+				<label labelfor="jCS1" font="Fantasy-BOLD-12" foreground="000000" text="newparty.form.computer.label"/>
+				<checkbox id="jCS1"/>
+			</panel>
+			<panel>
+				<label labelfor="jN2" font="Fantasy-BOLD-12" foreground="000000" text="newparty.form.player2.label"/>
+				<textfield id="jN2" columns="20" preferredsize="400,40"/>
+				<label labelfor="jCS2" font="Fantasy-BOLD-12" foreground="000000" text="newparty.form.computer.label"/>
+				<checkbox id="jCS2"/>
+			</panel>
+			<panel>
+				<label labelfor="jN3" font="Fantasy-BOLD-12" foreground="000000" text="newparty.form.player3.label"/>
+				<textfield id="jN3" columns="20" preferredsize="400,40"/>
+				<label labelfor="jCS3" font="Fantasy-BOLD-12" foreground="000000" text="newparty.form.computer.label"/>
+				<checkbox id="jCS3"/>
+			</panel>
+			<panel>
+				<label labelfor="jN4" font="Fantasy-BOLD-12" foreground="000000" text="newparty.form.player4.label"/>
+				<textfield id="jN4" columns="20" preferredsize="400,40"/>
+				<label labelfor="jCS4" font="Fantasy-BOLD-12" foreground="000000" text="newparty.form.computer.label"/>
+				<checkbox id="jCS4"/>
+			</panel>
+			<button id="startNewPartyButton" text="newparty.form.start.button" name="new game" preferredsize="180,80" font="Fantasy-BOLD-22"/>
+		</vbox>
+	</panel>
+</frame>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-autowire="autodetect">
+
+    <bean id="setSexyLookAndFeel" class="org.springframework.util.MethodInvoker" 
+         init-method="prepare">
+    	<property name="targetClass"><value>javax.swing.UIManager</value></property>
+    	<property name="targetMethod"><value>setLookAndFeel</value></property>
+    	<property name="targetObject"><null/></property>
+    	<property name="arguments">
+    		<!--value>org.jvnet.substance.skin.SubstanceOfficeBlue2007LookAndFeel</value-->
+    		<value>org.jvnet.substance.skin.SubstanceMagmaLookAndFeel</value>
+    	</property>
+    </bean>
+    
+    <bean id="skinListBean" class="org.toilelibre.libe.scrabble.applicationlayer.beans.SkinListBean">
+ 	   <constructor-arg>
+ 	   	<list>
+ 	   		<value type="java.lang.Class">org.jvnet.substance.skin.SubstanceMagmaLookAndFeel</value>
+ 	   		<value type="java.lang.Class">org.jvnet.substance.skin.SubstanceBusinessLookAndFeel</value>
+ 	   		<value type="java.lang.Class">org.jvnet.substance.skin.SubstanceBusinessBlackSteelLookAndFeel</value>
+ 	   		<value type="java.lang.Class">org.jvnet.substance.skin.SubstanceOfficeBlue2007LookAndFeel</value>
+ 	   		<value type="java.lang.Class">org.jvnet.substance.skin.SubstanceDustCoffeeLookAndFeel</value>
+ 	   	</list>
+ 	   </constructor-arg>
+    </bean>
+    
+    <bean id="setDefaultLookAndFeelDecorated" class="org.springframework.util.MethodInvoker" 
+         init-method="prepare">
+    	<property name="targetClass"><value>javax.swing.JFrame</value></property>
+    	<property name="targetMethod"><value>setDefaultLookAndFeelDecorated</value></property>
+    	<property name="targetObject"><null/></property>
+    	<property name="arguments"><value type="boolean">true</value></property>
+    </bean>
+    
+    <bean id="fireLoadRunnable" class="org.springframework.util.MethodInvoker" init-method="prepare">
+    	<property name="targetClass"><value>javax.swing.SwingUtilities</value></property>
+    	<property name="targetMethod"><value>invokeLater</value></property>
+    	<property name="targetObject"><null/></property>
+    	<property name="arguments"><ref bean="loadRunnable"/></property>
+    </bean>
+   
+
+	<bean id="uiManager" class="javax.swing.UIManager" />
+
+	<bean id="laf" class="java.lang.String">
+		<constructor-arg>
+			<value>javax.swing.LookAndFeel</value>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="synthLaf" class="javax.swing.plaf.synth.SynthLookAndFeel" singleton="true" />
+	
+	<bean id="guiEngine" class="org.swixml.SwingEngine" singleton="true">
+		<property name="client"><value>null</value></property>
+	</bean>
+
+	<bean id="loadRunnable" class="org.toilelibre.libe.scrabble.gui.LoadRunnable"/>
+
+	<bean id="defaultSession" class="org.toilelibre.libe.scrabble.sessions.Session" />
+
+	<bean id="sessionsHandler"
+		class="org.toilelibre.libe.scrabble.sessions.ScrabbleSessionsHandler">
+		<property name="sessions">
+			<map>
+				<entry key="default">
+					<ref bean="defaultSession" />
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="listModel" class="javax.swing.DefaultListModel" />
+
+</beans>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame size="1024, 768" title="Scrabble" iconimage="window.icon" defaultcloseoperation="JFrame.EXIT_ON_CLOSE" visible="true" bundle="properties.scrabble"
+xmlns="http://www.swixml.org/2007/Swixml"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.swixml.org/2007/Swixml swixml.xsd">
+ <tabbedpane id='tp' name="jtp" titles="tabs.game.text,tabs.settings.text,tabs.help.text,tabs.logs.text" icons="tabs.game.icon,tabs.settings.icon,tabs.help.icon,tabs.logs.icon">
+  <panel include="xul/game.xml#game"/>
+  <panel include="xul/settings.xml#settings"/>
+  <panel/>
+  <panel include="xul/logs.xml#logs"/>
+ </tabbedpane>
+</frame>
