@@ -25,13 +25,14 @@ public class TxtToSetLoader implements Loader
 
   public final void load (final Dictionary d, final String fileName)
   {
+	 BufferedReader bfr = null;
     try
     {
       String line;
       final ClassLoader cld = Thread.currentThread ().getContextClassLoader ();
       final URL url = cld.getResource (fileName);
       final File f = new File (url.toURI ());
-      final BufferedReader bfr = new BufferedReader (new InputStreamReader (
+      bfr = new BufferedReader (new InputStreamReader (
           new FileInputStream (f)));
       line = bfr.readLine ();
       while (line != null)
@@ -48,6 +49,14 @@ public class TxtToSetLoader implements Loader
     } catch (final URISyntaxException e)
     {
       TxtToSetLoader.LOG.error (e.getMessage ());
+    } finally {
+    	if (bfr != null){
+    	  try {
+			bfr.close ();
+		} catch (IOException e) {
+		      TxtToSetLoader.LOG.error (e.getMessage ());
+		}
+    	}
     }
   }
 

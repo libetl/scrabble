@@ -10,21 +10,21 @@ import javax.swing.DefaultListModel;
  * @author lionel
  *
  */
-public final class ListModel
+public final class ListModel<T>
 {
 
-  private DefaultListModel dlm;
+  private DefaultListModel<T> dlm;
 
   public ListModel ()
   {
-    this.dlm = new DefaultListModel ();
+    this.dlm = new DefaultListModel<T> ();
   }
   
   /**
    * @param obj1
    * @see DefaultListModel#addElement(java.lang.Object)
    */
-  public void addElement (final Object obj1)
+  public void addElement (final T obj1)
   {
     this.dlm.addElement (obj1);
   }
