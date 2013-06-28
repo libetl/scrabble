@@ -24,6 +24,26 @@ public class Insertion implements Iterable<Placement>
     return this.placements.contains (p);
   }
 
+  public final boolean contains (final int x, final int y)
+  {
+    for (Placement p : this){
+    	if (p.getX() == x && p.getY() == y){
+    		return true;
+    	}
+    }
+    return false;
+  }
+  
+  public final Placement placementAt (final int x, final int y)
+  {
+    for (Placement p : this){
+    	if (p.getX() == x && p.getY() == y){
+    		return p;
+    	}
+    }
+    return null;
+  }
+  
   public final Placement getPlacement (final int index)
   {
     return this.placements.get (index);

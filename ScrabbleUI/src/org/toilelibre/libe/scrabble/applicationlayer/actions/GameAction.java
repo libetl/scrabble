@@ -182,7 +182,9 @@ public final class GameAction extends Action {
     for (String word : words){
     	text += word + "\n";
     }
-    text = text.substring(0, text.length() - 2);
+    if (text.length() > 0){
+      text = text.substring(0, text.length() - 1);
+    }
     gb.getScoresTableModel ().setValueAt (text + "\t" + score, -1, turn);
     
     for (final ILetterBranchGroup lbg : lbgs[turn]) {

@@ -3,8 +3,8 @@
  */
 package org.toilelibre.libe.scrabble.component.impl;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.toilelibre.libe.scrabble.component.AbstractComponent;
 import org.toilelibre.libe.scrabble.component.iface.IValidateInsertionComponent;
@@ -32,7 +32,6 @@ public class ValidateInsertionComponent extends AbstractComponent implements
   public final String[] validate (final Insertion i)
       throws ScrabbleModelException
   {
-	List<String> words = new LinkedList<String> ();
     String word = "";
     final Board board = this.getData ().getBoards ().get (0);
     // Contrôles d'intégrité
@@ -59,15 +58,95 @@ public class ValidateInsertionComponent extends AbstractComponent implements
       word = this.buildWord (row);
     }
 
-    if (!this.getData ().getDictionaries ().get (0).contains (
-        word.toLowerCase ()))
-    {
-      throw new ScrabbleModelException ("Mot non présent : " + word);
+    Set<String> words = this.findWordsAround (i);
+    for (String w : words){
+      if (!this.getData ().getDictionaries ().get (0).contains (
+        w.toLowerCase ()))
+      {
+        throw new ScrabbleModelException ("Mot non présent : " + word);
+      }
     }
-    return (String[])words.toArray();
+    String[] result = new String [words.size ()];
+    words.toArray(result);
+    return result;
   }
 
-  private void integrityCheck (final Insertion i) throws ScrabbleModelException
+  private Set<String> findWordsAround(Insertion i) {
+	Set<String> words = new HashSet<String> ();
+	
+    final Board b = this.getData ().getBoards ().get (0);
+	for (Placement p : i){
+		if ((p.getY() - 1 > 0 &&
+				(b.getCellLetter(p.getX(), p.getY() - 1) != 0 ||
+				i.contains(p.getX(), p.getY() - 1))) ||
+			(p.getY() + 1 < Board.ROWS &&
+					(b.getCellLetter(p.getX(), p.getY() + 1) != 0 ||
+					i.contains(p.getX(), p.getY() + 1)))){
+			words.add(this.findWordAroundDirY(p, i));
+		}
+		if ((p.getX() - 1 > 0 &&
+				(b.getCellLetter(p.getX() - 1, p.getY()) != 0||
+				i.contains(p.getX() - 1, p.getY()))) ||
+			(p.getX() + 1 < Board.COLS &&
+					(b.getCellLetter(p.getX() + 1, p.getY()) != 0 ||
+							i.contains(p.getX() + 1, p.getY())))){
+			words.add(this.findWordAroundDirX(p, i));
+		}
+	}
+	return words;
+}
+
+private String findWordAroundDirX(Placement p, Insertion i) {
+    final Board b = this.getData ().getBoards ().get (0);
+    StringBuffer sb = new StringBuffer (p.getLetter());
+    int x = p.getX ();
+    while (--x > 0 &&
+			(b.getCellLetter(x, p.getY()) != 0) ||
+			i.contains(x, p.getY())){
+    	if (b.getCellLetter(x, p.getY()) != 0){
+    	    sb.insert (0, b.getCellLetter(x, p.getY()));
+    	}else{
+    		sb.insert(0, i.placementAt(x, p.getY()).getLetter());
+    	}
+    }
+    while (++x < Board.COLS &&
+				(b.getCellLetter(x, p.getY()) != 0) ||
+				i.contains(x, p.getY())){
+    	if (b.getCellLetter(x, p.getY()) != 0){
+    	    sb.insert (0, b.getCellLetter(x, p.getY()));
+    	}else{
+    		sb.insert(0, i.placementAt(x, p.getY()).getLetter());
+    	}
+    }
+	return sb.toString();
+}
+
+private String findWordAroundDirY(Placement p, Insertion i) {
+    final Board b = this.getData ().getBoards ().get (0);
+    StringBuffer sb = new StringBuffer (p.getLetter());
+    int y = p.getY ();
+    while (--y > 0 &&
+			(b.getCellLetter(p.getX(), y) != 0 ||
+					i.contains(p.getX(), y))){
+    	if (b.getCellLetter(p.getX(), y) != 0){
+    	    sb.insert (0, b.getCellLetter(p.getX(), y));
+    	}else{
+    		sb.insert(0, i.placementAt(p.getX(), y).getLetter());
+    	}
+    }
+    while (++y < Board.ROWS &&
+    		(b.getCellLetter(p.getX(), y) != 0 ||
+			i.contains(p.getX(), y))){
+    	if (b.getCellLetter(p.getX(), y) != 0){
+    	    sb.insert (0, b.getCellLetter(p.getX(), y));
+    	}else{
+    		sb.insert(0, i.placementAt(p.getX(), y).getLetter());
+    	}
+    }
+	return sb.toString();
+}
+
+private void integrityCheck (final Insertion i) throws ScrabbleModelException
   {
     final Board b = this.getData ().getBoards ().get (0);
     for (final Placement p : i)
