@@ -24,9 +24,9 @@ public final class CountScoreComponent extends AbstractComponent implements
         final Board b = this.getData ().getBoards ().get (0);
         int coeff = 1;
         if (Board.DW == b.getCellPoints (x, y)) {
-            coeff += 2;
+            coeff = 2;
         } else if (Board.TW == b.getCellPoints (x, y)) {
-            coeff += 3;
+            coeff = 3;
         }
         return coeff;
     }
