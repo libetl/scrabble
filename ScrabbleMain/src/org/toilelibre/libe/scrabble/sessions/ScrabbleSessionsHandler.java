@@ -10,7 +10,7 @@ public final class ScrabbleSessionsHandler
 {
   private static final char           AT          = '@';
   private static final Logger         LOG         = Logger
-                                     .getLogger (ScrabbleSessionsHandler.class);
+                                                      .getLogger (ScrabbleSessionsHandler.class);
   private static Map<String, Session> sessions;
   private static final String         USERNAMEKEY = "user.name";
 

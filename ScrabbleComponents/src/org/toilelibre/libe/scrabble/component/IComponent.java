@@ -7,15 +7,14 @@ import java.lang.reflect.InvocationTargetException;
 
 import org.toilelibre.libe.scrabble.model.ScrabbleData;
 
-public interface IComponent
-{
+public interface IComponent {
 
-  Object execute (final Object... parameters);
+    Object execute (final Object... parameters);
 
-  Object executeAndThrow (final Object... parameters) 
-                                               throws InvocationTargetException;
+    Object executeAndThrow (final Object... parameters)
+            throws InvocationTargetException;
 
-  ScrabbleData getData ();
+    ScrabbleData getData ();
 
-  void setData (final ScrabbleData sd);
+    void setData (final ScrabbleData sd);
 }

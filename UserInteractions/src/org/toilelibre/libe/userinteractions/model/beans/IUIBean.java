@@ -2,13 +2,12 @@ package org.toilelibre.libe.userinteractions.model.beans;
 
 import java.util.EventObject;
 
-public interface IUIBean
-{
-  EventObject getEvent ();
+public interface IUIBean {
+    EventObject getEvent ();
 
-  String getName ();
+    String getName ();
 
-  void setEvent (final EventObject event1);
+    void setEvent (final EventObject event1);
 
-  void setName (final String name1);
+    void setName (final String name1);
 }

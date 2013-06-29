@@ -15,8 +15,7 @@ public final class InitViewPoint implements IScrabbleInit
   public void init ()
   {
     final int threadSleep = 1000;
-    final String newPartyAction =
-   "org.toilelibre.libe.scrabble.applicationlayer.actions.party.NewPartyAction";
+    final String newPartyAction = "org.toilelibre.libe.scrabble.applicationlayer.actions.party.NewPartyAction";
     final UserInteractions ui = (UserInteractions) ScrabbleBeansHelper
         .getBean ("userInteractions");
     Interaction interaction = ui.getInteraction (newPartyAction);

@@ -19,9 +19,9 @@ public class InitGUI implements IScrabbleInit
 
   public InitGUI ()
   {
-    
+
   }
-  
+
   /**
    * @see org.toilelibre.libe.scrabble.init.IScrabbleInit#init()
    */
@@ -31,8 +31,10 @@ public class InitGUI implements IScrabbleInit
     final ScrabbleGUI sgui = new ScrabbleGUI ();
     try
     {
-      sgui.getEngine ().getTaglib ().registerTag ("Canvas3D",
-          Class.forName ((String) ScrabbleBeansHelper.getBean ("canvas3d")));
+      sgui.getEngine ()
+          .getTaglib ()
+          .registerTag ("Canvas3D",
+              Class.forName ((String) ScrabbleBeansHelper.getBean ("canvas3d")));
     } catch (ClassNotFoundException e)
     {
       throw new ScrabbleException (e);

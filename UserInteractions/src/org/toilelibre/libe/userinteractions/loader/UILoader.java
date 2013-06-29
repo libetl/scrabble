@@ -15,38 +15,29 @@ import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.XMLReaderFactory;
 
-public final class UILoader
-{
-  private static final Logger LOG = Logger.getLogger (UILoader.class);
+public final class UILoader {
+    private static final Logger LOG = Logger.getLogger (UILoader.class);
 
-  private UILoader ()
-  {
+    private UILoader () {
 
-  }
-  
-  public static void load (final UserInteractions ui, final String xmlFileName)
-  {
-    try
-    {
-      final URL url = Thread.currentThread ().getContextClassLoader ()
-          .getResource (xmlFileName);
-      final XMLReader xr = XMLReaderFactory.createXMLReader ();
-      xr.setContentHandler (new UIXmlContentHandler (ui));
-      xr
-          .parse (new InputSource (
-              new FileInputStream (new File (url.toURI ()))));
-    } catch (final SAXException e)
-    {
-      UILoader.LOG.error (e.getMessage ());
-    } catch (final FileNotFoundException e)
-    {
-      UILoader.LOG.error (e.getMessage ());
-    } catch (final IOException e)
-    {
-      UILoader.LOG.error (e.getMessage ());
-    } catch (final URISyntaxException e)
-    {
-      UILoader.LOG.error (e.getMessage ());
     }
-  }
+
+    public static void load (final UserInteractions ui, final String xmlFileName) {
+        try {
+            final URL url = Thread.currentThread ().getContextClassLoader ()
+                    .getResource (xmlFileName);
+            final XMLReader xr = XMLReaderFactory.createXMLReader ();
+            xr.setContentHandler (new UIXmlContentHandler (ui));
+            xr.parse (new InputSource (new FileInputStream (new File (url
+                    .toURI ()))));
+        } catch (final SAXException e) {
+            UILoader.LOG.error (e.getMessage ());
+        } catch (final FileNotFoundException e) {
+            UILoader.LOG.error (e.getMessage ());
+        } catch (final IOException e) {
+            UILoader.LOG.error (e.getMessage ());
+        } catch (final URISyntaxException e) {
+            UILoader.LOG.error (e.getMessage ());
+        }
+    }
 }

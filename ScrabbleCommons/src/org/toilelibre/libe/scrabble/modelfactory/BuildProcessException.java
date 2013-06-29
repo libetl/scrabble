@@ -7,44 +7,39 @@ package org.toilelibre.libe.scrabble.modelfactory;
  * @author lionel
  * 
  */
-public final class BuildProcessException extends Exception
-{
+public final class BuildProcessException extends Exception {
 
-  /**
+    /**
    * 
    */
-  private static final long serialVersionUID = -3064208074552158785L;
+    private static final long serialVersionUID = -3064208074552158785L;
 
-  /**
+    /**
    * 
    */
-  public BuildProcessException ()
-  {
-  }
+    public BuildProcessException () {
+    }
 
-  /**
-   * @param message
-   */
-  public BuildProcessException (final String message)
-  {
-    super (message);
-  }
+    /**
+     * @param message
+     */
+    public BuildProcessException (final String message) {
+        super (message);
+    }
 
-  /**
-   * @param message
-   * @param cause
-   */
-  public BuildProcessException (final String message, final Throwable cause)
-  {
-    super (message, cause);
-  }
+    /**
+     * @param message
+     * @param cause
+     */
+    public BuildProcessException (final String message, final Throwable cause) {
+        super (message, cause);
+    }
 
-  /**
-   * @param cause
-   */
-  public BuildProcessException (final Throwable cause)
-  {
-    super (cause);
-  }
+    /**
+     * @param cause
+     */
+    public BuildProcessException (final Throwable cause) {
+        super (cause);
+    }
 
 }

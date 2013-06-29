@@ -9,39 +9,32 @@ import java.util.EventObject;
 
 /**
  * @author lionel
- *
+ * 
  */
-public final class EventMethods
-{
+public final class EventMethods {
 
-  private EventMethods ()
-  {
-    
-  }
-  
-  public static int getWheelRotation (final EventObject eo)
-  {
-    return ((MouseWheelEvent) eo).getWheelRotation ();
-  }
-  
-  public static int getScrollAmount (final EventObject eo)
-  {
-    return ((MouseWheelEvent) eo).getScrollAmount ();
-  }
-  
-  public static int getButton (final EventObject eo)
-  {
-    return ((MouseEvent) eo).getButton ();
-  }
+    private EventMethods () {
 
-  public static int getX (final EventObject eo)
-  {
-    return ((MouseEvent) eo).getX ();
-  }
+    }
 
-  public static int getY (final EventObject eo)
-  {
-    return ((MouseEvent) eo).getY ();
-  }
+    public static int getWheelRotation (final EventObject eo) {
+        return ((MouseWheelEvent) eo).getWheelRotation ();
+    }
+
+    public static int getScrollAmount (final EventObject eo) {
+        return ((MouseWheelEvent) eo).getScrollAmount ();
+    }
+
+    public static int getButton (final EventObject eo) {
+        return ((MouseEvent) eo).getButton ();
+    }
+
+    public static int getX (final EventObject eo) {
+        return ((MouseEvent) eo).getX ();
+    }
+
+    public static int getY (final EventObject eo) {
+        return ((MouseEvent) eo).getY ();
+    }
 
 }

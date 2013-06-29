@@ -12,22 +12,23 @@ import org.toilelibre.libe.scrabble.properties.ScrabbleMessages;
 
 public final class InitAppearance implements IScrabbleInit
 {
-  private static final Logger LOG = Logger.getLogger (InitAppearance.class);
-  private static final String JAVA_VERSION ="java.version";
-  private static final double SIX = 1.6;
-  private static final double FIVE = 1.5;
-  private static final String SET_LAF_METHOD ="setSexyLookAndFeel";
-  private static double javaVersionFromVM;
+  private static final Logger LOG            = Logger
+                                                 .getLogger (InitAppearance.class);
+  private static final String JAVA_VERSION   = "java.version";
+  private static final double SIX            = 1.6;
+  private static final double FIVE           = 1.5;
+  private static final String SET_LAF_METHOD = "setSexyLookAndFeel";
+  private static double       javaVersionFromVM;
 
-  static {
+  static
+  {
 
-    String version =
-      System.getProperty (InitAppearance.JAVA_VERSION);
+    String version = System.getProperty (InitAppearance.JAVA_VERSION);
     int majorIndex = version.indexOf ('.');
-    int minorIndex = majorIndex + 1 + 
-                    version.substring (majorIndex + 1).indexOf ('.');
-    InitAppearance.javaVersionFromVM = 
-      Double.parseDouble (version.substring (0, minorIndex));
+    int minorIndex = majorIndex + 1
+        + version.substring (majorIndex + 1).indexOf ('.');
+    InitAppearance.javaVersionFromVM = Double.parseDouble (version.substring (
+        0, minorIndex));
   }
 
   public InitAppearance ()
@@ -40,8 +41,7 @@ public final class InitAppearance implements IScrabbleInit
     if (InitAppearance.javaVersionFromVM >= InitAppearance.SIX)
     {
       InitAppearance.init60 ();
-    } else if (InitAppearance.javaVersionFromVM >= 
-                                                  InitAppearance.FIVE)
+    } else if (InitAppearance.javaVersionFromVM >= InitAppearance.FIVE)
     {
       InitAppearance.init50 ();
     }
@@ -53,16 +53,14 @@ public final class InitAppearance implements IScrabbleInit
     {
       InitAppearance.LOG.info ("Changement d'apparence graphique");
       ScrabbleBeansHelper.modifyMethodParameters (
-          InitAppearance.SET_LAF_METHOD,
-          new Object [] {clazz.getName ()});
+          InitAppearance.SET_LAF_METHOD, new Object [] {clazz.getName () });
       ScrabbleBeansHelper.launchMethod (InitAppearance.SET_LAF_METHOD);
     }
   }
-  
+
   public static void init60 ()
   {
-    InitAppearance.LOG
-        .info ("Apparence graphique Java >= 6");
+    InitAppearance.LOG.info ("Apparence graphique Java >= 6");
     ScrabbleBeansHelper.launchMethod (InitAppearance.SET_LAF_METHOD);
     ScrabbleBeansHelper.launchMethod ("setDefaultLookAndFeelDecorated");
   }

@@ -11,19 +11,17 @@ import org.toilelibre.libe.userinteractions.model.UserInteractions;
 
 public final class ScrabbleGUI
 {
-  private static final String CREATING_GUI_ERROR = 
-                                    "Erreur lors de la création de l'interface";
-  private static final Logger LOG                = Logger
-                                                 .getLogger (ScrabbleGUI.class);
+  private static final String    CREATING_GUI_ERROR = "Erreur lors de la création de l'interface";
+  private static final Logger    LOG                = Logger
+                                                        .getLogger (ScrabbleGUI.class);
 
-  private static ScrabbleGUI  sgui;
+  private static ScrabbleGUI     sgui;
 
+  private final IEngine          engine             = (IEngine) ScrabbleBeansHelper
+                                                        .getBean ("guiEngine");
 
-  private final IEngine          engine = (IEngine) ScrabbleBeansHelper
-                                            .getBean ("guiEngine");
-
-  private final UserInteractions ui     = (UserInteractions) ScrabbleBeansHelper
-                                            .getBean ("userInteractions");
+  private final UserInteractions ui                 = (UserInteractions) ScrabbleBeansHelper
+                                                        .getBean ("userInteractions");
 
   public ScrabbleGUI ()
   {
@@ -39,13 +37,13 @@ public final class ScrabbleGUI
   {
     ScrabbleGUI.getInstance ().display (beanName, url);
   }
-  
+
   public void display (final String beanName, final URL url)
   {
     try
     {
-      ScrabbleGUI.LOG.info ("Redirection (" + 
-          url.toString ().substring (url.toString ().lastIndexOf ('/') + 1)
+      ScrabbleGUI.LOG.info ("Redirection ("
+          + url.toString ().substring (url.toString ().lastIndexOf ('/') + 1)
           + ", " + beanName + ")");
       this.engine.setClient (this.ui.getBean (beanName));
       this.engine.render (url);

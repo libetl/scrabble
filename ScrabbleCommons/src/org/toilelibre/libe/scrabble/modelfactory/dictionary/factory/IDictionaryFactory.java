@@ -4,11 +4,10 @@ import java.util.Locale;
 
 import org.toilelibre.libe.scrabble.model.dictionary.Dictionary;
 
-public interface IDictionaryFactory
-{
-  Dictionary getDictionary ();
+public interface IDictionaryFactory {
+    Dictionary getDictionary ();
 
-  Locale getLocale ();
+    Locale getLocale ();
 
-  void load ();
+    void load ();
 }

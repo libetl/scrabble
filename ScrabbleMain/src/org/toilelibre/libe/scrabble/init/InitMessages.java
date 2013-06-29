@@ -15,9 +15,9 @@ public final class InitMessages implements IScrabbleInit
 
   public InitMessages ()
   {
-    
+
   }
-  
+
   /**
    * 
    * 

@@ -9,192 +9,162 @@ import org.toilelibre.libe.scrabble.s3d.model.ITransform;
 import org.toilelibre.libe.scrabble.s3d.model.IUniverse;
 import org.toilelibre.libe.scrabble.s3d.util.scene.IScenePicker;
 
-public final class S3DHelper
-{
+public final class S3DHelper {
 
-  private static S3DHelper instance;
-  
-  private static final String MODEL_PACKAGE = ".model.";
-  private String           implPackage;
-  private String           implPrefix;
+    private static S3DHelper    instance;
 
-  public S3DHelper ()
-  {
-    S3DHelper.instance = this;
-  }
-  
-  /**
-   * @return the implPackage
-   */
-  public String getImplPackage ()
-  {
-    return this.implPackage;
-  }
+    private static final String MODEL_PACKAGE = ".model.";
+    private String              implPackage;
+    private String              implPrefix;
 
-  /**
-   * @param implPackage
-   *          the implPackage to set
-   */
-  public void setImplPackage (final String implPackage1)
-  {
-    this.implPackage = implPackage1;
-  }
-
-  /**
-   * @return the implPrefix
-   */
-  public String getImplPrefix ()
-  {
-    return this.implPrefix;
-  }
-
-  /**
-   * @param implPrefix
-   *          the implPrefix to set
-   */
-  public void setImplPrefix (final String implPrefix1)
-  {
-    this.implPrefix = implPrefix1;
-  }
-
-  /**
-   * @return the instance
-   */
-  public static S3DHelper getInstance ()
-  {
-    return S3DHelper.instance;
-  }
-
-
-  public static IScenePicker getScenePicker ()
-  {
-    final Object [] objects2 = new Object [0];
-    final Class<?> [] classes = new Class<?> [0];
-    final String className = S3DHelper.instance.implPackage + ".util.scene."
-        + S3DHelper.instance.implPrefix + "ScenePicker";
-    return (IScenePicker) S3DHelper.invokeConstructor (className, classes,
-        objects2);
-  }
-
-  public static ITransform newTransform (final Object... objects)
-  {
-    Object [] objects2 = objects;
-    if (objects2 == null)
-    {
-      objects2 = new Object [0];
+    public S3DHelper () {
+        S3DHelper.instance = this;
     }
-    final String className = S3DHelper.instance.implPackage 
-        + S3DHelper.MODEL_PACKAGE + S3DHelper.instance.implPrefix 
-        + "Transform";
-    final Class<?> [] classes = S3DHelper.getClasses (objects2);
-    return (ITransform) S3DHelper.invokeConstructor (className,
-        classes, objects2);
-  }
 
-  public static IUniverse newUniverse (final Object... objects)
-  {
-    Object [] objects2 = objects;
-    if (objects2 == null)
-    {
-      objects2 = new Object [0];
+    /**
+     * @return the implPackage
+     */
+    public String getImplPackage () {
+        return this.implPackage;
     }
-    final String className = S3DHelper.instance.implPackage
-        + S3DHelper.MODEL_PACKAGE + S3DHelper.instance.implPrefix
-        + "Universe";
-    final Class<?> [] classes = S3DHelper.getClasses (objects2);
-    return (IUniverse) S3DHelper.invokeConstructor (className, classes,
-        objects2);
-  }
 
-  public static ILetterBranchGroup newLetterBranchGroup (
-      final Object... objects)
-  {
-    Object [] objects2 = objects;
-    if (objects2 == null)
-    {
-      objects2 = new Object [0];
+    /**
+     * @param implPackage
+     *            the implPackage to set
+     */
+    public void setImplPackage (final String implPackage1) {
+        this.implPackage = implPackage1;
     }
-    final String className = S3DHelper.instance.implPackage
-        + S3DHelper.MODEL_PACKAGE + S3DHelper.instance.implPrefix
-        + "LetterBranchGroup";
-    final Class<?> [] classes = new Class<?> [] {Object.class };
-    return (ILetterBranchGroup) S3DHelper.invokeConstructor (className,
-        classes, objects2);
-  }
 
-  public static IPoint3D newPoint3d (final Object... objects)
-  {
-    Object [] objects2 = objects;
-    if (objects2 == null)
-    {
-      objects2 = new Object [0];
+    /**
+     * @return the implPrefix
+     */
+    public String getImplPrefix () {
+        return this.implPrefix;
     }
-    final String className = S3DHelper.instance.implPackage
-        + S3DHelper.MODEL_PACKAGE+ S3DHelper.instance.implPrefix
-        + "Point3D";
-    final Class<?> [] classes = S3DHelper.getClasses (objects2);
-    return (IPoint3D) S3DHelper.invokeConstructor (className,
-        classes, objects2);
-  }
 
-  private static Object invokeConstructor (final String className,
-      final Class<?> [] classes, final Object [] objects2)
-  {
-    try
-    {
-      return Class.forName (className).getConstructor (classes).newInstance (
-          objects2);
-    } catch (IllegalArgumentException e)
-    {
-      e.hashCode ();
-    } catch (SecurityException e)
-    {
-      e.hashCode ();
-    } catch (InstantiationException e)
-    {
-      e.hashCode ();
-    } catch (IllegalAccessException e)
-    {
-      e.hashCode ();
-    } catch (InvocationTargetException e)
-    {
-      e.hashCode ();
-    } catch (NoSuchMethodException e)
-    {
-      e.hashCode ();
-    } catch (ClassNotFoundException e)
-    {
-      e.hashCode ();
+    /**
+     * @param implPrefix
+     *            the implPrefix to set
+     */
+    public void setImplPrefix (final String implPrefix1) {
+        this.implPrefix = implPrefix1;
     }
-    return null;
-  }
 
-  private static Class<?> [] getClasses (final Object [] objects)
-  {
-    final String scrabble = "scrabble";
-    final Class<?> [] classes = new Class<?> [objects.length];
-    for (int i = 0; i < objects.length; i++)
-    {
-      if (objects[i].getClass ().getInterfaces ().length == 1
-          && objects[i].getClass ().getInterfaces ()[0].getName ().contains (
-              scrabble))
-      {
-        classes[i] = objects[i].getClass ().getInterfaces ()[0];
-      } else if (!Object.class.equals (objects[i].getClass ().getSuperclass ())
-          && objects[i].getClass ().getSuperclass ().getName ().contains (
-              scrabble))
-      {
-        classes[i] = objects[i].getClass ().getSuperclass ();
-      } else
-      {
-        classes[i] = objects[i].getClass ();
-      }
+    /**
+     * @return the instance
+     */
+    public static S3DHelper getInstance () {
+        return S3DHelper.instance;
     }
-    return classes;
-  }
 
-  public static ILetterBranchGroup cloneLetter ()
-  {
-    return AbstractLetterBranchGroup.cloneLetter ();
-  }
+    public static IScenePicker getScenePicker () {
+        final Object [] objects2 = new Object [0];
+        final Class<?> [] classes = new Class<?> [0];
+        final String className = S3DHelper.instance.implPackage
+                + ".util.scene." + S3DHelper.instance.implPrefix
+                + "ScenePicker";
+        return (IScenePicker) S3DHelper.invokeConstructor (className, classes,
+                objects2);
+    }
+
+    public static ITransform newTransform (final Object... objects) {
+        Object [] objects2 = objects;
+        if (objects2 == null) {
+            objects2 = new Object [0];
+        }
+        final String className = S3DHelper.instance.implPackage
+                + S3DHelper.MODEL_PACKAGE + S3DHelper.instance.implPrefix
+                + "Transform";
+        final Class<?> [] classes = S3DHelper.getClasses (objects2);
+        return (ITransform) S3DHelper.invokeConstructor (className, classes,
+                objects2);
+    }
+
+    public static IUniverse newUniverse (final Object... objects) {
+        Object [] objects2 = objects;
+        if (objects2 == null) {
+            objects2 = new Object [0];
+        }
+        final String className = S3DHelper.instance.implPackage
+                + S3DHelper.MODEL_PACKAGE + S3DHelper.instance.implPrefix
+                + "Universe";
+        final Class<?> [] classes = S3DHelper.getClasses (objects2);
+        return (IUniverse) S3DHelper.invokeConstructor (className, classes,
+                objects2);
+    }
+
+    public static ILetterBranchGroup newLetterBranchGroup (
+            final Object... objects) {
+        Object [] objects2 = objects;
+        if (objects2 == null) {
+            objects2 = new Object [0];
+        }
+        final String className = S3DHelper.instance.implPackage
+                + S3DHelper.MODEL_PACKAGE + S3DHelper.instance.implPrefix
+                + "LetterBranchGroup";
+        final Class<?> [] classes = new Class<?> [] { Object.class };
+        return (ILetterBranchGroup) S3DHelper.invokeConstructor (className,
+                classes, objects2);
+    }
+
+    public static IPoint3D newPoint3d (final Object... objects) {
+        Object [] objects2 = objects;
+        if (objects2 == null) {
+            objects2 = new Object [0];
+        }
+        final String className = S3DHelper.instance.implPackage
+                + S3DHelper.MODEL_PACKAGE + S3DHelper.instance.implPrefix
+                + "Point3D";
+        final Class<?> [] classes = S3DHelper.getClasses (objects2);
+        return (IPoint3D) S3DHelper.invokeConstructor (className, classes,
+                objects2);
+    }
+
+    private static Object invokeConstructor (final String className,
+            final Class<?> [] classes, final Object [] objects2) {
+        try {
+            return Class.forName (className).getConstructor (classes)
+                    .newInstance (objects2);
+        } catch (IllegalArgumentException e) {
+            e.hashCode ();
+        } catch (SecurityException e) {
+            e.hashCode ();
+        } catch (InstantiationException e) {
+            e.hashCode ();
+        } catch (IllegalAccessException e) {
+            e.hashCode ();
+        } catch (InvocationTargetException e) {
+            e.hashCode ();
+        } catch (NoSuchMethodException e) {
+            e.hashCode ();
+        } catch (ClassNotFoundException e) {
+            e.hashCode ();
+        }
+        return null;
+    }
+
+    private static Class<?> [] getClasses (final Object [] objects) {
+        final String scrabble = "scrabble";
+        final Class<?> [] classes = new Class<?> [objects.length];
+        for (int i = 0 ; i < objects.length ; i++) {
+            if (objects [i].getClass ().getInterfaces ().length == 1
+                    && objects [i].getClass ().getInterfaces () [0].getName ()
+                            .contains (scrabble)) {
+                classes [i] = objects [i].getClass ().getInterfaces () [0];
+            } else if (!Object.class.equals (objects [i].getClass ()
+                    .getSuperclass ())
+                    && objects [i].getClass ().getSuperclass ().getName ()
+                            .contains (scrabble)) {
+                classes [i] = objects [i].getClass ().getSuperclass ();
+            } else {
+                classes [i] = objects [i].getClass ();
+            }
+        }
+        return classes;
+    }
+
+    public static ILetterBranchGroup cloneLetter () {
+        return AbstractLetterBranchGroup.cloneLetter ();
+    }
 }

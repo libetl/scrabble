@@ -4,15 +4,14 @@ import java.util.Locale;
 
 import org.toilelibre.libe.scrabble.model.ModelElement;
 
-public interface BuildProcess
-{
-  String getFile ();
+public interface BuildProcess {
+    String getFile ();
 
-  Locale getLocale ();
+    Locale getLocale ();
 
-  ModelElement process ();
+    ModelElement process ();
 
-  void setFile (String fileset);
+    void setFile (String fileset);
 
-  void setLocale (Locale l);
+    void setLocale (Locale l);
 }

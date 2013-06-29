@@ -10,16 +10,15 @@ public final class InitBeans implements IScrabbleInit
 
   public InitBeans ()
   {
-    
+
   }
-  
+
   public void init ()
   {
     InitBeans.LOG.info ("Beans Spring");
-    final org.springframework.core.io.Resource res = 
-      new org.springframework.core.io.ClassPathResource (
+    final org.springframework.core.io.Resource res = new org.springframework.core.io.ClassPathResource (
         ScrabbleMessages.getMessage ("locations.applicationcontext"));
-    ScrabbleBeansHelper.setImpl (
-        new org.springframework.beans.factory.xml.XmlBeanFactory (res));
+    ScrabbleBeansHelper
+        .setImpl (new org.springframework.beans.factory.xml.XmlBeanFactory (res));
   }
 }

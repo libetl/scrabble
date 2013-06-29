@@ -1,10 +1,9 @@
 package org.toilelibre.libe.scrabble.s3d.model;
 
-public interface IBranchGroup
-{
+public interface IBranchGroup {
 
-  ITransformGroup getTransformGroup ();
+    ITransformGroup getTransformGroup ();
 
-  void addBranchGraph (IBranchGroup isbg);
+    void addBranchGraph (IBranchGroup isbg);
 
 }

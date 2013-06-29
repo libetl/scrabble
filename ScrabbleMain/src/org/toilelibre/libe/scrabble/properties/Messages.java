@@ -29,8 +29,8 @@ public class Messages
   public Messages (final String bName)
   {
     this.bundleName = bName;
-    this.resourceBundle = ResourceBundle.getBundle (this.bundleName, Locale
-        .getDefault ());
+    this.resourceBundle = ResourceBundle.getBundle (this.bundleName,
+        Locale.getDefault ());
   }
 
   /**

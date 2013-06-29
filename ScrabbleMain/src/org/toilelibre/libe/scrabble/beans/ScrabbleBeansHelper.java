@@ -19,29 +19,27 @@ public final class ScrabbleBeansHelper
 
   public static Object getBean (final String name)
   {
-    return ((org.springframework.beans.factory.BeanFactory) 
-        ScrabbleBeansHelper.bf).getBean (name);
+    return ((org.springframework.beans.factory.BeanFactory) ScrabbleBeansHelper.bf)
+        .getBean (name);
   }
 
-  public static void modifyMethodParameters (final String name, 
+  public static void modifyMethodParameters (final String name,
       final Object [] attrs)
   {
     final Object o = ScrabbleBeansHelper.getBean (name);
     if (o instanceof org.springframework.util.MethodInvoker)
     {
-      final org.springframework.util.MethodInvoker mi = 
-          (org.springframework.util.MethodInvoker) o;
+      final org.springframework.util.MethodInvoker mi = (org.springframework.util.MethodInvoker) o;
       mi.setArguments (attrs);
-    }    
+    }
   }
-  
+
   public static Object launchMethod (final String name)
   {
     final Object o = ScrabbleBeansHelper.getBean (name);
     if (o instanceof org.springframework.util.MethodInvoker)
     {
-      final org.springframework.util.MethodInvoker mi = 
-          (org.springframework.util.MethodInvoker) o;
+      final org.springframework.util.MethodInvoker mi = (org.springframework.util.MethodInvoker) o;
       try
       {
         return mi.invoke ();
@@ -59,9 +57,7 @@ public final class ScrabbleBeansHelper
   private static void setComponents ()
   {
     ScrabbleBeansHelper.components = new HashMap<String, IComponent> ();
-    final Map<?, ?> input = 
-      ((org.springframework.beans.factory.ListableBeanFactory) 
-          ScrabbleBeansHelper.bf)
+    final Map<?, ?> input = ((org.springframework.beans.factory.ListableBeanFactory) ScrabbleBeansHelper.bf)
         .getBeansOfType (IComponent.class);
     for (Object o : input.keySet ())
     {
@@ -89,9 +85,7 @@ public final class ScrabbleBeansHelper
 
   public static IComponent getComponent (final String name)
   {
-    return
-    (IComponent) ((org.springframework.beans.factory.ListableBeanFactory) 
-        ScrabbleBeansHelper.bf)
+    return (IComponent) ((org.springframework.beans.factory.ListableBeanFactory) ScrabbleBeansHelper.bf)
         .getBeansOfType (IComponent.class).get (
             name + ScrabbleBeansHelper.COMPONENT);
   }
@@ -106,10 +100,9 @@ public final class ScrabbleBeansHelper
    */
   public static Class<?> getType (final String name)
   {
-    return ((org.springframework.beans.factory.BeanFactory) 
-        ScrabbleBeansHelper.bf).getType (name);
+    return ((org.springframework.beans.factory.BeanFactory) ScrabbleBeansHelper.bf)
+        .getType (name);
   }
-
 
   /**
    * @param factory1

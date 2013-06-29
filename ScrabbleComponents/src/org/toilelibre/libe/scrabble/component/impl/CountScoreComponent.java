@@ -8,21 +8,18 @@ import org.toilelibre.libe.scrabble.component.iface.ICountScoreComponent;
 import org.toilelibre.libe.scrabble.model.board.placements.Insertion;
 
 public final class CountScoreComponent extends AbstractComponent implements
-    ICountScoreComponent
-{
+        ICountScoreComponent {
 
-  public CountScoreComponent ()
-  {
+    public CountScoreComponent () {
 
-  }
+    }
 
-  /**
-   * @see org.toilelibre.libe.scrabble.component.iface.ICountScoreComponent
-   * #count(org.toilelibre.libe.scrabble.model.board.placements.Insertion)
-   */
-  public int count (final Insertion i1)
-  {
-    return 0;
-  }
+    /**
+     * @see org.toilelibre.libe.scrabble.component.iface.ICountScoreComponent
+     *      #count(org.toilelibre.libe.scrabble.model.board.placements.Insertion)
+     */
+    public int count (final Insertion i1) {
+        return 0;
+    }
 
 }

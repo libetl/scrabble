@@ -15,9 +15,9 @@ public final class InitSessionsHandler implements IScrabbleInit
 
   public InitSessionsHandler ()
   {
-    
+
   }
-  
+
   public void init ()
   {
     InitSessionsHandler.LOG.info ("Gestionnaire de sessions");

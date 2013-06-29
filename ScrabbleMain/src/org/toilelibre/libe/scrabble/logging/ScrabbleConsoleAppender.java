@@ -3,7 +3,6 @@
  */
 package org.toilelibre.libe.scrabble.logging;
 
-
 import org.apache.log4j.AppenderSkeleton;
 import org.apache.log4j.spi.LoggingEvent;
 import org.toilelibre.libe.userinteractions.util.BeansComponents;
@@ -11,21 +10,21 @@ import org.toilelibre.libe.userinteractions.util.ListModel;
 
 /**
  * @author lionel
- *
+ * 
  */
 public final class ScrabbleConsoleAppender extends AppenderSkeleton
 {
 
   private static ListModel<String> dlm;
-  
+
   public ScrabbleConsoleAppender ()
-  {    
+  {
     ScrabbleConsoleAppender.dlm = new ListModel<String> ();
   }
-  
+
   /**
    * @see org.apache.log4j.AppenderSkeleton
-   * #append(org.apache.log4j.spi.LoggingEvent)
+   *      #append(org.apache.log4j.spi.LoggingEvent)
    */
   @Override
   protected void append (final LoggingEvent le)

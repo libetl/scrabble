@@ -1,6 +1,5 @@
 package org.toilelibre.libe.scrabble.model.player;
 
-public enum Type
-{
-  Computer, Human
+public enum Type {
+    Computer, Human
 }

@@ -21,8 +21,8 @@ public final class InitUserInteractions implements IScrabbleInit
     InitUserInteractions.LOG.info ("Interactions");
     final UserInteractions ui = (UserInteractions) ScrabbleBeansHelper
         .getBean ("userInteractions");
-    UILoader.load (ui, ScrabbleMessages
-        .getMessage ("locations.userinteractions"));
+    UILoader.load (ui,
+        ScrabbleMessages.getMessage ("locations.userinteractions"));
 
   }
 }

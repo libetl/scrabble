@@ -14,8 +14,8 @@ import org.toilelibre.libe.scrabble.s3d.model.ICanvas3D;
 
 public final class InitS3d implements IScrabbleInit
 {
-  
-  private static final Logger LOG          = Logger.getLogger (InitS3d.class);
+
+  private static final Logger LOG = Logger.getLogger (InitS3d.class);
 
   public InitS3d ()
   {

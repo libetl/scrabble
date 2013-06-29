@@ -6,37 +6,30 @@ import org.toilelibre.libe.userinteractions.model.UserInteractions;
 import org.toilelibre.libe.userinteractions.model.beans.IUIBean;
 import org.xml.sax.Attributes;
 
-public class BeanTagParser implements TagParser
-{
-  private static final Logger    LOG = Logger
-  .getLogger (BeanTagParser.class);
+public class BeanTagParser implements TagParser {
+    private static final Logger LOG = Logger.getLogger (BeanTagParser.class);
 
-  public BeanTagParser ()
-  {
+    public BeanTagParser () {
 
-  }
-
-  public final void parse (final UserInteractions ui, 
-      final String [] currentAction,
-      final String name,
-      final Attributes atts)
-  {
-    try
-    {
-      final Class<?> clazz = Class
-          .forName (atts.getValue (UIConstants.IMPL_ATTRIBUTE));
-      final IUIBean bean = (IUIBean) clazz.newInstance ();
-      ui.addBean (atts.getValue (UIConstants.NAME_ATTRIBUTE), bean);
-    } catch (ClassNotFoundException e)
-    {
-      BeanTagParser.LOG.error (e.getMessage ());
-      BeanTagParser.LOG.error (e.getCause ().getMessage ());
-    } catch (InstantiationException e) {
-      BeanTagParser.LOG.error (e.getMessage ());
-      BeanTagParser.LOG.error (e.getCause ().getMessage ());
-    } catch (IllegalAccessException e) {
-      BeanTagParser.LOG.error (e.getMessage ());
-      BeanTagParser.LOG.error (e.getCause ().getMessage ());
     }
-  }
+
+    public final void parse (final UserInteractions ui,
+            final String [] currentAction, final String name,
+            final Attributes atts) {
+        try {
+            final Class<?> clazz = Class.forName (atts
+                    .getValue (UIConstants.IMPL_ATTRIBUTE));
+            final IUIBean bean = (IUIBean) clazz.newInstance ();
+            ui.addBean (atts.getValue (UIConstants.NAME_ATTRIBUTE), bean);
+        } catch (ClassNotFoundException e) {
+            BeanTagParser.LOG.error (e.getMessage ());
+            BeanTagParser.LOG.error (e.getCause ().getMessage ());
+        } catch (InstantiationException e) {
+            BeanTagParser.LOG.error (e.getMessage ());
+            BeanTagParser.LOG.error (e.getCause ().getMessage ());
+        } catch (IllegalAccessException e) {
+            BeanTagParser.LOG.error (e.getMessage ());
+            BeanTagParser.LOG.error (e.getCause ().getMessage ());
+        }
+    }
 }
