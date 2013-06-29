@@ -22,7 +22,7 @@ public final class CountScoreComponent extends AbstractComponent implements
 
     private int coeffPosition (int x, int y) {
         final Board b = this.getData ().getBoards ().get (0);
-        int coeff = 0;
+        int coeff = 1;
         if (Board.DW == b.getCellPoints (x, y)) {
             coeff += 2;
         } else if (Board.TW == b.getCellPoints (x, y)) {
@@ -66,7 +66,7 @@ public final class CountScoreComponent extends AbstractComponent implements
             if (i.contains (x, p.getY ())) {
                 sb.insert (0, i.placementAt (x, p.getY ()).getLetter ());
                 score += this.countPosition (x, p.getY ());
-                coeff += this.coeffPosition (x, p.getY ());
+                coeff *= this.coeffPosition (x, p.getY ());
             } else {
                 sb.insert (0, b.getCellLetter (x, p.getY ()));
                 score += bb.getValue (b.getCellLetter (x, p.getY ()));
@@ -79,7 +79,7 @@ public final class CountScoreComponent extends AbstractComponent implements
             if (i.contains (x, p.getY ())) {
                 sb.append (i.placementAt (x, p.getY ()).getLetter ());
                 score += this.countPosition (x, p.getY ());
-                coeff += this.coeffPosition (x, p.getY ());
+                coeff *= this.coeffPosition (x, p.getY ());
             } else {
                 sb.append (b.getCellLetter (x, p.getY ()));
                 score += bb.getValue (b.getCellLetter (x, p.getY ()));
@@ -103,7 +103,7 @@ public final class CountScoreComponent extends AbstractComponent implements
             if (i.contains (p.getX (), y)) {
                 sb.insert (0, i.placementAt (p.getX (), y).getLetter ());
                 score += this.countPosition (p.getX (), y);
-                coeff += this.coeffPosition (p.getX (), y);
+                coeff *= this.coeffPosition (p.getX (), y);
             } else {
                 sb.insert (0, b.getCellLetter (p.getX (), y));
                 score += bb.getValue (b.getCellLetter (p.getX (), y));
@@ -117,7 +117,7 @@ public final class CountScoreComponent extends AbstractComponent implements
             if (i.contains (p.getX (), y)) {
                 sb.append (i.placementAt (p.getX (), y).getLetter ());
                 score += this.countPosition (p.getX (), y);
-                coeff += this.coeffPosition (p.getX (), y);
+                coeff *= this.coeffPosition (p.getX (), y);
             } else {
                 sb.append (b.getCellLetter (p.getX (), y));
                 score += bb.getValue (b.getCellLetter (p.getX (), y));
