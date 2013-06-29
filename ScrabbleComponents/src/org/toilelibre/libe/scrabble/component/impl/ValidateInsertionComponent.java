@@ -26,10 +26,22 @@ public class ValidateInsertionComponent extends AbstractComponent implements
             throws ScrabbleModelException {
         char [] row = null;
         final Placement p1 = i.getPlacement (0);
-        final Placement p2 = i.getPlacement (1);
+        final Placement p2 = i.nbOfLetters () > 1 ? i.getPlacement (1) : p1;
         final int dHorz = p2.getX () - p1.getX ();
         final int dVert = p2.getY () - p1.getY ();
-        if (dHorz == 0) {
+        if (p1 == p2) {
+            boolean contiguous = p1.getX () - 1 > 0
+                    && b.getCellLetter (p1.getX () - 1, p1.getY ()) != 0
+                    || p1.getY () - 1 > 0
+                    && b.getCellLetter (p1.getX (), p1.getY () - 1) != 0
+                    || p1.getX () + 1 < Board.ROWS
+                    && b.getCellLetter (p1.getX () + 1, p1.getY ()) != 0
+                    || p1.getY () + 1 < Board.COLS
+                    && b.getCellLetter (p1.getX (), p1.getY () + 1) != 0;
+            if (!contiguous) {
+                throw new ScrabbleModelException (Board.NOT_ALIGNED);
+            }
+        } else if (dHorz == 0) {
             row = this.alignCheckX (i);
             this.completeRowX (b, i, row, p1.getX ());
         } else if (dVert == 0) {
@@ -93,26 +105,6 @@ public class ValidateInsertionComponent extends AbstractComponent implements
         if (j != row.length) {
             throw new ScrabbleModelException (Board.NOT_CONTINUED);
         }
-        return word;
-    }
-
-    private String buildWordOnly2Letters (final Insertion i)
-            throws ScrabbleModelException {
-        String word;
-        final Placement p1 = i.getPlacement (0);
-        final Placement p2 = i.getPlacement (1);
-        if (! (Math.abs (p1.getX () - p2.getX ()) == 1 && p1.getY ()
-                - p2.getY () == 0)
-                && ! (p1.getX () - p2.getX () == 0 && Math.abs (p1.getY ()
-                        - p2.getY ()) == 1)) {
-            throw new ScrabbleModelException (Board.NOT_CONTINUED);
-        }
-        if (p1.getX () < p2.getX () || p1.getY () < p2.getY ()) {
-            word = "" + p1.getLetter () + p2.getLetter ();
-        } else {
-            word = "" + p2.getLetter () + p1.getLetter ();
-        }
-
         return word;
     }
 
@@ -282,18 +274,16 @@ public class ValidateInsertionComponent extends AbstractComponent implements
         this.integrityCheck (i);
 
         char [] row = null;
-        if (i.nbOfLetters () > 2) {
-            // Contrôle de l'alignement
-            row = this.alignCheck (board, i);
-        }
+        // Contrôle de l'alignement
+        row = this.alignCheck (board, i);
 
         if (i.nbOfLetters () == 1) {
             word = "" + i.getPlacement (0).getLetter ();
 
-        } else if (i.nbOfLetters () == 2) {
+        }// else if (i.nbOfLetters () == 2) {
 
-            word = this.buildWordOnly2Letters (i);
-        } else if (row != null) {
+        // word = this.buildWordOnly2Letters (i);}
+        else if (row != null) {
             // Les lettres doivent être placées consécutivement
             word = this.buildWord (row);
         }
