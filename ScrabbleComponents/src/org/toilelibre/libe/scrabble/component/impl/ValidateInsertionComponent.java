@@ -203,7 +203,7 @@ public class ValidateInsertionComponent extends AbstractComponent implements
 
     private String findWordAroundDirY (Placement p, Insertion i) {
         final Board b = this.getData ().getBoards ().get (0);
-        StringBuffer sb = new StringBuffer (p.getLetter ());
+        StringBuffer sb = new StringBuffer ("" + p.getLetter ());
         int y = p.getY ();
         while (--y > 0
                 && (b.getCellLetter (p.getX (), y) != 0 || i.contains (
