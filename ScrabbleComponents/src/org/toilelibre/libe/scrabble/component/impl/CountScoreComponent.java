@@ -55,8 +55,8 @@ public final class CountScoreComponent extends AbstractComponent implements
     }
 
     private String countWordAroundDirX (Placement p, Insertion i) {
-        int coeff = 0;
-        int score = 0;
+        int score = this.countPosition (p.getX (), p.getY ());
+        int coeff = this.coeffPosition (p.getX (), p.getY ());
         final BallotBox bb = this.getData ().getBallotBoxes ().get (0);
         final Board b = this.getData ().getBoards ().get (0);
         StringBuffer sb = new StringBuffer ("" + p.getLetter ());
@@ -91,8 +91,8 @@ public final class CountScoreComponent extends AbstractComponent implements
     }
 
     private String countWordAroundDirY (Placement p, Insertion i) {
-        int coeff = 0;
-        int score = 0;
+        int score = this.countPosition (p.getX (), p.getY ());
+        int coeff = this.coeffPosition (p.getX (), p.getY ());
         final Board b = this.getData ().getBoards ().get (0);
         final BallotBox bb = this.getData ().getBallotBoxes ().get (0);
         StringBuffer sb = new StringBuffer ("" + p.getLetter ());
