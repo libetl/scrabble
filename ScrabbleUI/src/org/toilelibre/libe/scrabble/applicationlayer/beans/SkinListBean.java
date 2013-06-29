@@ -9,7 +9,7 @@ import org.toilelibre.libe.userinteractions.util.ComboBoxModel;
  * @author lionel
  *
  */
-public class SkinListBean extends ComboBoxModel
+public class SkinListBean extends ComboBoxModel<Class<?>>
 {
   public SkinListBean ()
   {

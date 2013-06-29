@@ -74,7 +74,7 @@ public final class GameBean extends AbstractUIBean
   public void setSkinCbx (final Object skinCbx1)
   {
     BeansComponents.setComboBoxModel (skinCbx1,
-        (ComboBoxModel) ScrabbleBeansHelper.getBean ("skinListBean"));
+        (ComboBoxModel<?>) ScrabbleBeansHelper.getBean ("skinListBean"));
     this.skinCbx = skinCbx1;
   }
 
