@@ -16,11 +16,11 @@ import org.toilelibre.libe.userinteractions.util.ListModel;
 public final class ScrabbleConsoleAppender extends AppenderSkeleton
 {
 
-  private static ListModel dlm;
+  private static ListModel<String> dlm;
   
   public ScrabbleConsoleAppender ()
   {    
-    ScrabbleConsoleAppender.dlm = new ListModel ();
+    ScrabbleConsoleAppender.dlm = new ListModel<String> ();
   }
   
   /**
