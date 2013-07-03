@@ -173,8 +173,8 @@ public class ValidateInsertionComponent extends AbstractComponent implements
         final Board b = this.getData ().getBoards ().get (0);
         StringBuffer sb = new StringBuffer ("" + p.getLetter ());
         int x = p.getX ();
-        while (--x > 0 && b.getCellLetter (x, p.getY ()) != 0
-                || i.contains (x, p.getY ())) {
+        while (--x > 0 && (b.getCellLetter (x, p.getY ()) != 0
+                || i.contains (x, p.getY ()))) {
             if (b.getCellLetter (x, p.getY ()) != 0) {
                 sb.insert (0, b.getCellLetter (x, p.getY ()));
             } else {
@@ -182,8 +182,8 @@ public class ValidateInsertionComponent extends AbstractComponent implements
             }
         }
         x = p.getX ();
-        while (++x < Board.COLS && b.getCellLetter (x, p.getY ()) != 0
-                || i.contains (x, p.getY ())) {
+        while (++x < Board.COLS && (b.getCellLetter (x, p.getY ()) != 0
+                || i.contains (x, p.getY ()))) {
             if (b.getCellLetter (x, p.getY ()) != 0) {
                 sb.append (b.getCellLetter (x, p.getY ()));
             } else {
