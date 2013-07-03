@@ -36,8 +36,12 @@ public final class CountScoreComponent extends AbstractComponent implements
      *      #count(org.toilelibre.libe.scrabble.model.board.placements.Insertion)
      */
     public int count (final Insertion i1) {
+    	int bonus = 0;
         Map<String, Integer> counts = this.countWordsAround (i1);
-        return this.sumValues (counts);
+        if (i1.nbOfLetters() == 7){
+        	bonus = 50;
+        }
+        return this.sumValues (counts) + bonus;
     }
 
     private int countPosition (int x, int y) {
