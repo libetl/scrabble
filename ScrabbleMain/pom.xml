@@ -8,6 +8,32 @@
 	<name>Scrabble Main Artefact</name>
 	<dependencies>
 	
+		<dependency>
+			<groupId>org.toilelibre.libe.scrabble</groupId>
+			<artifactId>Scrabble3D</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.toilelibre.libe.scrabble</groupId>
+			<artifactId>ScrabbleCommons</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.toilelibre.libe.scrabble</groupId>
+			<artifactId>ScrabbleComponents</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.toilelibre.libe.scrabble</groupId>
+			<artifactId>ScrabbleComponents</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.toilelibre.libe.userinteractions</groupId>
+			<artifactId>UserInteractions</artifactId>
+			<version>0.1-SNAPSHOT</version>
+		</dependency>
+	
 	    <!-- SPRING -->
 		<dependency>
 			<groupId>org.springframework</groupId>

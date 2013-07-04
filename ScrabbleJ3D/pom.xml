@@ -7,7 +7,6 @@
 	<packaging>pom</packaging>
 	<name>Scrabble Java3D Concrete Program</name>
 	
-	
      <repositories>
       <repository>
          <id>gael-main</id>
