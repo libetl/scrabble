@@ -17,7 +17,13 @@
 	</repositories>
 	
 	<dependencies>
-
+	
+	    <dependency>
+			<groupId>org.toilelibre.libe.scrabble</groupId>
+			<artifactId>Scrabble3D</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		
 		<!-- LOG4J -->
 		<dependency>
 			<groupId>log4j</groupId>
