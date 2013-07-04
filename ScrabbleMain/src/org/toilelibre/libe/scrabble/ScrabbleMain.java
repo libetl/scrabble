@@ -3,10 +3,6 @@ package org.toilelibre.libe.scrabble;
 public final class ScrabbleMain
 {
 
-  private ScrabbleMain ()
-  {
-  }
-
   /**
    * Point d'entrée
    * 
@@ -16,5 +12,9 @@ public final class ScrabbleMain
   public static void main (final String [] args)
   {
     Scrabble.init ();
+  }
+
+  private ScrabbleMain ()
+  {
   }
 }

@@ -13,10 +13,6 @@ public final class Scrabble
 {
   private static final Logger LOG = Logger.getLogger (Scrabble.class);
 
-  private Scrabble ()
-  {
-  }
-
   public static void exit (final int i)
   {
     Scrabble.LOG.info ("Sortie de Scrabble - code " + i + "");
@@ -51,13 +47,17 @@ public final class Scrabble
     } catch (final IllegalAccessException e)
     {
       Scrabble.LOG.error (errorComment, e);
-    } catch (InstantiationException e)
+    } catch (final InstantiationException e)
     {
       Scrabble.LOG.error (errorComment, e);
-    } catch (ScrabbleException e)
+    } catch (final ScrabbleException e)
     {
       Scrabble.LOG.error (errorComment, e);
     }
     Scrabble.LOG.info ("Fin Initialisation");
+  }
+
+  private Scrabble ()
+  {
   }
 }

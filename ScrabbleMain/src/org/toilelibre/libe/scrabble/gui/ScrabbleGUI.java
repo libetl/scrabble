@@ -11,22 +11,11 @@ import org.toilelibre.libe.userinteractions.model.UserInteractions;
 
 public final class ScrabbleGUI
 {
-  private static final String    CREATING_GUI_ERROR = "Erreur lors de la création de l'interface";
-  private static final Logger    LOG                = Logger
-                                                        .getLogger (ScrabbleGUI.class);
+  private static final String CREATING_GUI_ERROR = "Erreur lors de la création de l'interface";
+  private static final Logger LOG                = Logger
+                                                     .getLogger (ScrabbleGUI.class);
 
-  private static ScrabbleGUI     sgui;
-
-  private final IEngine          engine             = (IEngine) ScrabbleBeansHelper
-                                                        .getBean ("guiEngine");
-
-  private final UserInteractions ui                 = (UserInteractions) ScrabbleBeansHelper
-                                                        .getBean ("userInteractions");
-
-  public ScrabbleGUI ()
-  {
-    ScrabbleGUI.sgui = this;
-  }
+  private static ScrabbleGUI  sgui;
 
   public static ScrabbleGUI getInstance ()
   {
@@ -36,6 +25,17 @@ public final class ScrabbleGUI
   public static void redirect (final String beanName, final URL url)
   {
     ScrabbleGUI.getInstance ().display (beanName, url);
+  }
+
+  private final IEngine          engine = (IEngine) ScrabbleBeansHelper
+                                            .getBean ("guiEngine");
+
+  private final UserInteractions ui     = (UserInteractions) ScrabbleBeansHelper
+                                            .getBean ("userInteractions");
+
+  public ScrabbleGUI ()
+  {
+    ScrabbleGUI.sgui = this;
   }
 
   public void display (final String beanName, final URL url)

@@ -12,39 +12,23 @@ import org.toilelibre.libe.scrabble.properties.ScrabbleMessages;
 
 public final class InitAppearance implements IScrabbleInit
 {
+  private static final double FIVE           = 1.5;
+  private static final String JAVA_VERSION   = "java.version";
+  private static double       javaVersionFromVM;
   private static final Logger LOG            = Logger
                                                  .getLogger (InitAppearance.class);
-  private static final String JAVA_VERSION   = "java.version";
-  private static final double SIX            = 1.6;
-  private static final double FIVE           = 1.5;
   private static final String SET_LAF_METHOD = "setSexyLookAndFeel";
-  private static double       javaVersionFromVM;
+  private static final double SIX            = 1.6;
 
   static
   {
 
-    String version = System.getProperty (InitAppearance.JAVA_VERSION);
-    int majorIndex = version.indexOf ('.');
-    int minorIndex = majorIndex + 1
+    final String version = System.getProperty (InitAppearance.JAVA_VERSION);
+    final int majorIndex = version.indexOf ('.');
+    final int minorIndex = majorIndex + 1
         + version.substring (majorIndex + 1).indexOf ('.');
     InitAppearance.javaVersionFromVM = Double.parseDouble (version.substring (
         0, minorIndex));
-  }
-
-  public InitAppearance ()
-  {
-
-  }
-
-  public void init () throws ScrabbleException
-  {
-    if (InitAppearance.javaVersionFromVM >= InitAppearance.SIX)
-    {
-      InitAppearance.init60 ();
-    } else if (InitAppearance.javaVersionFromVM >= InitAppearance.FIVE)
-    {
-      InitAppearance.init50 ();
-    }
   }
 
   public static void changeLaf60 (final Class<?> clazz)
@@ -56,13 +40,6 @@ public final class InitAppearance implements IScrabbleInit
           InitAppearance.SET_LAF_METHOD, new Object [] {clazz.getName () });
       ScrabbleBeansHelper.launchMethod (InitAppearance.SET_LAF_METHOD);
     }
-  }
-
-  public static void init60 ()
-  {
-    InitAppearance.LOG.info ("Apparence graphique Java >= 6");
-    ScrabbleBeansHelper.launchMethod (InitAppearance.SET_LAF_METHOD);
-    ScrabbleBeansHelper.launchMethod ("setDefaultLookAndFeelDecorated");
   }
 
   public static void init50 () throws ScrabbleException
@@ -85,24 +62,47 @@ public final class InitAppearance implements IScrabbleInit
           .getResourceAsStream (filename);
       load.invoke (laf, new Object [] {is, Scrabble.class });
       setLookAndFeel.invoke (null, new Object [] {laf });
-    } catch (SecurityException e)
+    } catch (final SecurityException e)
     {
       throw new ScrabbleException (e);
-    } catch (NoSuchMethodException e)
+    } catch (final NoSuchMethodException e)
     {
       throw new ScrabbleException (e);
-    } catch (IllegalArgumentException e)
+    } catch (final IllegalArgumentException e)
     {
       throw new ScrabbleException (e);
-    } catch (IllegalAccessException e)
+    } catch (final IllegalAccessException e)
     {
       throw new ScrabbleException (e);
-    } catch (InvocationTargetException e)
+    } catch (final InvocationTargetException e)
     {
       throw new ScrabbleException (e);
-    } catch (ClassNotFoundException e)
+    } catch (final ClassNotFoundException e)
     {
       throw new ScrabbleException (e);
+    }
+  }
+
+  public static void init60 ()
+  {
+    InitAppearance.LOG.info ("Apparence graphique Java >= 6");
+    ScrabbleBeansHelper.launchMethod (InitAppearance.SET_LAF_METHOD);
+    ScrabbleBeansHelper.launchMethod ("setDefaultLookAndFeelDecorated");
+  }
+
+  public InitAppearance ()
+  {
+
+  }
+
+  public void init () throws ScrabbleException
+  {
+    if (InitAppearance.javaVersionFromVM >= InitAppearance.SIX)
+    {
+      InitAppearance.init60 ();
+    } else if (InitAppearance.javaVersionFromVM >= InitAppearance.FIVE)
+    {
+      InitAppearance.init50 ();
     }
   }
 }

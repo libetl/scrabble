@@ -25,7 +25,7 @@ public final class InitViewPoint implements IScrabbleInit
       try
       {
         Thread.sleep (threadSleep);
-      } catch (InterruptedException e)
+      } catch (final InterruptedException e)
       {
         e.hashCode ();
       }

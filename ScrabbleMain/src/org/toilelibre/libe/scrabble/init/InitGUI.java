@@ -35,7 +35,7 @@ public class InitGUI implements IScrabbleInit
           .getTaglib ()
           .registerTag ("Canvas3D",
               Class.forName ((String) ScrabbleBeansHelper.getBean ("canvas3d")));
-    } catch (ClassNotFoundException e)
+    } catch (final ClassNotFoundException e)
     {
       throw new ScrabbleException (e);
     }

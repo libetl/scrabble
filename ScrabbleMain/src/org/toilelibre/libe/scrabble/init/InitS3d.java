@@ -41,7 +41,7 @@ public final class InitS3d implements IScrabbleInit
         try
         {
           Thread.sleep (m);
-        } catch (InterruptedException e)
+        } catch (final InterruptedException e)
         {
           e.hashCode ();
         }
@@ -51,7 +51,7 @@ public final class InitS3d implements IScrabbleInit
       ((AbstractBranchGroup) sbg).setBranchGraph (ret);
       ret = s3dl.init (clazz, fichierLetter3D);
       S3DHelper.newLetterBranchGroup (ret);
-    } catch (S3DLoaderException e)
+    } catch (final S3DLoaderException e)
     {
       throw new ScrabbleException (e);
     }

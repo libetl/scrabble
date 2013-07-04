@@ -2,30 +2,30 @@ package org.toilelibre.libe.scrabble.s3d.model;
 
 public interface ITransform {
 
-    double getY ();
+	double getRotX ();
 
-    double getX ();
+	double getRotY ();
 
-    double getZ ();
+	double getRotZ ();
 
-    double getRotX ();
+	double getX ();
 
-    double getRotY ();
+	double getY ();
 
-    double getRotZ ();
+	double getZ ();
 
-    void setIdentity ();
+	void mul (ITransform r);
 
-    void rotX (double x);
+	void normalize ();
 
-    void rotY (double y);
+	void rotX (double x);
 
-    void rotZ (double z);
+	void rotY (double y);
 
-    void mul (ITransform r);
+	void rotZ (double z);
 
-    void normalize ();
+	void setIdentity ();
 
-    void setTranslation (double d, double e, double f);
+	void setTranslation (double d, double e, double f);
 
 }

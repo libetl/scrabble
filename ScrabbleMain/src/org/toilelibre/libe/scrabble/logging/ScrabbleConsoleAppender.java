@@ -17,6 +17,14 @@ public final class ScrabbleConsoleAppender extends AppenderSkeleton
 
   private static ListModel<String> dlm;
 
+  /**
+   * @param console1
+   */
+  public static void setImpl (final Object console1)
+  {
+    BeansComponents.setListModel (console1, ScrabbleConsoleAppender.dlm);
+  }
+
   public ScrabbleConsoleAppender ()
   {
     ScrabbleConsoleAppender.dlm = new ListModel<String> ();
@@ -52,14 +60,6 @@ public final class ScrabbleConsoleAppender extends AppenderSkeleton
   public boolean requiresLayout ()
   {
     return false;
-  }
-
-  /**
-   * @param console1
-   */
-  public static void setImpl (final Object console1)
-  {
-    BeansComponents.setListModel (console1, ScrabbleConsoleAppender.dlm);
   }
 
 }

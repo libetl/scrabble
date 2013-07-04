@@ -14,11 +14,6 @@ public final class ScrabbleSessionsHandler
   private static Map<String, Session> sessions;
   private static final String         USERNAMEKEY = "user.name";
 
-  public ScrabbleSessionsHandler ()
-  {
-
-  }
-
   public static void create ()
   {
     ScrabbleSessionsHandler.create (System
@@ -58,6 +53,11 @@ public final class ScrabbleSessionsHandler
       ScrabbleSessionsHandler.LOG.error (e1.getMessage ());
     }
     return null;
+  }
+
+  public ScrabbleSessionsHandler ()
+  {
+
   }
 
   public Map<String, Session> getSessions ()

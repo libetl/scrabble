@@ -4,21 +4,21 @@ import org.toilelibre.libe.scrabble.modelfactory.dictionary.factory.AbstractDict
 
 public class HuffDictionaryFactory extends AbstractDictionaryFactory {
 
-    private static final String DEFAULT_BUILDER = "Tree";
+	private static final String	DEFAULT_BUILDER	= "Tree";
 
-    public HuffDictionaryFactory (final String filename) {
-        super.setType (HuffDictionaryFactory.DEFAULT_BUILDER);
-        super.setFile (filename);
-    }
+	public HuffDictionaryFactory (final String filename) {
+		super.setType (HuffDictionaryFactory.DEFAULT_BUILDER);
+		super.setFile (filename);
+	}
 
-    public HuffDictionaryFactory (final String filename, final String dictType1) {
-        super.setType (dictType1);
-        super.setFile (filename);
-    }
+	public HuffDictionaryFactory (final String filename, final String dictType1) {
+		super.setType (dictType1);
+		super.setFile (filename);
+	}
 
-    @Override
-    public final String getExtension () {
-        return "huff";
-    }
+	@Override
+	public final String getExtension () {
+		return "huff";
+	}
 
 }

@@ -6,49 +6,49 @@ import org.toilelibre.libe.scrabble.s3d.model.ITransform;
 import org.toilelibre.libe.scrabble.s3d.model.ITransformGroup;
 
 public final class SceneHelper {
-    private SceneHelper () {
+	public static void rotate (final ITransformGroup stg, final double x,
+	        final double y, final double z) {
+		final ITransform st = S3DHelper.newTransform ((Object []) null);
+		final ITransform xr = S3DHelper.newTransform ((Object []) null);
+		final ITransform yr = S3DHelper.newTransform ((Object []) null);
+		final ITransform zr = S3DHelper.newTransform ((Object []) null);
 
-    }
+		stg.getTransform (st);
 
-    public static void rotate (final ITransformGroup stg, final double x,
-            final double y, final double z) {
-        final ITransform st = S3DHelper.newTransform ((Object []) null);
-        final ITransform xr = S3DHelper.newTransform ((Object []) null);
-        final ITransform yr = S3DHelper.newTransform ((Object []) null);
-        final ITransform zr = S3DHelper.newTransform ((Object []) null);
+		xr.setIdentity ();
+		yr.setIdentity ();
+		zr.setIdentity ();
+		xr.rotX (x);
+		yr.rotY (y);
+		zr.rotZ (z);
+		st.mul (xr);
+		st.mul (yr);
+		st.mul (zr);
 
-        stg.getTransform (st);
+		st.normalize ();
+		try {
+			stg.setTransform (st);
+		} catch (final S3DException e) {
+			e.hashCode ();
+		}
+	}
 
-        xr.setIdentity ();
-        yr.setIdentity ();
-        zr.setIdentity ();
-        xr.rotX (x);
-        yr.rotY (y);
-        zr.rotZ (z);
-        st.mul (xr);
-        st.mul (yr);
-        st.mul (zr);
+	public static void translate (final ITransformGroup stg, final double x,
+	        final double y, final double z) {
+		final ITransform st = S3DHelper.newTransform ((Object []) null);
 
-        st.normalize ();
-        try {
-            stg.setTransform (st);
-        } catch (S3DException e) {
-            e.hashCode ();
-        }
-    }
+		stg.getTransform (st);
 
-    public static void translate (final ITransformGroup stg, final double x,
-            final double y, final double z) {
-        final ITransform st = S3DHelper.newTransform ((Object []) null);
+		st.setTranslation (st.getX () + x, st.getY () + y, st.getZ () + z);
+		st.normalize ();
+		try {
+			stg.setTransform (st);
+		} catch (final S3DException e) {
+			e.hashCode ();
+		}
+	}
 
-        stg.getTransform (st);
+	private SceneHelper () {
 
-        st.setTranslation (st.getX () + x, st.getY () + y, st.getZ () + z);
-        st.normalize ();
-        try {
-            stg.setTransform (st);
-        } catch (S3DException e) {
-            e.hashCode ();
-        }
-    }
+	}
 }

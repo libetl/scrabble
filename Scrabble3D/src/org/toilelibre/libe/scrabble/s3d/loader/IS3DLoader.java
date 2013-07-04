@@ -8,6 +8,6 @@ package org.toilelibre.libe.scrabble.s3d.loader;
  * 
  */
 public interface IS3DLoader {
-    Object init (final String clazzName, final String fichier3D)
-            throws S3DLoaderException;
+	Object init (final String clazzName, final String fichier3D)
+	        throws S3DLoaderException;
 }

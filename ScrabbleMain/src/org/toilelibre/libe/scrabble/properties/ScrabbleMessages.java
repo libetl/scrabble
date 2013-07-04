@@ -4,11 +4,6 @@ public final class ScrabbleMessages
 {
   private static Messages m;
 
-  private ScrabbleMessages ()
-  {
-
-  }
-
   public static String getMessage (final String key)
   {
     return ScrabbleMessages.m.getString (key);
@@ -21,5 +16,10 @@ public final class ScrabbleMessages
   public static void setMessages (final Messages m1)
   {
     ScrabbleMessages.m = m1;
+  }
+
+  private ScrabbleMessages ()
+  {
+
   }
 }
