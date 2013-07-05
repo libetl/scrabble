@@ -15,54 +15,54 @@ import org.toilelibre.libe.scrabble.modelfactory.dictionary.loader.Loader;
 
 public final class HuffToTreeLoader implements Loader {
 
-    private static final Logger LOG = Logger.getLogger(HuffToTreeLoader.class);
+    private static final Logger LOG = Logger.getLogger (HuffToTreeLoader.class);
 
     public HuffToTreeLoader() {
-        super();
+        super ();
     }
 
     public void load (final Dictionary d, final String fileName) {
 
         InputStreamReader isr;
         try {
-            final ClassLoader cld = Thread.currentThread()
-                    .getContextClassLoader();
-            isr = new InputStreamReader(new FileInputStream(new File(cld
-                    .getResource(fileName).toURI())));
-            final Node root = (Node) d.getImpl();
-            this.load(root, isr, 0);
+            final ClassLoader cld = Thread.currentThread ()
+                    .getContextClassLoader ();
+            isr = new InputStreamReader (new FileInputStream (new File (cld
+                    .getResource (fileName).toURI ())));
+            final Node root = (Node) d.getImpl ();
+            this.load (root, isr, 0);
         } catch (final FileNotFoundException e) {
-            HuffToTreeLoader.LOG.error(e.getMessage());
+            HuffToTreeLoader.LOG.error (e.getMessage ());
         } catch (final URISyntaxException e) {
-            HuffToTreeLoader.LOG.error(e.getMessage());
+            HuffToTreeLoader.LOG.error (e.getMessage ());
         }
     }
 
     private Node load (final Node n, final Reader r, final int lastChar) {
         int val;
         try {
-            val = r.read();
+            val = r.read ();
         } catch (final IOException e) {
             return n;
         }
         switch (val) {
             case '\0' :
             case '*' :
-                n.setTerm(true);
+                n.setTerm (true);
                 break;
             case '$' :
-                n.setTerm(true);
-                this.load(n, r, val);
+                n.setTerm (true);
+                this.load (n, r, val);
                 break;
             case '/' :
                 break;
             default:
-                Node n2 = n.getChild((char) val);
+                Node n2 = n.getChild ((char) val);
                 if (n2 != null) {
-                    this.load(n2, r, val);
+                    this.load (n2, r, val);
                 } else {
-                    n2 = new Node((char) val);
-                    n.addChild(n2);
+                    n2 = new Node ((char) val);
+                    n.addChild (n2);
                 }
         }
         return n;

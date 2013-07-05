@@ -12,14 +12,14 @@ public abstract class AbstractBranchGroup implements IBranchGroup {
     }
 
     protected AbstractBranchGroup(final Object bg1) {
-        this.set(bg1);
+        this.set (bg1);
     }
 
     protected AbstractBranchGroup(final Object bg1,
             final boolean lookForParentTg) {
     }
 
-    public AbstractBranchGroup(final Object[] bg1, final int i) {
+    public AbstractBranchGroup(final Object [] bg1, final int i) {
     }
 
     public abstract void addBranchGraph (final IBranchGroup brgr);
@@ -46,18 +46,18 @@ public abstract class AbstractBranchGroup implements IBranchGroup {
     protected abstract void set (final Object bg1);
 
     public final void setBranchGraph (final Object brgr) {
-        this.set(brgr);
-        this.univers.addBranchGraph(this);
+        this.set (brgr);
+        this.univers.addBranchGraph (this);
     }
 
     public final void setComponent (final ICanvas3D c) {
         final double near = 0.001;
         final double far = 1000.0;
-        this.univers = S3DHelper.newUniverse(c);
-        this.univers.addBranchGraph(this);
-        this.univers.setAdditionalParameters();
-        this.univers.setClipDistances(near, far);
-        this.stg = this.univers.getTransformGroup();
+        this.univers = S3DHelper.newUniverse (c);
+        this.univers.addBranchGraph (this);
+        this.univers.setAdditionalParameters ();
+        this.univers.setClipDistances (near, far);
+        this.stg = this.univers.getTransformGroup ();
     }
 
     /**

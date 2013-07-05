@@ -17,30 +17,30 @@ public final class BoundsChecker {
 
     public static boolean isOverBoard (final double x, final double y,
             final double z) {
-        final IPoint3D sp3d = S3DHelper.newPoint3d(new Double(x),
-                new Double(y), new Double(z));
-        return BoundsChecker.isOverBoard(sp3d);
+        final IPoint3D sp3d = S3DHelper.newPoint3d (new Double (x), new Double (
+                y), new Double (z));
+        return BoundsChecker.isOverBoard (sp3d);
     }
 
     public static boolean isOverBoard (final ILetterBranchGroup lbg) {
-        final ITransform st = S3DHelper.newTransform((Object[]) null);
+        final ITransform st = S3DHelper.newTransform ((Object []) null);
         if (lbg == null) {
             return false;
         }
-        lbg.getTransformGroup().getTransform(st);
-        return BoundsChecker.isOverBoard(st.getX(), st.getY(), st.getZ());
+        lbg.getTransformGroup ().getTransform (st);
+        return BoundsChecker.isOverBoard (st.getX (), st.getY (), st.getZ ());
     }
 
     public static boolean isOverBoard (final IPoint3D sp3d) {
         if (sp3d == null) {
             return false;
         }
-        return (sp3d.getX() >= BoundsChecker.BOARD_OVER_X1)
-                && (sp3d.getX() <= BoundsChecker.BOARD_OVER_X2)
-                && (sp3d.getZ() >= BoundsChecker.BOARD_OVER_Z1)
-                && (sp3d.getZ() <= BoundsChecker.BOARD_OVER_Z2)
-                && (sp3d.getY() >= BoundsChecker.BOARD_OVER_Y1)
-                && (sp3d.getY() <= BoundsChecker.BOARD_OVER_Y2);
+        return (sp3d.getX () >= BoundsChecker.BOARD_OVER_X1)
+                && (sp3d.getX () <= BoundsChecker.BOARD_OVER_X2)
+                && (sp3d.getZ () >= BoundsChecker.BOARD_OVER_Z1)
+                && (sp3d.getZ () <= BoundsChecker.BOARD_OVER_Z2)
+                && (sp3d.getY () >= BoundsChecker.BOARD_OVER_Y1)
+                && (sp3d.getY () <= BoundsChecker.BOARD_OVER_Y2);
     }
 
     private BoundsChecker() {

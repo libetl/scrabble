@@ -22,17 +22,17 @@ public class UIKeyListener implements KeyListener {
     }
 
     public final void keyPressed (final KeyEvent e) {
-        ListenerHelper.fireAction(UIConstants.ACTIONLISTENER_TYPE, "pressed",
+        ListenerHelper.fireAction (UIConstants.ACTIONLISTENER_TYPE, "pressed",
                 this.bean, this.methods, this.action, e);
     }
 
     public final void keyReleased (final KeyEvent e) {
-        ListenerHelper.fireAction(UIConstants.ACTIONLISTENER_TYPE, "released",
+        ListenerHelper.fireAction (UIConstants.ACTIONLISTENER_TYPE, "released",
                 this.bean, this.methods, this.action, e);
     }
 
     public final void keyTyped (final KeyEvent e) {
-        ListenerHelper.fireAction(UIConstants.ACTIONLISTENER_TYPE, "typed",
+        ListenerHelper.fireAction (UIConstants.ACTIONLISTENER_TYPE, "typed",
                 this.bean, this.methods, this.action, e);
     }
 

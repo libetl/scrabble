@@ -17,31 +17,31 @@ public class SetDictionary implements Dictionary {
     private final Map<String, List<String>> sortedLettersHm;
 
     public SetDictionary() {
-        this.sortedLettersHm = new HashMap<String, List<String>>();
+        this.sortedLettersHm = new HashMap<String, List<String>> ();
     }
 
     public final void add (final String word) {
-        final char[] table = new char[word.length()];
+        final char [] table = new char [word.length ()];
         for (int i = 0 ; i < table.length ; i += 1) {
-            table[i] = word.charAt(i);
+            table [i] = word.charAt (i);
         }
-        Arrays.sort(table);
-        final String sTable = new String(table);
-        List<String> lHomonymes = this.sortedLettersHm.get(sTable);
+        Arrays.sort (table);
+        final String sTable = new String (table);
+        List<String> lHomonymes = this.sortedLettersHm.get (sTable);
         if (lHomonymes == null) {
-            lHomonymes = new LinkedList<String>();
-            this.sortedLettersHm.put(new String(table), lHomonymes);
+            lHomonymes = new LinkedList<String> ();
+            this.sortedLettersHm.put (new String (table), lHomonymes);
         }
-        lHomonymes.add(word);
+        lHomonymes.add (word);
     }
 
     public final boolean contains (final String word) {
-        final char[] sortedMatch = word.toCharArray();
+        final char [] sortedMatch = word.toCharArray ();
         String sorted;
-        Arrays.sort(sortedMatch);
-        sorted = new String(sortedMatch);
-        final List<String> listeResultats = this.sortedLettersHm.get(sorted);
-        return (listeResultats != null) && listeResultats.contains(word);
+        Arrays.sort (sortedMatch);
+        sorted = new String (sortedMatch);
+        final List<String> listeResultats = this.sortedLettersHm.get (sorted);
+        return (listeResultats != null) && listeResultats.contains (word);
     }
 
     public final Object getImpl () {
@@ -57,19 +57,19 @@ public class SetDictionary implements Dictionary {
     }
 
     public final List<String> similarWords (final String word) {
-        final Set<String> similarWords = new HashSet<String>();
-        final Set<String> sortedMatches = Combinations.listMatches(word);
+        final Set<String> similarWords = new HashSet<String> ();
+        final Set<String> sortedMatches = Combinations.listMatches (word);
 
         for (final String string : sortedMatches) {
-            final List<String> ls = this.sortedLettersHm.get(string);
+            final List<String> ls = this.sortedLettersHm.get (string);
             if (ls != null) {
-                similarWords.addAll(ls);
+                similarWords.addAll (ls);
             }
         }
-        final String[] sortedWords = new String[similarWords.size()];
-        similarWords.toArray(sortedWords);
-        Arrays.sort(sortedWords);
+        final String [] sortedWords = new String [similarWords.size ()];
+        similarWords.toArray (sortedWords);
+        Arrays.sort (sortedWords);
 
-        return Arrays.asList(sortedWords);
+        return Arrays.asList (sortedWords);
     }
 }

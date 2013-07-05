@@ -22,12 +22,12 @@ public class UIMouseMotionListener implements MouseMotionListener {
     }
 
     public final void mouseDragged (final MouseEvent e) {
-        ListenerHelper.fireAction(UIConstants.MOUSEMOTIONLISTENER_TYPE,
+        ListenerHelper.fireAction (UIConstants.MOUSEMOTIONLISTENER_TYPE,
                 "dragged", this.bean, this.methods, this.action, e);
     }
 
     public final void mouseMoved (final MouseEvent e) {
-        ListenerHelper.fireAction(UIConstants.MOUSEMOTIONLISTENER_TYPE,
+        ListenerHelper.fireAction (UIConstants.MOUSEMOTIONLISTENER_TYPE,
                 "moved", this.bean, this.methods, this.action, e);
     }
 

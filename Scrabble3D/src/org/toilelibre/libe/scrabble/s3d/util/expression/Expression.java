@@ -4,24 +4,24 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class Expression {
-    private static char[] priorities = { '%', '/', '*', '-', '+' };
+    private static char [] priorities = { '%', '/', '*', '-', '+' };
 
     private static Node buildTree (final String expr) {
-        final Node n = new Node();
-        String expr2 = expr.trim();
-        while ((expr2.charAt(0) == '(')
-                && (expr2.charAt(expr2.length() - 1) == ')')) {
-            expr2 = expr2.substring(1, expr2.length() - 1).trim();
+        final Node n = new Node ();
+        String expr2 = expr.trim ();
+        while ( (expr2.charAt (0) == '(')
+                && (expr2.charAt (expr2.length () - 1) == ')')) {
+            expr2 = expr2.substring (1, expr2.length () - 1).trim ();
         }
-        final int operator = Expression.operator(expr2);
-        if ((operator == -1) || (operator == 0)) {
-            n.setLetter(expr2);
-            n.setLeft(null);
-            n.setRight(null);
+        final int operator = Expression.operator (expr2);
+        if ( (operator == -1) || (operator == 0)) {
+            n.setLetter (expr2);
+            n.setLeft (null);
+            n.setRight (null);
         } else {
-            n.setLetter("" + expr2.charAt(operator));
-            n.setLeft(Expression.buildTree(expr2.substring(0, operator)));
-            n.setRight(Expression.buildTree(expr2.substring(operator + 1)));
+            n.setLetter ("" + expr2.charAt (operator));
+            n.setLeft (Expression.buildTree (expr2.substring (0, operator)));
+            n.setRight (Expression.buildTree (expr2.substring (operator + 1)));
         }
         return n;
     }
@@ -55,15 +55,15 @@ public final class Expression {
         int numParent = 0;
         int pos = -1;
         int priority = -1;
-        for (int i = 0 ; i < expr.length() ; i += 1) {
-            final int priorityTmp = Expression.priority(expr.charAt(i));
-            if (expr.charAt(i) == '(') {
+        for (int i = 0 ; i < expr.length () ; i += 1) {
+            final int priorityTmp = Expression.priority (expr.charAt (i));
+            if (expr.charAt (i) == '(') {
                 numParent += 1;
             }
-            if (expr.charAt(i) == ')') {
+            if (expr.charAt (i) == ')') {
                 numParent -= 1;
             }
-            if ((numParent == 0) && (priorityTmp >= priority)) {
+            if ( (numParent == 0) && (priorityTmp >= priority)) {
                 priority = priorityTmp;
                 pos = i;
             }
@@ -75,8 +75,8 @@ public final class Expression {
         final int moinsdeux = -2;
         int priority = moinsdeux;
         int i = 0;
-        while ((i < Expression.priorities.length) && (priority == moinsdeux)) {
-            if (Expression.priorities[i] == operator) {
+        while ( (i < Expression.priorities.length) && (priority == moinsdeux)) {
+            if (Expression.priorities [i] == operator) {
                 priority = i;
             }
             i += 1;
@@ -87,11 +87,11 @@ public final class Expression {
     private static double replaceEnv (final Map<String, Double> env,
             final String id) {
         double res = 0;
-        if (env.containsKey(id)) {
-            res = env.get(id).doubleValue();
+        if (env.containsKey (id)) {
+            res = env.get (id).doubleValue ();
         } else {
             try {
-                res = Double.parseDouble(id);
+                res = Double.parseDouble (id);
             } catch (final NumberFormatException nfe) {
                 res = 0;
             }
@@ -101,23 +101,23 @@ public final class Expression {
 
     public static double valueOfExpr (final String expr,
             final Map<String, Double> env) {
-        return Expression.valueOfTree(Expression.buildTree(expr), env);
+        return Expression.valueOfTree (Expression.buildTree (expr), env);
     }
 
     public static double valueOfTree (final Node n) {
-        return Expression.valueOfTree(n, new HashMap<String, Double>());
+        return Expression.valueOfTree (n, new HashMap<String, Double> ());
     }
 
     public static double valueOfTree (final Node n,
             final Map<String, Double> env) {
         final int moinsdeux = -2;
-        if ((Expression.priority(n.getLetter().charAt(0)) != moinsdeux)
-                && (n.getLeft() != null) && (n.getLeft() != null)) {
-            return Expression.op(n.getLetter().charAt(0),
-                    Expression.valueOfTree(n.getLeft(), env),
-                    Expression.valueOfTree(n.getRight(), env));
+        if ( (Expression.priority (n.getLetter ().charAt (0)) != moinsdeux)
+                && (n.getLeft () != null) && (n.getLeft () != null)) {
+            return Expression.op (n.getLetter ().charAt (0),
+                    Expression.valueOfTree (n.getLeft (), env),
+                    Expression.valueOfTree (n.getRight (), env));
         }
-        return Expression.replaceEnv(env, n.getLetter());
+        return Expression.replaceEnv (env, n.getLetter ());
     }
 
     private Expression() {

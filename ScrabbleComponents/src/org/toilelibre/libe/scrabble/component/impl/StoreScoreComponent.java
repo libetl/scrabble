@@ -10,7 +10,7 @@ import org.toilelibre.libe.scrabble.model.ScrabbleData;
 
 public class StoreScoreComponent extends AbstractComponent implements
         IStoreScoreComponent {
-    private static final Logger LOG = Logger.getLogger(StoreScoreComponent.class);
+    private static final Logger LOG = Logger.getLogger (StoreScoreComponent.class);
 
     /**
    * 
@@ -24,9 +24,9 @@ public class StoreScoreComponent extends AbstractComponent implements
      */
     public final void store (final int turn, final String word, final int score) {
 
-        final ScrabbleData sd = this.getData();
-        sd.getPlayers().get(turn).addTurn(word, score);
-        StoreScoreComponent.LOG.info(sd.getPlayers().get(turn).getName()
+        final ScrabbleData sd = this.getData ();
+        sd.getPlayers ().get (turn).addTurn (word, score);
+        StoreScoreComponent.LOG.info (sd.getPlayers ().get (turn).getName ()
                 + " : {'" + word + "', " + score + " point(s)}");
     }
 

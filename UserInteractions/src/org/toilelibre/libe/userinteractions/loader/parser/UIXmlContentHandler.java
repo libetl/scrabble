@@ -9,12 +9,12 @@ import org.xml.sax.Locator;
 import org.xml.sax.SAXException;
 
 public class UIXmlContentHandler implements ContentHandler {
-    private final String[]         currentAction;
+    private final String []        currentAction;
     private final UserInteractions ui;
 
     public UIXmlContentHandler(final UserInteractions ui2) {
         this.ui = ui2;
-        this.currentAction = new String[1];
+        this.currentAction = new String [1];
     }
 
     /**
@@ -29,7 +29,7 @@ public class UIXmlContentHandler implements ContentHandler {
      *            le rang du dernier caractere a traiter effectivement
      * @see org.xml.sax.ContentHandler#characters(char[], int, int)
      */
-    public void characters (final char[] ch, final int start, final int length)
+    public void characters (final char [] ch, final int start, final int length)
             throws SAXException {
     }
 
@@ -52,8 +52,8 @@ public class UIXmlContentHandler implements ContentHandler {
      */
     public final void endElement (final String uri, final String localName,
             final String name) throws SAXException {
-        if (UIConstants.ACTION_TAG.equals(localName)) {
-            this.currentAction[0] = "";
+        if (UIConstants.ACTION_TAG.equals (localName)) {
+            this.currentAction [0] = "";
         }
     }
 
@@ -82,7 +82,7 @@ public class UIXmlContentHandler implements ContentHandler {
      *            le rang du dernier caractere a traiter effectivement
      * @see org.xml.sax.ContentHandler#ignorableWhitespace(char[], int, int)
      */
-    public void ignorableWhitespace (final char[] ch, final int start,
+    public void ignorableWhitespace (final char [] ch, final int start,
             final int length) throws SAXException {
     }
 
@@ -154,7 +154,7 @@ public class UIXmlContentHandler implements ContentHandler {
      */
     public final void startElement (final String uri, final String localName,
             final String name, final Attributes atts) throws SAXException {
-        TagParserHelper.parseTag(this.ui, this.currentAction, name, atts);
+        TagParserHelper.parseTag (this.ui, this.currentAction, name, atts);
     }
 
     /**

@@ -17,12 +17,12 @@ public final class GetAlignsComponent extends AbstractComponent implements
     public GetAlignsComponent() {
     }
 
-    public void get (final ILetterBranchGroup[] lbgs, final int[][] alignment,
-            final char[] letters) {
+    public void get (final ILetterBranchGroup [] lbgs,
+            final int [][] alignment, final char [] letters) {
         for (int j = 0 ; j < lbgs.length ; j++) {
-            final ILetterBranchGroup lbg = lbgs[j];
-            alignment[j] = AlignOnBoard.align(lbg);
-            letters[j] = lbg.getLetter();
+            final ILetterBranchGroup lbg = lbgs [j];
+            alignment [j] = AlignOnBoard.align (lbg);
+            letters [j] = lbg.getLetter ();
         }
     }
 }

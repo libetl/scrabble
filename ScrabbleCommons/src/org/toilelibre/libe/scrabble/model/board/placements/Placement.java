@@ -6,7 +6,7 @@ public class Placement {
     private final int  y;
 
     public Placement(final char letter1, final int x1, final int y1) {
-        super();
+        super ();
         this.letter = letter1;
         this.x = x1;
         this.y = y1;

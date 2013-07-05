@@ -16,11 +16,11 @@ public class SwingUITimer implements IUITimer {
     private final Timer t;
 
     public SwingUITimer() {
-        this.t = new Timer(0, null);
+        this.t = new Timer (0, null);
     }
 
     public SwingUITimer(final long delay1, final UIActionListener uial1) {
-        this.t = new Timer((int) delay1, uial1);
+        this.t = new Timer ((int) delay1, uial1);
     }
 
     /**
@@ -28,7 +28,7 @@ public class SwingUITimer implements IUITimer {
      * @see Timer#setDelay(int)
      */
     public final void setDelay (final long delay1) {
-        this.t.setDelay((int) delay1);
+        this.t.setDelay ((int) delay1);
     }
 
     /**
@@ -36,7 +36,7 @@ public class SwingUITimer implements IUITimer {
      * @see Timer#setInitialDelay(int)
      */
     public final void setInitialDelay (final long initialDelay1) {
-        this.t.setInitialDelay((int) initialDelay1);
+        this.t.setInitialDelay ((int) initialDelay1);
     }
 
     /**
@@ -44,7 +44,7 @@ public class SwingUITimer implements IUITimer {
      * @see Timer#start()
      */
     public final void start () {
-        this.t.start();
+        this.t.start ();
     }
 
     /**
@@ -52,7 +52,7 @@ public class SwingUITimer implements IUITimer {
      * @see Timer#stop()
      */
     public final void stop () {
-        this.t.stop();
+        this.t.stop ();
     }
 
 }

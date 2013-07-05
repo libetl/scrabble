@@ -22,27 +22,27 @@ public class UIMouseListener implements MouseListener {
     }
 
     public final void mouseClicked (final MouseEvent e) {
-        ListenerHelper.fireAction(UIConstants.MOUSELISTENER_TYPE, "clicked",
+        ListenerHelper.fireAction (UIConstants.MOUSELISTENER_TYPE, "clicked",
                 this.bean, this.methods, this.action, e);
     }
 
     public final void mouseEntered (final MouseEvent e) {
-        ListenerHelper.fireAction(UIConstants.MOUSELISTENER_TYPE, "entered",
+        ListenerHelper.fireAction (UIConstants.MOUSELISTENER_TYPE, "entered",
                 this.bean, this.methods, this.action, e);
     }
 
     public final void mouseExited (final MouseEvent e) {
-        ListenerHelper.fireAction(UIConstants.MOUSELISTENER_TYPE, "exited",
+        ListenerHelper.fireAction (UIConstants.MOUSELISTENER_TYPE, "exited",
                 this.bean, this.methods, this.action, e);
     }
 
     public final void mousePressed (final MouseEvent e) {
-        ListenerHelper.fireAction(UIConstants.MOUSELISTENER_TYPE, "pressed",
+        ListenerHelper.fireAction (UIConstants.MOUSELISTENER_TYPE, "pressed",
                 this.bean, this.methods, this.action, e);
     }
 
     public final void mouseReleased (final MouseEvent e) {
-        ListenerHelper.fireAction(UIConstants.MOUSELISTENER_TYPE, "released",
+        ListenerHelper.fireAction (UIConstants.MOUSELISTENER_TYPE, "released",
                 this.bean, this.methods, this.action, e);
     }
 

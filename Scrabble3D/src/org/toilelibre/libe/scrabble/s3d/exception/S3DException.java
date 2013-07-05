@@ -25,7 +25,7 @@ public class S3DException extends Exception {
      *            message
      */
     public S3DException(final String message) {
-        super(message);
+        super (message);
     }
 
     /**
@@ -35,7 +35,7 @@ public class S3DException extends Exception {
      *            cause
      */
     public S3DException(final String message, final Throwable cause) {
-        super(message, cause);
+        super (message, cause);
     }
 
     /**
@@ -43,7 +43,7 @@ public class S3DException extends Exception {
      *            cause
      */
     public S3DException(final Throwable cause) {
-        super(cause);
+        super (cause);
     }
 
 }

@@ -20,29 +20,30 @@ public final class MoveCamera implements IMoveObject {
         final double dixMille = 10000.0;
         final double centMille = 100000.0;
         final double unSixM = 1600000.;
-        final int bp = params[0];
-        final int ax = params[1];
-        final int px = params[2];
-        final int ay = params[trois];
-        final int py = params[quatre];
-        final ITransform st = S3DHelper.newTransform((Object[]) null);
+        final int bp = params [0];
+        final int ax = params [1];
+        final int px = params [2];
+        final int ay = params [trois];
+        final int py = params [quatre];
+        final ITransform st = S3DHelper.newTransform ((Object []) null);
 
-        stg.getTransform(st);
-        final double[][] mat = ((AbstractTransform) st).get();
+        stg.getTransform (st);
+        final double [][] mat = ((AbstractTransform) st).get ();
         final int x = ax - px;
         final int y = ay - py;
         if (bp == 1) {
-            SceneHelper.translate(stg, (x / dixMille) * mat[0][0], -y
-                    / dixMille, (x / dixMille) * mat[2][0]);
+            SceneHelper.translate (stg, (x / dixMille) * mat [0] [0], -y
+                    / dixMille, (x / dixMille) * mat [2] [0]);
         } else if (bp == 2) {
             final int wheel = ax * ay;
-            SceneHelper.translate(stg, wheel * mat[0][2], 0, wheel * mat[0][0]);
+            SceneHelper.translate (stg, wheel * mat [0] [2], 0, wheel
+                    * mat [0] [0]);
         } else if (bp == trois) {
             int roty = 0;
-            if ((y > dix) || (y < -dix)) {
+            if ( (y > dix) || (y < -dix)) {
                 roty = y;
             }
-            SceneHelper.rotate(stg, -roty / centMille, -x / centMille, -x
+            SceneHelper.rotate (stg, -roty / centMille, -x / centMille, -x
                     / unSixM);
         }
         // System.out.println (st);
@@ -57,20 +58,20 @@ public final class MoveCamera implements IMoveObject {
         final int x = ax - px;
         final int y = ay - py;
         if (bp == 1) {
-            SceneHelper.translate(stg, x / dixMille, -y / dixMille, .0);
+            SceneHelper.translate (stg, x / dixMille, -y / dixMille, .0);
         } else if (bp == 2) {
-            SceneHelper.translate(stg, 0, 0, ax * ay);
+            SceneHelper.translate (stg, 0, 0, ax * ay);
         } else if (bp == trois) {
             int roty = 0;
-            if ((y > dix) || (y < -dix)) {
+            if ( (y > dix) || (y < -dix)) {
                 roty = y;
             }
-            final ITransform st = S3DHelper.newTransform((Object[]) null);
+            final ITransform st = S3DHelper.newTransform ((Object []) null);
 
-            stg.getTransform(st);
-            final double[][] mat = ((AbstractTransform) st).get();
-            SceneHelper.rotate(stg, (-roty / centMille) * mat[0][0], -x
-                    / centMille, (-roty / centMille) * mat[0][2]);
+            stg.getTransform (st);
+            final double [][] mat = ((AbstractTransform) st).get ();
+            SceneHelper.rotate (stg, (-roty / centMille) * mat [0] [0], -x
+                    / centMille, (-roty / centMille) * mat [0] [2]);
         }
     }
 

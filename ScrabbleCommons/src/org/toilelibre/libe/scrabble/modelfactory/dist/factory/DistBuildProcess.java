@@ -25,13 +25,13 @@ public final class DistBuildProcess implements BuildProcess {
     }
 
     public ModelElement process () {
-        final BallotBox bb = new BallotBox();
-        final Locale l = LocaleChecker.check(this.locale, this.xmlFileName);
+        final BallotBox bb = new BallotBox ();
+        final Locale l = LocaleChecker.check (this.locale, this.xmlFileName);
         if (l == null) {
             return null;
         }
-        bb.setLocale(l);
-        LettersXmlLoader.load(bb, this.xmlFileName);
+        bb.setLocale (l);
+        LettersXmlLoader.load (bb, this.xmlFileName);
         return bb;
     }
 

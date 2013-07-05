@@ -8,7 +8,7 @@ public abstract class AbstractLetterBranchGroup implements ILetterBranchGroup {
 
     public static ILetterBranchGroup cloneLetter () {
         return ((AbstractLetterBranchGroup) AbstractLetterBranchGroup.lbg)
-                .cloneImpl();
+                .cloneImpl ();
     }
 
     /**
@@ -83,7 +83,7 @@ public abstract class AbstractLetterBranchGroup implements ILetterBranchGroup {
     }
 
     public final void setComponent (final IBranchGroup sbg) {
-        sbg.addBranchGraph(this);
+        sbg.addBranchGraph (this);
     }
 
     public final void setIdTray (final int idTray1) {
@@ -108,9 +108,9 @@ public abstract class AbstractLetterBranchGroup implements ILetterBranchGroup {
 
     public final void setTransform (final ITransform ist) {
         try {
-            this.stg.setTransform(ist);
+            this.stg.setTransform (ist);
         } catch (final S3DException e) {
-            e.hashCode();
+            e.hashCode ();
         }
     }
 

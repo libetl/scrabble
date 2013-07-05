@@ -104,7 +104,7 @@ public final class GameBean extends AbstractUIBean {
      * @return scoresTableModel
      */
     public TableModel getScoresTableModel () {
-        return BeansComponents.getTableModel(this.scoresTable);
+        return BeansComponents.getTableModel (this.scoresTable);
     }
 
     /**
@@ -118,7 +118,7 @@ public final class GameBean extends AbstractUIBean {
      * @return the skinCbx
      */
     public Object getSkinCbxValue () {
-        return BeansComponents.getComboBoxValue(this.skinCbx);
+        return BeansComponents.getComboBoxValue (this.skinCbx);
     }
 
     /**
@@ -145,7 +145,7 @@ public final class GameBean extends AbstractUIBean {
      *            the console to set
      */
     public void setConsole (final Object console1) {
-        ScrabbleConsoleAppender.setImpl(console1);
+        ScrabbleConsoleAppender.setImpl (console1);
         this.console = console1;
     }
 
@@ -214,8 +214,10 @@ public final class GameBean extends AbstractUIBean {
      *            the skinCbx to set
      */
     public void setSkinCbx (final Object skinCbx1) {
-        BeansComponents.setComboBoxModel(skinCbx1,
-                (ComboBoxModel<?>) ScrabbleBeansHelper.getBean("skinListBean"));
+        BeansComponents
+                .setComboBoxModel (skinCbx1,
+                        (ComboBoxModel<?>) ScrabbleBeansHelper
+                                .getBean ("skinListBean"));
         this.skinCbx = skinCbx1;
     }
 

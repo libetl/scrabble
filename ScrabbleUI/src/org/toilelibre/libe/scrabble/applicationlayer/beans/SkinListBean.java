@@ -16,9 +16,9 @@ public class SkinListBean extends ComboBoxModel<Class<?>> {
     /**
    * 
    */
-    public SkinListBean(final Class<?>[] cL) {
+    public SkinListBean(final Class<?> [] cL) {
         for (final Class<?> c : cL) {
-            this.addElement(c);
+            this.addElement (c);
         }
     }
 

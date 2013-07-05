@@ -19,14 +19,14 @@ public class UITimerEvent extends EventObject {
      * @param source1
      */
     public UITimerEvent() {
-        super(new Object());
+        super (new Object ());
     }
 
     /**
      * @param source1
      */
     public UITimerEvent(final Object source1) {
-        super(source1);
+        super (source1);
     }
 
 }

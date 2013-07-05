@@ -4,39 +4,39 @@ import org.toilelibre.libe.userinteractions.model.beans.AbstractUIBean;
 import org.toilelibre.libe.userinteractions.util.BeansComponents;
 
 public final class NewPartyBean extends AbstractUIBean {
-    public static final String     MOVEMENT            = "movement";
+    public static final String      MOVEMENT            = "movement";
 
-    public static final double[][] VIEWPOINT_NEW_PARTY = new double[][] {
+    public static final double [][] VIEWPOINT_NEW_PARTY = new double [] [] {
             { 1, 0, 0, 0 }, { 0, 0, 1, 46.5 }, { 0, -1, 0, 1.35 },
-            { 0, 0, 0, 1, },                          };
-    private Object                 jCS1;
-    private Object                 jCS2;
-    private Object                 jCS3;
-    private Object                 jCS4;
-    private Object                 jN1;
-    private Object                 jN2;
-    private Object                 jN3;
-    private Object                 jN4;
+            { 0, 0, 0, 1, },                           };
+    private Object                  jCS1;
+    private Object                  jCS2;
+    private Object                  jCS3;
+    private Object                  jCS4;
+    private Object                  jN1;
+    private Object                  jN2;
+    private Object                  jN3;
+    private Object                  jN4;
 
-    private Object                 startNewPartyButton;
+    private Object                  startNewPartyButton;
 
     public NewPartyBean() {
     }
 
     public String getJN1Text () {
-        return BeansComponents.getText(this.jN1);
+        return BeansComponents.getText (this.jN1);
     }
 
     public String getJN2Text () {
-        return BeansComponents.getText(this.jN2);
+        return BeansComponents.getText (this.jN2);
     }
 
     public String getJN3Text () {
-        return BeansComponents.getText(this.jN3);
+        return BeansComponents.getText (this.jN3);
     }
 
     public String getJN4Text () {
-        return BeansComponents.getText(this.jN4);
+        return BeansComponents.getText (this.jN4);
     }
 
     public Object getStartNewPartyButton () {
@@ -44,19 +44,19 @@ public final class NewPartyBean extends AbstractUIBean {
     }
 
     public Boolean isJ1CSelected () {
-        return BeansComponents.isChecked(this.jCS1);
+        return BeansComponents.isChecked (this.jCS1);
     }
 
     public Boolean isJ2CSelected () {
-        return BeansComponents.isChecked(this.jCS2);
+        return BeansComponents.isChecked (this.jCS2);
     }
 
     public Boolean isJ3CSelected () {
-        return BeansComponents.isChecked(this.jCS3);
+        return BeansComponents.isChecked (this.jCS3);
     }
 
     public Boolean isJ4CSelected () {
-        return BeansComponents.isChecked(this.jCS4);
+        return BeansComponents.isChecked (this.jCS4);
     }
 
     public void setJCS1 (final Object jcs11) {

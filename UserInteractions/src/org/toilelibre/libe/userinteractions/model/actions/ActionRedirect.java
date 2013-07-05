@@ -6,19 +6,19 @@ public class ActionRedirect {
     private String  redirect;
 
     public ActionRedirect(final String redirect1) {
-        super();
+        super ();
         this.redirect = redirect1;
         this.closePrevious = false;
     }
 
     public ActionRedirect(final String redirect1, final boolean closePrevious1) {
-        super();
+        super ();
         this.redirect = redirect1;
         this.closePrevious = closePrevious1;
     }
 
     public ActionRedirect(final String beanName2, final String redirect2) {
-        super();
+        super ();
         this.redirect = redirect2;
         this.closePrevious = false;
         this.beanName = beanName2;
@@ -26,7 +26,7 @@ public class ActionRedirect {
 
     public ActionRedirect(final String beanName2, final String redirect2,
             final boolean closePrevious2) {
-        super();
+        super ();
         this.redirect = redirect2;
         this.closePrevious = closePrevious2;
         this.beanName = beanName2;

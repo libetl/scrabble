@@ -10,7 +10,7 @@ import org.toilelibre.libe.scrabble.model.ModelElement;
 import org.toilelibre.libe.scrabble.model.ScrabbleData;
 
 public final class ScrabbleDataLoader {
-    private static final Logger LOG = Logger.getLogger(ScrabbleDataLoader.class);
+    private static final Logger LOG = Logger.getLogger (ScrabbleDataLoader.class);
 
     private List<String>        locations;
     private List<BuildProcess>  processes;
@@ -25,28 +25,28 @@ public final class ScrabbleDataLoader {
             final List<ModelElement> list) {
         try {
             final List<ModelElement> lme = list;
-            final ClassLoader cld = Thread.currentThread()
-                    .getContextClassLoader();
-            final URL url = cld.getResource(location);
-            final File folderFile = new File(url.toURI());
-            if (folderFile.isDirectory()) {
-                for (final String sf : folderFile.list()) {
-                    if (sf.endsWith(".dtd")) {
+            final ClassLoader cld = Thread.currentThread ()
+                    .getContextClassLoader ();
+            final URL url = cld.getResource (location);
+            final File folderFile = new File (url.toURI ());
+            if (folderFile.isDirectory ()) {
+                for (final String sf : folderFile.list ()) {
+                    if (sf.endsWith (".dtd")) {
                         continue;
                     }
-                    bp.setFile(location + sf);
-                    final ModelElement me = bp.process();
+                    bp.setFile (location + sf);
+                    final ModelElement me = bp.process ();
                     if (me != null) {
-                        lme.add(me);
+                        lme.add (me);
                     }
                 }
             }
         } catch (final SecurityException e) {
-            ScrabbleDataLoader.LOG.error(e.getMessage());
+            ScrabbleDataLoader.LOG.error (e.getMessage ());
         } catch (final IllegalArgumentException e) {
-            ScrabbleDataLoader.LOG.error(e.getMessage());
+            ScrabbleDataLoader.LOG.error (e.getMessage ());
         } catch (final URISyntaxException e) {
-            ScrabbleDataLoader.LOG.error(e.getMessage());
+            ScrabbleDataLoader.LOG.error (e.getMessage ());
         }
     }
 
@@ -64,12 +64,12 @@ public final class ScrabbleDataLoader {
 
     @SuppressWarnings ("unchecked")
     public ScrabbleData load (final ScrabbleData sd) {
-        for (int i = 0 ; i < this.processes.size() ; i += 1) {
-            this.build(
-                    this.locations.get(i),
-                    this.processes.get(i),
-                    (List<ModelElement>) FieldAccessor.get(sd,
-                            this.properties.get(i)));
+        for (int i = 0 ; i < this.processes.size () ; i += 1) {
+            this.build (
+                    this.locations.get (i),
+                    this.processes.get (i),
+                    (List<ModelElement>) FieldAccessor.get (sd,
+                            this.properties.get (i)));
         }
         return sd;
     }

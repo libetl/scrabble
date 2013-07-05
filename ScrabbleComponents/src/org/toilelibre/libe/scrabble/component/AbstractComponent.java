@@ -21,18 +21,18 @@ public abstract class AbstractComponent implements IComponent {
      *      (java.lang.Object[])
      */
     public final Object execute (final Object... parameters1) {
-        final Method[] methods = this.getClass().getInterfaces()[0]
-                .getDeclaredMethods();
+        final Method [] methods = this.getClass ().getInterfaces () [0]
+                .getDeclaredMethods ();
         Object res = null;
         if (methods.length > 0) {
             try {
-                res = methods[0].invoke(this, parameters1);
+                res = methods [0].invoke (this, parameters1);
             } catch (final IllegalArgumentException e) {
-                e.hashCode();
+                e.hashCode ();
             } catch (final IllegalAccessException e) {
-                e.hashCode();
+                e.hashCode ();
             } catch (final InvocationTargetException e) {
-                e.hashCode();
+                e.hashCode ();
             }
         }
         return res;
@@ -44,16 +44,16 @@ public abstract class AbstractComponent implements IComponent {
      */
     public final Object executeAndThrow (final Object... parameters1)
             throws InvocationTargetException {
-        final Method[] methods = this.getClass().getInterfaces()[0]
-                .getDeclaredMethods();
+        final Method [] methods = this.getClass ().getInterfaces () [0]
+                .getDeclaredMethods ();
         Object res = null;
         if (methods.length > 0) {
             try {
-                res = methods[0].invoke(this, parameters1);
+                res = methods [0].invoke (this, parameters1);
             } catch (final IllegalArgumentException e) {
-                e.hashCode();
+                e.hashCode ();
             } catch (final IllegalAccessException e) {
-                e.hashCode();
+                e.hashCode ();
             }
         }
         return res;

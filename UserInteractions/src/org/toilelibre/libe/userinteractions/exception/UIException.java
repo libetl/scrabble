@@ -24,7 +24,7 @@ public class UIException extends Exception {
      * @param message
      */
     public UIException(final String message) {
-        super(message);
+        super (message);
     }
 
     /**
@@ -32,14 +32,14 @@ public class UIException extends Exception {
      * @param cause
      */
     public UIException(final String message, final Throwable cause) {
-        super(message, cause);
+        super (message, cause);
     }
 
     /**
      * @param cause
      */
     public UIException(final Throwable cause) {
-        super(cause);
+        super (cause);
     }
 
 }

@@ -8,7 +8,7 @@ import org.xml.sax.Locator;
 import org.xml.sax.SAXException;
 
 public class BoardXmlContentHandler implements ContentHandler {
-    private static final Logger LOG = Logger.getLogger(BoardXmlContentHandler.class);
+    private static final Logger LOG = Logger.getLogger (BoardXmlContentHandler.class);
     private final Board         board;
     private int                 col;
     private int                 row;
@@ -31,7 +31,7 @@ public class BoardXmlContentHandler implements ContentHandler {
      *            le rang du dernier caractere a traiter effectivement
      * @see org.xml.sax.ContentHandler#characters(char[], int, int)
      */
-    public void characters (final char[] ch, final int start, final int length)
+    public void characters (final char [] ch, final int start, final int length)
             throws SAXException {
     }
 
@@ -81,7 +81,7 @@ public class BoardXmlContentHandler implements ContentHandler {
      *            le rang du dernier caractere a traiter effectivement
      * @see org.xml.sax.ContentHandler#ignorableWhitespace(char[], int, int)
      */
-    public void ignorableWhitespace (final char[] ch, final int start,
+    public void ignorableWhitespace (final char [] ch, final int start,
             final int length) throws SAXException {
     }
 
@@ -153,24 +153,24 @@ public class BoardXmlContentHandler implements ContentHandler {
      */
     public final void startElement (final String uri, final String localName,
             final String name, final Attributes atts) throws SAXException {
-        if ("row".equals(localName)) {
+        if ("row".equals (localName)) {
             this.row += 1;
             this.col = -1;
-        } else if ("col".equals(localName)) {
+        } else if ("col".equals (localName)) {
             this.col += 1;
-            final String value = atts.getValue("value");
+            final String value = atts.getValue ("value");
             if (value != null) {
                 try {
-                    this.board.setCellPoints(this.col, this.row, Board.class
-                            .getField(value).getChar(null));
+                    this.board.setCellPoints (this.col, this.row, Board.class
+                            .getField (value).getChar (null));
                 } catch (final IllegalArgumentException e) {
-                    BoardXmlContentHandler.LOG.error(e.getMessage());
+                    BoardXmlContentHandler.LOG.error (e.getMessage ());
                 } catch (final SecurityException e) {
-                    BoardXmlContentHandler.LOG.error(e.getMessage());
+                    BoardXmlContentHandler.LOG.error (e.getMessage ());
                 } catch (final IllegalAccessException e) {
-                    BoardXmlContentHandler.LOG.error(e.getMessage());
+                    BoardXmlContentHandler.LOG.error (e.getMessage ());
                 } catch (final NoSuchFieldException e) {
-                    BoardXmlContentHandler.LOG.error(e.getMessage());
+                    BoardXmlContentHandler.LOG.error (e.getMessage ());
                 }
             }
         }

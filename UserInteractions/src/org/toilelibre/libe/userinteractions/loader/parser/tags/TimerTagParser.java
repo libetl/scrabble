@@ -12,11 +12,11 @@ public class TimerTagParser implements TagParser {
     }
 
     public final void parse (final UserInteractions ui,
-            final String[] currentAction, final String name,
+            final String [] currentAction, final String name,
             final Attributes atts) {
-        final Interaction interaction = ui.getInteraction(currentAction[0]);
-        interaction.addTimer(atts.getValue(UIConstants.NAME_ATTRIBUTE),
-                Long.parseLong(atts.getValue(UIConstants.DELAY_ATTRIBUTE)),
-                atts.getValue(UIConstants.METHOD_ATTRIBUTE));
+        final Interaction interaction = ui.getInteraction (currentAction [0]);
+        interaction.addTimer (atts.getValue (UIConstants.NAME_ATTRIBUTE),
+                Long.parseLong (atts.getValue (UIConstants.DELAY_ATTRIBUTE)),
+                atts.getValue (UIConstants.METHOD_ATTRIBUTE));
     }
 }

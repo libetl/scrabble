@@ -15,23 +15,23 @@ public class Player {
     private final List<String> words;
 
     public Player(final String name1) {
-        super();
+        super ();
         this.name = name1;
         this.score = 0;
-        this.tray = new Tray();
-        this.words = new LinkedList<String>();
+        this.tray = new Tray ();
+        this.words = new LinkedList<String> ();
         this.type = Type.Human;
     }
 
     public Player(final String name1, final boolean computerPlayer) {
-        this(name1);
+        this (name1);
         if (computerPlayer) {
             this.type = Type.Computer;
         }
     }
 
     public final void addTurn (final String word1, final int scoreAdd) {
-        this.words.add(word1);
+        this.words.add (word1);
         this.score += scoreAdd;
     }
 
@@ -48,7 +48,7 @@ public class Player {
     }
 
     public final String getType () {
-        return this.type.toString();
+        return this.type.toString ();
     }
 
     public final List<String> getWords () {

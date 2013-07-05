@@ -36,11 +36,11 @@ public class ScrabbleData {
     private List<Player>     players;
 
     public ScrabbleData() {
-        super();
-        this.boards = new LinkedList<Board>();
-        this.ballotBoxes = new LinkedList<BallotBox>();
-        this.dictionaries = new LinkedList<Dictionary>();
-        this.players = new LinkedList<Player>();
+        super ();
+        this.boards = new LinkedList<Board> ();
+        this.ballotBoxes = new LinkedList<BallotBox> ();
+        this.dictionaries = new LinkedList<Dictionary> ();
+        this.players = new LinkedList<Player> ();
         ScrabbleData.instance = this;
     }
 

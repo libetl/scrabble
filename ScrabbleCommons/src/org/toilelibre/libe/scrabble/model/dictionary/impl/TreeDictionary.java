@@ -13,64 +13,64 @@ public class TreeDictionary implements Dictionary {
     private final Node root;
 
     public TreeDictionary() {
-        this.root = new Node('\0');
+        this.root = new Node ('\0');
     }
 
     private void add (final Node n, final String word) {
-        if (word.length() > 0) {
-            final int index = n.getChildNum(word.charAt(0));
+        if (word.length () > 0) {
+            final int index = n.getChildNum (word.charAt (0));
             if (index != -1) {
-                this.add(n.getChildNum(index), word.substring(1));
+                this.add (n.getChildNum (index), word.substring (1));
             } else {
-                final Node sn = new Node(word.charAt(0));
-                n.addChild(sn);
-                this.callIfWordLengthGtOne(word, sn);
+                final Node sn = new Node (word.charAt (0));
+                n.addChild (sn);
+                this.callIfWordLengthGtOne (word, sn);
             }
         }
     }
 
     public final void add (final String word) {
         if (word != null) {
-            this.add(this.root, word);
+            this.add (this.root, word);
         }
     }
 
     private void callIfWordLengthGtOne (final String word, final Node sn) {
-        if (word.length() > 1) {
-            this.add(sn, word.substring(1));
+        if (word.length () > 1) {
+            this.add (sn, word.substring (1));
         } else {
-            sn.setTerm(true);
+            sn.setTerm (true);
         }
 
     }
 
     private boolean contains (final Node n, final String word) {
         return (word == null)
-                || (word.length() == 0)
-                || ((n.getChildNum(word.charAt(0)) != -1) && this.contains(
-                        n.getChild(word.charAt(0)), word.substring(1)));
+                || (word.length () == 0)
+                || ( (n.getChildNum (word.charAt (0)) != -1) && this.contains (
+                        n.getChild (word.charAt (0)), word.substring (1)));
     }
 
     public final boolean contains (final String word) {
-        return this.contains(this.root, word);
+        return this.contains (this.root, word);
     }
 
     private List<String> findMatches (final String word, final Node n,
             final int numLettersMissing, final String debutMot) {
-        final List<String> res = new LinkedList<String>();
-        if (n.isTerm() && (debutMot.length() > 1)) {
-            res.add(debutMot);
+        final List<String> res = new LinkedList<String> ();
+        if (n.isTerm () && (debutMot.length () > 1)) {
+            res.add (debutMot);
         }
-        for (final Node cN : n.getChildNodes()) {
-            if (word.indexOf(cN.getValue()) != -1) {
-                final String word2 = word.substring(0,
-                        word.indexOf(cN.getValue()))
-                        + word.substring(word.indexOf(cN.getValue()) + 1);
-                res.addAll(this.findMatches(word2, cN, numLettersMissing,
-                        debutMot + cN.getValue()));
+        for (final Node cN : n.getChildNodes ()) {
+            if (word.indexOf (cN.getValue ()) != -1) {
+                final String word2 = word.substring (0,
+                        word.indexOf (cN.getValue ()))
+                        + word.substring (word.indexOf (cN.getValue ()) + 1);
+                res.addAll (this.findMatches (word2, cN, numLettersMissing,
+                        debutMot + cN.getValue ()));
             } else if (numLettersMissing > 0) {
-                res.addAll(this.findMatches(word, cN, numLettersMissing - 1,
-                        debutMot + cN.getValue()));
+                res.addAll (this.findMatches (word, cN, numLettersMissing - 1,
+                        debutMot + cN.getValue ()));
             }
         }
         return res;
@@ -91,12 +91,12 @@ public class TreeDictionary implements Dictionary {
     public final List<String> similarWords (final String word) {
         int numLettersMissing = 1;
         String word2 = word;
-        while (word2.indexOf(' ') != -1) {
+        while (word2.indexOf (' ') != -1) {
             numLettersMissing += 1;
-            word2 = word2.substring(0, word.indexOf(' '))
-                    + word2.substring(word.indexOf(' ') + 1);
+            word2 = word2.substring (0, word.indexOf (' '))
+                    + word2.substring (word.indexOf (' ') + 1);
         }
 
-        return this.findMatches(word, this.root, numLettersMissing, "");
+        return this.findMatches (word, this.root, numLettersMissing, "");
     }
 }

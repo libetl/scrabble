@@ -22,7 +22,7 @@ public class UtilUITimer implements IUITimer {
     }
 
     public UtilUITimer(final long delay1, final UIActionListener uial1) {
-        this();
+        this ();
         this.initialDelay = 0;
         this.delay = delay1;
         if (delay1 == 0) {
@@ -48,22 +48,22 @@ public class UtilUITimer implements IUITimer {
     }
 
     public final void start () {
-        this.timer = new Timer();
-        this.uial = new UIActionListener(this.uial.getAction(),
-                this.uial.getMethods(), this.uial.getBean());
+        this.timer = new Timer ();
+        this.uial = new UIActionListener (this.uial.getAction (),
+                this.uial.getMethods (), this.uial.getBean ());
         if (this.initialDelay == 0) {
-            this.timer.scheduleAtFixedRate(this.uial, new Date(), this.delay);
+            this.timer.scheduleAtFixedRate (this.uial, new Date (), this.delay);
         } else {
-            final Date firstTimeDate = new Date(new Date().getTime()
+            final Date firstTimeDate = new Date (new Date ().getTime ()
                     + this.initialDelay);
-            this.timer
-                    .scheduleAtFixedRate(this.uial, firstTimeDate, this.delay);
+            this.timer.scheduleAtFixedRate (this.uial, firstTimeDate,
+                    this.delay);
         }
     }
 
     public final void stop () {
-        this.timer.cancel();
-        this.uial.cancel();
+        this.timer.cancel ();
+        this.uial.cancel ();
     }
 
 }

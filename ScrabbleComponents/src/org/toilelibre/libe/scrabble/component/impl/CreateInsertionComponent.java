@@ -21,13 +21,14 @@ public final class CreateInsertionComponent extends AbstractComponent implements
      * @see org.toilelibre.libe.scrabble.component.iface.ICreateInsertionComponent
      *      #createObject(int[][],char[])
      */
-    public Insertion createObject (final int[][] alignment, final char[] letters) {
+    public Insertion createObject (final int [][] alignment,
+            final char [] letters) {
 
-        final Insertion i = new Insertion();
+        final Insertion i = new Insertion ();
         for (int j = 0 ; j < alignment.length ; j++) {
-            final int[] res = alignment[j];
+            final int [] res = alignment [j];
             if (res != null) {
-                i.addPlacement(new Placement(letters[j], res[0], res[1]));
+                i.addPlacement (new Placement (letters [j], res [0], res [1]));
             }
         }
         return i;

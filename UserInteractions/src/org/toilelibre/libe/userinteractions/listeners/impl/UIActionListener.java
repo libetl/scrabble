@@ -13,7 +13,7 @@ import org.toilelibre.libe.userinteractions.timers.impl.UITimerEvent;
 
 public class UIActionListener extends TimerTask implements ActionListener {
     private static final String       ACTION_PERFORMED = "actionPerformed";
-    private static final UITimerEvent UI_TIMER_EVENT   = new UITimerEvent();
+    private static final UITimerEvent UI_TIMER_EVENT   = new UITimerEvent ();
     private final Action              action;
     private final IUIBean             bean;
     private final Map<String, String> methods;
@@ -26,7 +26,7 @@ public class UIActionListener extends TimerTask implements ActionListener {
     }
 
     public final void actionPerformed (final ActionEvent e) {
-        ListenerHelper.fireAction(UIConstants.ACTIONLISTENER_TYPE,
+        ListenerHelper.fireAction (UIConstants.ACTIONLISTENER_TYPE,
                 UIActionListener.ACTION_PERFORMED, this.bean, this.methods,
                 this.action, e);
     }
@@ -57,7 +57,7 @@ public class UIActionListener extends TimerTask implements ActionListener {
      */
     @Override
     public final void run () {
-        ListenerHelper.fireAction(UIConstants.ACTIONLISTENER_TYPE,
+        ListenerHelper.fireAction (UIConstants.ACTIONLISTENER_TYPE,
                 UIActionListener.ACTION_PERFORMED, this.bean, this.methods,
                 this.action, UIActionListener.UI_TIMER_EVENT);
     }

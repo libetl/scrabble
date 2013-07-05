@@ -14,7 +14,7 @@ public final class TableModel {
     private final DefaultTableModel dtm;
 
     public TableModel() {
-        this.dtm = new DefaultTableModel();
+        this.dtm = new DefaultTableModel ();
     }
 
     /**
@@ -29,7 +29,7 @@ public final class TableModel {
      * @see DefaultTableModel#addColumn(java.lang.Object)
      */
     public void addColumn (final Object columnName1) {
-        this.dtm.addColumn(columnName1);
+        this.dtm.addColumn (columnName1);
     }
 
     /**
@@ -37,7 +37,7 @@ public final class TableModel {
      * @see DefaultTableModel#addRow(java.lang.Object[])
      */
     public void addRow () {
-        this.dtm.addRow(new Object[0]);
+        this.dtm.addRow (new Object [0]);
     }
 
     /**
@@ -54,7 +54,7 @@ public final class TableModel {
      * @seeDefaultTableModel#getValueAt(int, int)
      */
     public Object getValueAt (final int row1, final int column1) {
-        return this.dtm.getValueAt(row1, column1);
+        return this.dtm.getValueAt (row1, column1);
     }
 
     /**
@@ -62,7 +62,7 @@ public final class TableModel {
      * @see DefaultTableModel#setRowCount(int)
      */
     public void setRowCount (final int rowCount1) {
-        this.dtm.setRowCount(rowCount1);
+        this.dtm.setRowCount (rowCount1);
     }
 
     /**
@@ -75,9 +75,9 @@ public final class TableModel {
             final int column1) {
         int row = row1;
         if (row == -1) {
-            row = this.dtm.getRowCount() - 1;
+            row = this.dtm.getRowCount () - 1;
         }
-        this.dtm.setValueAt(value1, row, column1);
+        this.dtm.setValueAt (value1, row, column1);
     }
 
 }

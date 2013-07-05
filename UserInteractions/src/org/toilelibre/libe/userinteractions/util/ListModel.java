@@ -14,7 +14,7 @@ public final class ListModel<T> {
     private final DefaultListModel<T> dlm;
 
     public ListModel() {
-        this.dlm = new DefaultListModel<T>();
+        this.dlm = new DefaultListModel<T> ();
     }
 
     /**
@@ -22,7 +22,7 @@ public final class ListModel<T> {
      * @see DefaultListModel#addElement(java.lang.Object)
      */
     public void addElement (final T obj1) {
-        this.dlm.addElement(obj1);
+        this.dlm.addElement (obj1);
     }
 
     /**
@@ -30,7 +30,7 @@ public final class ListModel<T> {
      * @see DefaultListModel#clear()
      */
     public void clear () {
-        this.dlm.clear();
+        this.dlm.clear ();
     }
 
     /**

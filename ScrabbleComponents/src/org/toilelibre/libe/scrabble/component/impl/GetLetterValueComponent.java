@@ -20,7 +20,7 @@ public class GetLetterValueComponent extends AbstractComponent implements
      *      #valueOf(char)
      */
     public final int valueOf (final char c1) {
-        return this.getData().getBallotBoxes().get(0).getValue(c1);
+        return this.getData ().getBallotBoxes ().get (0).getValue (c1);
     }
 
 }

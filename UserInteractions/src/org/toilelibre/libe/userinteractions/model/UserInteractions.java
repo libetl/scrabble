@@ -15,25 +15,25 @@ public class UserInteractions {
     private final Map<String, Interaction> interactions;
 
     public UserInteractions() {
-        this.interactions = new HashMap<String, Interaction>();
-        this.beans = new HashMap<String, IUIBean>();
+        this.interactions = new HashMap<String, Interaction> ();
+        this.beans = new HashMap<String, IUIBean> ();
     }
 
     public final void addBean (final String key, final IUIBean value) {
-        this.beans.put(key, value);
-        value.setName(key);
+        this.beans.put (key, value);
+        value.setName (key);
     }
 
     public final void addInteraction (final String key, final Interaction value) {
-        this.interactions.put(key, value);
+        this.interactions.put (key, value);
     }
 
     public final Action getAction (final String key) {
-        return this.interactions.get(key).getAction();
+        return this.interactions.get (key).getAction ();
     }
 
     public final IUIBean getBean (final String key) {
-        return this.beans.get(key);
+        return this.beans.get (key);
     }
 
     public final Map<String, IUIBean> getBeans () {
@@ -41,17 +41,17 @@ public class UserInteractions {
     }
 
     public final Interaction getInteraction (final String key) {
-        return this.interactions.get(key);
+        return this.interactions.get (key);
     }
 
     public final void setCallback (final String impl, final String method)
             throws UIException {
-        Callback.setMethod(impl, method);
+        Callback.setMethod (impl, method);
     }
 
     public final void updateBindings () {
-        for (final String key : this.interactions.keySet()) {
-            this.interactions.get(key).updateBindings();
+        for (final String key : this.interactions.keySet ()) {
+            this.interactions.get (key).updateBindings ();
         }
     }
 }

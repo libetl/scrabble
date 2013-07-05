@@ -26,13 +26,13 @@ public class BoardBuildProcess implements BuildProcess {
     }
 
     public final ModelElement process () {
-        final Board board = new Board();
-        final Locale l = LocaleChecker.check(this.locale, this.xmlFileName);
+        final Board board = new Board ();
+        final Locale l = LocaleChecker.check (this.locale, this.xmlFileName);
         if (l == null) {
             return null;
         }
-        board.setLocale(l);
-        BoardXmlLoader.load(board, this.xmlFileName);
+        board.setLocale (l);
+        BoardXmlLoader.load (board, this.xmlFileName);
         return board;
     }
 

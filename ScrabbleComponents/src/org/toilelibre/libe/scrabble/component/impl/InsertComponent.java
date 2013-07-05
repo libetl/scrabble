@@ -24,10 +24,10 @@ public class InsertComponent extends AbstractComponent implements
      */
     public final void insert (final Insertion i) {
 
-        final Board b = this.getData().getBoards().get(0);
+        final Board b = this.getData ().getBoards ().get (0);
 
         for (final Placement p : i) {
-            b.setCellLetter(p.getX(), p.getY(), p.getLetter());
+            b.setCellLetter (p.getX (), p.getY (), p.getLetter ());
         }
     }
 

@@ -5,15 +5,15 @@ import org.toilelibre.libe.userinteractions.model.beans.AbstractUIBean;
 
 public final class ChangeTurnBean extends AbstractUIBean {
 
-    public static final String     ID_BEAN                = "changeTurnBean";
-    public static final int        INITIAL_DELAY_MOVEMENT = 2000;
-    public static final String     MOVEMENT               = "movement";
-    public static final String     MOVEMENT_LETTER        = "movementLetter";
-    public static final String     NB_PLAYERS             = "nbPlayers";
-    public static final int        TRAY_LENGTH            = 7;
-    public static final String     TURN                   = "turn";
-    private ILetterBranchGroup[][] letterBranchGroups;
-    private double[]               letterPositions;
+    public static final String      ID_BEAN                = "changeTurnBean";
+    public static final int         INITIAL_DELAY_MOVEMENT = 2000;
+    public static final String      MOVEMENT               = "movement";
+    public static final String      MOVEMENT_LETTER        = "movementLetter";
+    public static final String      NB_PLAYERS             = "nbPlayers";
+    public static final int         TRAY_LENGTH            = 7;
+    public static final String      TURN                   = "turn";
+    private ILetterBranchGroup [][] letterBranchGroups;
+    private double []               letterPositions;
 
     public ChangeTurnBean() {
 
@@ -22,14 +22,14 @@ public final class ChangeTurnBean extends AbstractUIBean {
     /**
      * @return the letterBranchGroups
      */
-    public ILetterBranchGroup[][] getLetterBranchGroups () {
+    public ILetterBranchGroup [][] getLetterBranchGroups () {
         return this.letterBranchGroups;
     }
 
     /**
      * @return the letterPositions
      */
-    public double[] getLetterPositions () {
+    public double [] getLetterPositions () {
         return this.letterPositions;
     }
 
@@ -38,7 +38,7 @@ public final class ChangeTurnBean extends AbstractUIBean {
      *            the letterBranchGroups to set
      */
     public void setLetterBranchGroups (
-            final ILetterBranchGroup[][] letterBranchGroups1) {
+            final ILetterBranchGroup [][] letterBranchGroups1) {
         this.letterBranchGroups = letterBranchGroups1;
     }
 
@@ -46,7 +46,7 @@ public final class ChangeTurnBean extends AbstractUIBean {
      * @param letterPositions1
      *            the letterPositions to set
      */
-    public void setLetterPositions (final double[] letterPositions1) {
+    public void setLetterPositions (final double [] letterPositions1) {
         this.letterPositions = letterPositions1;
     }
 }

@@ -14,7 +14,7 @@ public class ComboBoxModel<T> {
     private final DefaultComboBoxModel<T> dcbm;
 
     public ComboBoxModel() {
-        this.dcbm = new DefaultComboBoxModel<T>();
+        this.dcbm = new DefaultComboBoxModel<T> ();
     }
 
     /**
@@ -22,7 +22,7 @@ public class ComboBoxModel<T> {
      * @see DefaultComboBoxModel#addElement(java.lang.Object)
      */
     public final void addElement (final T obj1) {
-        this.dcbm.addElement(obj1);
+        this.dcbm.addElement (obj1);
     }
 
     /**
@@ -30,7 +30,7 @@ public class ComboBoxModel<T> {
      * @see DefaultComboBoxModel#clear()
      */
     public final void clear () {
-        this.dcbm.removeAllElements();
+        this.dcbm.removeAllElements ();
     }
 
     /**

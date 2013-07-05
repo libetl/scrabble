@@ -12,13 +12,13 @@ public final class Callback {
     public static void fireCallback (final String string, final URL url)
             throws UIException {
         try {
-            Callback.m.invoke(null, new Object[] { string, url });
+            Callback.m.invoke (null, new Object [] { string, url });
         } catch (final IllegalArgumentException e) {
-            throw new UIException(e);
+            throw new UIException (e);
         } catch (final IllegalAccessException e) {
-            throw new UIException(e);
+            throw new UIException (e);
         } catch (final InvocationTargetException e) {
-            throw new UIException(e);
+            throw new UIException (e);
         }
     }
 
@@ -26,16 +26,16 @@ public final class Callback {
             throws UIException {
         Class<?> c;
         try {
-            c = Class.forName(impl);
-            final Method temp = c.getDeclaredMethod(method, new Class[] {
+            c = Class.forName (impl);
+            final Method temp = c.getDeclaredMethod (method, new Class [] {
                     String.class, URL.class, });
             Callback.m = temp;
         } catch (final ClassNotFoundException e) {
-            throw new UIException(e);
+            throw new UIException (e);
         } catch (final SecurityException e) {
-            throw new UIException(e);
+            throw new UIException (e);
         } catch (final NoSuchMethodException e) {
-            throw new UIException(e);
+            throw new UIException (e);
         }
     }
 

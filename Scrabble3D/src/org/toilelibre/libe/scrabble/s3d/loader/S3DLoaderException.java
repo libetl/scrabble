@@ -15,18 +15,18 @@ public class S3DLoaderException extends Exception {
     private static final long serialVersionUID = -7184604413601705595L;
 
     public S3DLoaderException() {
-        super();
+        super ();
     }
 
     public S3DLoaderException(final String message) {
-        super(message);
+        super (message);
     }
 
     public S3DLoaderException(final String message, final Throwable cause) {
-        super(message, cause);
+        super (message, cause);
     }
 
     public S3DLoaderException(final Throwable cause) {
-        super(cause);
+        super (cause);
     }
 }

@@ -25,30 +25,31 @@ public final class J3DLoader implements IS3DLoader {
             Scene scene = null;
             BranchGroup forme3D = null;
             BaseLoader loader = null;
-            final ClassLoader cld = Thread.currentThread()
-                    .getContextClassLoader();
-            final URL url = cld.getResource(fichier3D);
-            final String absoluteFile = new File(url.toURI()).getAbsolutePath();
-            final Class<?> clazz = Class.forName(clazzName);
+            final ClassLoader cld = Thread.currentThread ()
+                    .getContextClassLoader ();
+            final URL url = cld.getResource (fichier3D);
+            final String absoluteFile = new File (url.toURI ())
+                    .getAbsolutePath ();
+            final Class<?> clazz = Class.forName (clazzName);
 
-            loader = (BaseLoader) clazz.newInstance();
+            loader = (BaseLoader) clazz.newInstance ();
 
-            scene = loader.load(absoluteFile);
+            scene = loader.load (absoluteFile);
 
             if (scene != null) {
-                forme3D = scene.getSceneGroup();
+                forme3D = scene.getSceneGroup ();
             }
             return forme3D;
         } catch (final FileNotFoundException e) {
-            throw new J3DLoaderException(e);
+            throw new J3DLoaderException (e);
         } catch (final ClassNotFoundException e) {
-            throw new J3DLoaderException(e);
+            throw new J3DLoaderException (e);
         } catch (final URISyntaxException e) {
-            throw new J3DLoaderException(e);
+            throw new J3DLoaderException (e);
         } catch (final InstantiationException e) {
-            throw new J3DLoaderException(e);
+            throw new J3DLoaderException (e);
         } catch (final IllegalAccessException e) {
-            throw new J3DLoaderException(e);
+            throw new J3DLoaderException (e);
         }
     }
 

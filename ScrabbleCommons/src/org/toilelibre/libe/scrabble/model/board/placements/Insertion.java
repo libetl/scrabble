@@ -8,17 +8,17 @@ public class Insertion implements Iterable<Placement> {
     private final List<Placement> placements;
 
     public Insertion() {
-        super();
-        this.placements = new ArrayList<Placement>();
+        super ();
+        this.placements = new ArrayList<Placement> ();
     }
 
     public final boolean addPlacement (final Placement p) {
-        return this.placements.add(p);
+        return this.placements.add (p);
     }
 
     public final boolean contains (final int x, final int y) {
         for (final Placement p : this) {
-            if ((p.getX() == x) && (p.getY() == y)) {
+            if ( (p.getX () == x) && (p.getY () == y)) {
                 return true;
             }
         }
@@ -26,11 +26,11 @@ public class Insertion implements Iterable<Placement> {
     }
 
     public final boolean contains (final Placement p) {
-        return this.placements.contains(p);
+        return this.placements.contains (p);
     }
 
     public final Placement getPlacement (final int index) {
-        return this.placements.get(index);
+        return this.placements.get (index);
     }
 
     public final List<Placement> getPlacements () {
@@ -38,16 +38,16 @@ public class Insertion implements Iterable<Placement> {
     }
 
     public final Iterator<Placement> iterator () {
-        return this.placements.iterator();
+        return this.placements.iterator ();
     }
 
     public final int nbOfLetters () {
-        return this.placements.size();
+        return this.placements.size ();
     }
 
     public final Placement placementAt (final int x, final int y) {
         for (final Placement p : this) {
-            if ((p.getX() == x) && (p.getY() == y)) {
+            if ( (p.getX () == x) && (p.getY () == y)) {
                 return p;
             }
         }
@@ -59,7 +59,7 @@ public class Insertion implements Iterable<Placement> {
         String res = "Insertion : [";
 
         for (final Placement p : this.placements) {
-            res += p.toString() + " ";
+            res += p.toString () + " ";
         }
         return res + "]";
     }

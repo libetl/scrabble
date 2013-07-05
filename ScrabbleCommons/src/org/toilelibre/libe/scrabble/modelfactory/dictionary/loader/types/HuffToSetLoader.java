@@ -14,7 +14,7 @@ import org.toilelibre.libe.scrabble.modelfactory.dictionary.loader.Loader;
 
 public class HuffToSetLoader implements Loader {
 
-    private static final Logger LOG = Logger.getLogger(HuffToSetLoader.class);
+    private static final Logger LOG = Logger.getLogger (HuffToSetLoader.class);
 
     public HuffToSetLoader() {
 
@@ -26,21 +26,22 @@ public class HuffToSetLoader implements Loader {
             int val = 0;
 
             do {
-                val = r.read();
+                val = r.read ();
                 switch (val) {
                     case '\0' :
                         break;
                     case '*' :
-                        d.add(debutMot);
-                        debutMot = debutMot.substring(0, debutMot.length() - 2);
+                        d.add (debutMot);
+                        debutMot = debutMot.substring (0,
+                                debutMot.length () - 2);
                         break;
                     case '$' :
-                        d.add(debutMot);
+                        d.add (debutMot);
                         break;
                     case '/' :
-                        if (debutMot.length() > 0) {
-                            debutMot = debutMot.substring(0,
-                                    debutMot.length() - 1);
+                        if (debutMot.length () > 0) {
+                            debutMot = debutMot.substring (0,
+                                    debutMot.length () - 1);
                         } else {
                             return;
                         }
@@ -51,7 +52,7 @@ public class HuffToSetLoader implements Loader {
 
             } while (val != '\0');
         } catch (final IOException e) {
-            HuffToSetLoader.LOG.error(e.getMessage());
+            HuffToSetLoader.LOG.error (e.getMessage ());
         }
 
     }
@@ -59,15 +60,15 @@ public class HuffToSetLoader implements Loader {
     public final void load (final Dictionary d, final String fileName) {
         InputStreamReader isr;
         try {
-            final ClassLoader cld = Thread.currentThread()
-                    .getContextClassLoader();
-            isr = new InputStreamReader(new FileInputStream(new File(cld
-                    .getResource(fileName).toURI())));
-            this.load(d, isr);
+            final ClassLoader cld = Thread.currentThread ()
+                    .getContextClassLoader ();
+            isr = new InputStreamReader (new FileInputStream (new File (cld
+                    .getResource (fileName).toURI ())));
+            this.load (d, isr);
         } catch (final FileNotFoundException e) {
-            HuffToSetLoader.LOG.error(e.getMessage());
+            HuffToSetLoader.LOG.error (e.getMessage ());
         } catch (final URISyntaxException e) {
-            HuffToSetLoader.LOG.error(e.getMessage());
+            HuffToSetLoader.LOG.error (e.getMessage ());
         }
     }
 

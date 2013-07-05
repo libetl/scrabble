@@ -13,7 +13,7 @@ import org.toilelibre.libe.scrabble.model.dictionary.Dictionary;
 import org.toilelibre.libe.scrabble.modelfactory.dictionary.loader.Loader;
 
 public class TxtToTreeLoader implements Loader {
-    private static final Logger LOG = Logger.getLogger(TxtToTreeLoader.class);
+    private static final Logger LOG = Logger.getLogger (TxtToTreeLoader.class);
 
     public TxtToTreeLoader() {
 
@@ -23,26 +23,27 @@ public class TxtToTreeLoader implements Loader {
         BufferedReader bfr = null;
         try {
             String line;
-            final ClassLoader cld = Thread.currentThread()
-                    .getContextClassLoader();
-            bfr = new BufferedReader(new InputStreamReader(new FileInputStream(
-                    new File(cld.getResource(fileName).toURI()))));
+            final ClassLoader cld = Thread.currentThread ()
+                    .getContextClassLoader ();
+            bfr = new BufferedReader (new InputStreamReader (
+                    new FileInputStream (new File (cld.getResource (fileName)
+                            .toURI ()))));
             do {
-                line = bfr.readLine();
-                d.add(line);
+                line = bfr.readLine ();
+                d.add (line);
             } while (line != null);
         } catch (final FileNotFoundException e) {
-            TxtToTreeLoader.LOG.error(e.getMessage());
+            TxtToTreeLoader.LOG.error (e.getMessage ());
         } catch (final IOException e) {
-            TxtToTreeLoader.LOG.error(e.getMessage());
+            TxtToTreeLoader.LOG.error (e.getMessage ());
         } catch (final URISyntaxException e) {
-            TxtToTreeLoader.LOG.error(e.getMessage());
+            TxtToTreeLoader.LOG.error (e.getMessage ());
         } finally {
             if (bfr != null) {
                 try {
-                    bfr.close();
+                    bfr.close ();
                 } catch (final IOException e) {
-                    TxtToTreeLoader.LOG.error(e.getMessage());
+                    TxtToTreeLoader.LOG.error (e.getMessage ());
                 }
             }
         }

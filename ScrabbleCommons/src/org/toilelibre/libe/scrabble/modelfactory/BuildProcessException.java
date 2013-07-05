@@ -24,7 +24,7 @@ public final class BuildProcessException extends Exception {
      * @param message
      */
     public BuildProcessException(final String message) {
-        super(message);
+        super (message);
     }
 
     /**
@@ -32,14 +32,14 @@ public final class BuildProcessException extends Exception {
      * @param cause
      */
     public BuildProcessException(final String message, final Throwable cause) {
-        super(message, cause);
+        super (message, cause);
     }
 
     /**
      * @param cause
      */
     public BuildProcessException(final Throwable cause) {
-        super(cause);
+        super (cause);
     }
 
 }

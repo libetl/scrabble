@@ -7,5 +7,5 @@ import org.toilelibre.libe.scrabble.component.IComponent;
 
 public interface INewPlayerComponent extends IComponent {
 
-    int newPlayers (String[] players, Boolean[] computers);
+    int newPlayers (String [] players, Boolean [] computers);
 }

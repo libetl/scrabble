@@ -26,7 +26,7 @@ public class LettersXmlContentHandler implements ContentHandler {
      *            le rang du dernier caractere a traiter effectivement
      * @see org.xml.sax.ContentHandler#characters(char[], int, int)
      */
-    public void characters (final char[] ch, final int start, final int length)
+    public void characters (final char [] ch, final int start, final int length)
             throws SAXException {
     }
 
@@ -76,7 +76,7 @@ public class LettersXmlContentHandler implements ContentHandler {
      *            le rang du dernier caractere a traiter effectivement
      * @see org.xml.sax.ContentHandler#ignorableWhitespace(char[], int, int)
      */
-    public void ignorableWhitespace (final char[] ch, final int start,
+    public void ignorableWhitespace (final char [] ch, final int start,
             final int length) throws SAXException {
     }
 
@@ -148,11 +148,10 @@ public class LettersXmlContentHandler implements ContentHandler {
      */
     public final void startElement (final String uri, final String localName,
             final String name, final Attributes atts) throws SAXException {
-        if ("letter".equals(localName)) {
-            this.ballotBox.setLetter(new Letter(
-                    atts.getValue("name").charAt(0), Integer.parseInt(atts
-                            .getValue("value")), Integer.parseInt(atts
-                            .getValue("number"))));
+        if ("letter".equals (localName)) {
+            this.ballotBox.setLetter (new Letter (atts.getValue ("name")
+                    .charAt (0), Integer.parseInt (atts.getValue ("value")),
+                    Integer.parseInt (atts.getValue ("number"))));
         }
     }
 

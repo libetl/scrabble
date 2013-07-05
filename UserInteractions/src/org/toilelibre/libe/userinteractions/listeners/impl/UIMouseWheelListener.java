@@ -22,7 +22,7 @@ public class UIMouseWheelListener implements MouseWheelListener {
     }
 
     public final void mouseWheelMoved (final MouseWheelEvent e) {
-        ListenerHelper.fireAction(UIConstants.MOUSEWHEELLISTENER_TYPE,
+        ListenerHelper.fireAction (UIConstants.MOUSEWHEELLISTENER_TYPE,
                 "wheelMoved", this.bean, this.methods, this.action, e);
     }
 

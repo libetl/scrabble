@@ -13,11 +13,11 @@ public class Action {
     private UserInteractions      uiOwner;
 
     public Action() {
-        super();
+        super ();
     }
 
     public Action(final UserInteractions uiOwner1) {
-        super();
+        super ();
         this.uiOwner = uiOwner1;
     }
 
