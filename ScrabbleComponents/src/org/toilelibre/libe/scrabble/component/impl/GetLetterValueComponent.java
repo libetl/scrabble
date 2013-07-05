@@ -9,18 +9,18 @@ import org.toilelibre.libe.scrabble.component.iface.IGetLetterValueComponent;
 public class GetLetterValueComponent extends AbstractComponent implements
         IGetLetterValueComponent {
 
-	/**
+    /**
    * 
    */
-	public GetLetterValueComponent () {
-	}
+    public GetLetterValueComponent() {
+    }
 
-	/**
-	 * @see org.toilelibre.libe.scrabble.component.iface.IGetLetterValueComponent
-	 *      #valueOf(char)
-	 */
-	public final int valueOf (final char c1) {
-		return this.getData ().getBallotBoxes ().get (0).getValue (c1);
-	}
+    /**
+     * @see org.toilelibre.libe.scrabble.component.iface.IGetLetterValueComponent
+     *      #valueOf(char)
+     */
+    public final int valueOf (final char c1) {
+        return this.getData().getBallotBoxes().get(0).getValue(c1);
+    }
 
 }

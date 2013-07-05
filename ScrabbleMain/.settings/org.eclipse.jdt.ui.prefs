@@ -1,4 +1,4 @@
-#Sat Feb 28 09:23:09 CET 2009
+#Fri Feb 06 21:47:00 CET 2009
 cleanup.add_default_serial_version_id=false
 cleanup.add_generated_serial_version_id=true
 cleanup.add_missing_annotations=true
@@ -52,7 +52,4 @@ cleanup.use_this_for_non_static_method_access_only_if_necessary=false
 cleanup_profile=_essaiSCRABBLE
 cleanup_settings_version=2
 eclipse.preferences.version=1
-formatter_profile=_essaiScrabble
-formatter_settings_version=11
 internal.default.compliance=default
-org.eclipse.jdt.ui.text.custom_code_templates=<?xml version\="1.0" encoding\="UTF-8"?><templates/>

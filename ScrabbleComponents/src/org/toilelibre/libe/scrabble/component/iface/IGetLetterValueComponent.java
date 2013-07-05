@@ -7,6 +7,6 @@ import org.toilelibre.libe.scrabble.component.IComponent;
 
 public interface IGetLetterValueComponent extends IComponent {
 
-	int valueOf (char c);
+    int valueOf (char c);
 
 }

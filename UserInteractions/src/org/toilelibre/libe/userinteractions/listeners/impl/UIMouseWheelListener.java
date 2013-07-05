@@ -10,20 +10,20 @@ import org.toilelibre.libe.userinteractions.model.actions.Action;
 import org.toilelibre.libe.userinteractions.model.beans.IUIBean;
 
 public class UIMouseWheelListener implements MouseWheelListener {
-	private final Action	          action;
-	private final IUIBean	          bean;
-	private final Map<String, String>	methods;
+    private final Action              action;
+    private final IUIBean             bean;
+    private final Map<String, String> methods;
 
-	public UIMouseWheelListener (final Action action2,
-	        final Map<String, String> methods2, final IUIBean bean2) {
-		this.action = action2;
-		this.methods = methods2;
-		this.bean = bean2;
-	}
+    public UIMouseWheelListener(final Action action2,
+            final Map<String, String> methods2, final IUIBean bean2) {
+        this.action = action2;
+        this.methods = methods2;
+        this.bean = bean2;
+    }
 
-	public final void mouseWheelMoved (final MouseWheelEvent e) {
-		ListenerHelper.fireAction (UIConstants.MOUSEWHEELLISTENER_TYPE,
-		        "wheelMoved", this.bean, this.methods, this.action, e);
-	}
+    public final void mouseWheelMoved (final MouseWheelEvent e) {
+        ListenerHelper.fireAction(UIConstants.MOUSEWHEELLISTENER_TYPE,
+                "wheelMoved", this.bean, this.methods, this.action, e);
+    }
 
 }

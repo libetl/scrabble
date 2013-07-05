@@ -10,16 +10,16 @@ import org.toilelibre.libe.userinteractions.util.ComboBoxModel;
  * 
  */
 public class SkinListBean extends ComboBoxModel<Class<?>> {
-	public SkinListBean () {
-	}
+    public SkinListBean() {
+    }
 
-	/**
+    /**
    * 
    */
-	public SkinListBean (final Class<?> [] cL) {
-		for (final Class<?> c : cL) {
-			this.addElement (c);
-		}
-	}
+    public SkinListBean(final Class<?>[] cL) {
+        for (final Class<?> c : cL) {
+            this.addElement(c);
+        }
+    }
 
 }

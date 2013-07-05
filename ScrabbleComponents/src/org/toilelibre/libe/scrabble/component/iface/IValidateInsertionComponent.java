@@ -9,5 +9,5 @@ import org.toilelibre.libe.scrabble.model.exception.ScrabbleModelException;
 
 public interface IValidateInsertionComponent extends IComponent {
 
-	String [] validate (Insertion i) throws ScrabbleModelException;
+    String[] validate (Insertion i) throws ScrabbleModelException;
 }

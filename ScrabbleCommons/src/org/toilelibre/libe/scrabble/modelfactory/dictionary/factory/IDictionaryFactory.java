@@ -5,9 +5,9 @@ import java.util.Locale;
 import org.toilelibre.libe.scrabble.model.dictionary.Dictionary;
 
 public interface IDictionaryFactory {
-	Dictionary getDictionary ();
+    Dictionary getDictionary ();
 
-	Locale getLocale ();
+    Locale getLocale ();
 
-	void load ();
+    void load ();
 }
