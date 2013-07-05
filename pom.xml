@@ -6,6 +6,15 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>scrabble</name>
+    <modules>
+        <module>ScrabbleMain</module>
+        <module>ScrabbleUI</module>
+        <module>ScrabbleCommons</module>
+        <module>ScrabbleComponents</module>
+        <module>Scrabble3D</module>
+        <module>ScrabbleJ3D</module>
+        <module>UserInteractions</module>
+    </modules>
 
 <repositories>
       <repository>
@@ -15,22 +24,14 @@
          <layout>default</layout>
       </repository>
 	</repositories>
-
+    <build>
     <pluginManagement>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.0</version>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.12.4</version>
             </plugin>
-        </plugins>
-    </pluginManagement>
-    <plugins>
         <plugin>
             <artifactId>maven-compiler-plugin</artifactId>
             <configuration>
@@ -39,5 +40,7 @@
             </configuration>
         </plugin>
     </plugins>
+    </pluginManagement>
+    </build>
 
 </project>
