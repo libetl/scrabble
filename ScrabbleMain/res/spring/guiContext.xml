@@ -52,7 +52,7 @@
 	<bean id="synthLaf" class="javax.swing.plaf.synth.SynthLookAndFeel" singleton="true" />
 	
 	<bean id="guiEngine" class="org.swixml.SwingEngine" singleton="true">
-		<property name="client"><value>null</value></property>
+		<constructor-arg><null></null></constructor-arg>
 	</bean>
 
 	<bean id="loadRunnable" class="org.toilelibre.libe.scrabble.gui.LoadRunnable"/>
