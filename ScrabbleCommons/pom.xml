@@ -10,7 +10,7 @@
 	</parent>
 	
 	<artifactId>ScrabbleCommons</artifactId>
-	<packaging>pom</packaging>
+	<packaging>jar</packaging>
 	<name>Scrabble Common Logic</name>
 	<dependencies>
 	

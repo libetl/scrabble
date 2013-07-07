@@ -1,38 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="lib/aviatrix3d-all.jar"/>
-	<classpathentry kind="lib" path="lib/j3d-org.jar"/>
-	<classpathentry kind="lib" path="lib/j3dcore.jar" sourcepath="/j3d"/>
-	<classpathentry kind="lib" path="lib/j3dutils.jar"/>
-	<classpathentry kind="lib" path="lib/joal.jar"/>
-	<classpathentry kind="lib" path="lib/jogl.jar"/>
-	<classpathentry kind="lib" path="lib/vecmath.jar"/>
-	<classpathentry kind="lib" path="lib/xj3d-all.jar"/>
-	<classpathentry kind="lib" path="lib/xj3d-cefx3d.jar"/>
-	<classpathentry kind="lib" path="lib/xj3d-common.jar"/>
-	<classpathentry kind="lib" path="lib/xj3d-config.jar"/>
-	<classpathentry kind="lib" path="lib/xj3d-core.jar"/>
-	<classpathentry kind="lib" path="lib/xj3d-eai.jar"/>
-	<classpathentry kind="lib" path="lib/xj3d-ecmascript.jar"/>
-	<classpathentry kind="lib" path="lib/xj3d-external-sai.jar"/>
-	<classpathentry kind="lib" path="lib/xj3d-images.jar"/>
-	<classpathentry kind="lib" path="lib/xj3d-j3d.jar"/>
-	<classpathentry kind="lib" path="lib/xj3d-java-sai.jar"/>
-	<classpathentry kind="lib" path="lib/xj3d-jaxp.jar"/>
-	<classpathentry kind="lib" path="lib/xj3d-jsai.jar"/>
-	<classpathentry kind="lib" path="lib/xj3d-net.jar"/>
-	<classpathentry kind="lib" path="lib/xj3d-norender.jar"/>
-	<classpathentry kind="lib" path="lib/xj3d-ogl.jar"/>
-	<classpathentry kind="lib" path="lib/xj3d-parser.jar"/>
-	<classpathentry kind="lib" path="lib/xj3d-render.jar"/>
-	<classpathentry kind="lib" path="lib/xj3d-runtime.jar"/>
-	<classpathentry kind="lib" path="lib/xj3d-sai.jar"/>
-	<classpathentry kind="lib" path="lib/xj3d-sav.jar"/>
-	<classpathentry kind="lib" path="lib/xj3d-script-base.jar"/>
-	<classpathentry kind="lib" path="lib/xj3d-xml-util.jar"/>
-	<classpathentry kind="lib" path="lib/xj3d-xml.jar"/>
+	<classpathentry kind="src" output="bin" path="src">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry combineaccessrules="false" kind="src" path="/Scrabble3D"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

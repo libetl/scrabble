@@ -65,7 +65,7 @@ public class J3DTransform extends AbstractTransform {
         this.t.get (this.matrix4d);
         this.aa4d.set (0, 0, 0, 0);
         this.aa4d.set (this.matrix4d);
-        return this.aa4d.getX ();
+        return this.aa4d.x;
     }
 
     @Override
@@ -74,7 +74,7 @@ public class J3DTransform extends AbstractTransform {
         this.t.get (this.matrix4d);
         this.aa4d.set (0, 0, 0, 0);
         this.aa4d.set (this.matrix4d);
-        return this.aa4d.getY ();
+        return this.aa4d.y;
     }
 
     @Override
@@ -83,7 +83,7 @@ public class J3DTransform extends AbstractTransform {
         this.t.get (this.matrix4d);
         this.aa4d.set (0, 0, 0, 0);
         this.aa4d.set (this.matrix4d);
-        return this.aa4d.getZ ();
+        return this.aa4d.z;
     }
 
     @Override

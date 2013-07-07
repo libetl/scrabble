@@ -1,11 +1,9 @@
 package org.toilelibre.libe.scrabble.gui;
 
-import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 
 import org.apache.log4j.Logger;
-import org.guiengines.IEngine;
 import org.toilelibre.libe.scrabble.beans.ScrabbleBeansHelper;
 import org.toilelibre.libe.userinteractions.model.UserInteractions;
 
@@ -27,7 +25,7 @@ public final class ScrabbleGUI
     ScrabbleGUI.getInstance ().display (beanName, url);
   }
 
-  private final IEngine          engine = (IEngine) ScrabbleBeansHelper
+  private final Object          engine = ScrabbleBeansHelper
                                             .getBean ("guiEngine");
 
   private final UserInteractions ui     = (UserInteractions) ScrabbleBeansHelper
@@ -45,8 +43,10 @@ public final class ScrabbleGUI
       ScrabbleGUI.LOG.info ("Redirection ("
           + url.toString ().substring (url.toString ().lastIndexOf ('/') + 1)
           + ", " + beanName + ")");
-      this.engine.setClient (this.ui.getBean (beanName));
-      this.engine.render (url);
+      Class<?> c = this.engine.getClass ();
+      
+      c.getMethod ("setClient", Object.class).invoke (this.engine, this.ui.getBean (beanName));
+      c.getMethod ("render", URL.class).invoke (this.engine, url);
       this.ui.updateBindings ();
 
     } catch (final IllegalAccessException e)
@@ -56,13 +56,13 @@ public final class ScrabbleGUI
     } catch (final InvocationTargetException e)
     {
       ScrabbleGUI.LOG.error (ScrabbleGUI.CREATING_GUI_ERROR, e);
-    } catch (final IOException e)
+    } catch (IllegalArgumentException e)
     {
       ScrabbleGUI.LOG.error (ScrabbleGUI.CREATING_GUI_ERROR, e);
-    } catch (final InstantiationException e)
+    } catch (NoSuchMethodException e)
     {
       ScrabbleGUI.LOG.error (ScrabbleGUI.CREATING_GUI_ERROR, e);
-    } catch (final org.jdom.JDOMException e)
+    } catch (SecurityException e)
     {
       ScrabbleGUI.LOG.error (ScrabbleGUI.CREATING_GUI_ERROR, e);
     }
@@ -71,7 +71,7 @@ public final class ScrabbleGUI
   /**
    * @return engine
    */
-  public IEngine getEngine ()
+  public Object getEngine ()
   {
     return this.engine;
   }

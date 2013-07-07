@@ -10,7 +10,7 @@
 	</parent>
 	
 	<artifactId>ScrabbleComponents</artifactId>
-	<packaging>pom</packaging>
+	<packaging>jar</packaging>
 	<name>Scrabble Business Components</name>
 	<dependencies>
 	

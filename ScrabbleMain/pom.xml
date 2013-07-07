@@ -10,7 +10,7 @@
 	</parent>
 	
 	<artifactId>ScrabbleMain</artifactId>
-	<packaging>pom</packaging>
+	<packaging>jar</packaging>
 	<name>Scrabble Main Artefact</name>
 	<dependencies>
 	
@@ -22,11 +22,6 @@
 		<dependency>
 			<groupId>org.toilelibre.libe.scrabble</groupId>
 			<artifactId>ScrabbleCommons</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.toilelibre.libe.scrabble</groupId>
-			<artifactId>ScrabbleComponents</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
