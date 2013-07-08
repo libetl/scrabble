@@ -1,5 +1,6 @@
 package org.toilelibre.libe.scrabble.j3d.model;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
@@ -143,24 +144,21 @@ public class J3DTransform extends AbstractTransform {
     @Override
     public final void set (final double [][] matrix) {
         this.matrix4d.setIdentity ();
-        final String methodName = "setM";
+        final String fieldName = "m";
         for (int i = 0 ; i < J3DTransform.COLS ; i += 1) {
             for (int j = 0 ; j < J3DTransform.ROWS ; j += 1) {
-                Method method;
+                Field field;
                 try {
-                    method = this.matrix4d.getClass ().getMethod (
-                            methodName + i + j, new Class [] { double.class });
-                    method.invoke (this.matrix4d, new Object [] { new Double (
-                            matrix [i] [j]) });
+                    field = this.matrix4d.getClass ().getDeclaredField (
+                            fieldName + i + j);
+                    field.set (this.matrix4d, new Double (matrix [i] [j]));
                 } catch (final SecurityException e) {
-                    this.displayException (e);
-                } catch (final NoSuchMethodException e) {
                     this.displayException (e);
                 } catch (final IllegalArgumentException e) {
                     this.displayException (e);
                 } catch (final IllegalAccessException e) {
                     this.displayException (e);
-                } catch (final InvocationTargetException e) {
+                } catch (NoSuchFieldException e) {
                     this.displayException (e);
                 }
             }
