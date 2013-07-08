@@ -1,4 +1,4 @@
 3D scrabble
 ========
 
-This game is a 3D scrabble (java / (swing + spring + Java3D)). Play together on the sand.
+This game is a 3D scrabble (java / (swiXML + spring + Java3D) + maven). Play together on the sand.
