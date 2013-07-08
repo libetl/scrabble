@@ -3,11 +3,11 @@
 # PARAMETRES - PARTIE A EDITER
 APPLICATION_NAME="Scrabble"
 MINIMAL_JAVA_VERSION='1.5'
-APPLICATION_FOLDERS="ScrabbleCommons ScrabbleComponents Scrabble3D ScrabbleJ3D ScrabbleMain ScrabbleUI UserInteractions"
-APPLICATION_BIN_FOLDERS="bin bin bin bin bin bin bin"
-APPLICATION_NATIVE_LIBS_FOLDERS="ScrabbleMain/lib/$(uname -m)/"
-APPLICATION_JAR_FOLDERS="ScrabbleCommons/lib ScrabbleComponents/lib Scrabble3D/lib ScrabbleJ3D/lib ScrabbleMain/lib/jar ScrabbleJ3D/lib UserInteractions/lib"
-RSRC_CLASSPATH="ScrabbleMain/res/:ScrabbleMain/res/logging"
+APPLICATION_FOLDERS="."
+APPLICATION_BIN_FOLDERS=""
+APPLICATION_NATIVE_LIBS_FOLDERS="./$(uname -m)/"
+APPLICATION_JAR_FOLDERS="lib"
+RSRC_CLASSPATH="res/:res/logging"
 JAVACLASS="org.toilelibre.libe.scrabble.ScrabbleMain"
 
 
