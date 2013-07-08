@@ -10,7 +10,6 @@
     </parent>
     
     <artifactId>ScrabbleComponents</artifactId>
-    <packaging>jar</packaging>
     <name>Scrabble Business Components</name>
     <dependencies>
     

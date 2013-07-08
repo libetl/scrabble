@@ -10,7 +10,6 @@
 	</parent>
 
 	<artifactId>ScrabbleUI</artifactId>
-	<packaging>jar</packaging>
 	<name>Scrabble User Interactions Implementation</name>
 	
 	<dependencies>

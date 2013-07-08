@@ -51,8 +51,10 @@
 	
 	<bean id="synthLaf" class="javax.swing.plaf.synth.SynthLookAndFeel" singleton="true" />
 	
-	<bean id="guiEngine" class="org.swixml.SwingEngine" singleton="true">
-		<constructor-arg><null></null></constructor-arg>
+	<bean id="guiEngineClass" class="java.lang.Class" factory-method="forName" singleton="true">
+		<constructor-arg>
+			<value>org.swixml.SwingEngine</value>
+		</constructor-arg>
 	</bean>
 
 	<bean id="loadRunnable" class="org.toilelibre.libe.scrabble.gui.LoadRunnable"/>

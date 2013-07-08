@@ -1,5 +1,6 @@
 package org.toilelibre.libe.scrabble.gui;
 
+import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 
@@ -25,8 +26,10 @@ public final class ScrabbleGUI
     ScrabbleGUI.getInstance ().display (beanName, url);
   }
 
-  private final Object           engine = ScrabbleBeansHelper
-                                            .getBean ("guiEngine");
+  private final Class<?>         clazz  = (Class<?>) ScrabbleBeansHelper
+                                            .getBean ("guiEngineClass");
+
+  private Object                 engine = new Object ();
 
   private final UserInteractions ui     = (UserInteractions) ScrabbleBeansHelper
                                             .getBean ("userInteractions");
@@ -36,6 +39,19 @@ public final class ScrabbleGUI
     ScrabbleGUI.sgui = this;
   }
 
+  public void registerCanvas3D (Object canvas3D) throws IllegalAccessException,
+      IllegalArgumentException, InvocationTargetException,
+      NoSuchMethodException, SecurityException, ClassNotFoundException
+  {
+    Object taglib = this.engine.getClass ().getMethod ("getTaglib")
+        .invoke (this.getEngine ());
+    Class<?> c = taglib.getClass ();
+    c.getMethod ("registerTag", String.class, Class.class).invoke (taglib,
+        "Canvas3D",
+        Class.forName ((String) ScrabbleBeansHelper.getBean ("canvas3d")));
+
+  }
+
   public void display (final String beanName, final URL url)
   {
     try
@@ -43,11 +59,13 @@ public final class ScrabbleGUI
       ScrabbleGUI.LOG.info ("Redirection ("
           + url.toString ().substring (url.toString ().lastIndexOf ('/') + 1)
           + ", " + beanName + ")");
-      Class<?> c = this.engine.getClass ();
 
-      c.getMethod ("setClient", Object.class).invoke (this.engine,
-          this.ui.getBean (beanName));
-      c.getMethod ("render", URL.class).invoke (this.engine, url);
+      Constructor<?> constr = this.getGoodGuiEngineConstructor ();
+      this.engine = constr.newInstance (this.ui.getBean (beanName));
+      this.registerCanvas3D (Class.forName ((String) ScrabbleBeansHelper
+          .getBean ("canvas3d")));
+
+      this.clazz.getMethod ("render", URL.class).invoke (this.engine, url);
       this.ui.updateBindings ();
 
     } catch (final IllegalAccessException e)
@@ -66,7 +84,26 @@ public final class ScrabbleGUI
     } catch (SecurityException e)
     {
       ScrabbleGUI.LOG.error (ScrabbleGUI.CREATING_GUI_ERROR, e);
+    } catch (InstantiationException e)
+    {
+      ScrabbleGUI.LOG.error (ScrabbleGUI.CREATING_GUI_ERROR, e);
+    } catch (ClassNotFoundException e)
+    {
+      ScrabbleGUI.LOG.error (ScrabbleGUI.CREATING_GUI_ERROR, e);
     }
+  }
+
+  private Constructor<?> getGoodGuiEngineConstructor ()
+  {
+    Constructor<?> [] constrs = this.clazz.getConstructors ();
+    for (Constructor<?> constr : constrs)
+    {
+      if (constr.getParameterTypes ().length == 1)
+      {
+        return constr;
+      }
+    }
+    return null;
   }
 
   /**
