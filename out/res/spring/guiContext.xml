@@ -8,19 +8,17 @@
     	<property name="targetMethod"><value>setLookAndFeel</value></property>
     	<property name="targetObject"><null/></property>
     	<property name="arguments">
-    		<!--value>org.jvnet.substance.skin.SubstanceOfficeBlue2007LookAndFeel</value-->
-    		<value>org.jvnet.substance.skin.SubstanceMagmaLookAndFeel</value>
+    		<value>org.pushingpixels.substance.api.skin.SubstanceMagellanLookAndFeel</value>
     	</property>
     </bean>
     
     <bean id="skinListBean" class="org.toilelibre.libe.scrabble.applicationlayer.beans.SkinListBean">
  	   <constructor-arg>
  	   	<list>
- 	   		<value type="java.lang.Class">org.jvnet.substance.skin.SubstanceMagmaLookAndFeel</value>
- 	   		<value type="java.lang.Class">org.jvnet.substance.skin.SubstanceBusinessLookAndFeel</value>
- 	   		<value type="java.lang.Class">org.jvnet.substance.skin.SubstanceBusinessBlackSteelLookAndFeel</value>
- 	   		<value type="java.lang.Class">org.jvnet.substance.skin.SubstanceOfficeBlue2007LookAndFeel</value>
- 	   		<value type="java.lang.Class">org.jvnet.substance.skin.SubstanceDustCoffeeLookAndFeel</value>
+ 	   		<value type="java.lang.Class">org.pushingpixels.substance.api.skin.SubstanceGraphiteLookAndFeel</value>
+ 	   		<value type="java.lang.Class">org.pushingpixels.substance.api.skin.SubstanceTwilightLookAndFeel</value>
+ 	   		<value type="java.lang.Class">org.pushingpixels.substance.api.skin.SubstanceChallengerDeepLookAndFeel</value>
+ 	   		<value type="java.lang.Class">org.pushingpixels.substance.api.skin.SubstanceEmeraldDuskLookAndFeel</value>
  	   	</list>
  	   </constructor-arg>
     </bean>
