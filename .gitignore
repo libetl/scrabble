@@ -2,5 +2,6 @@
 *.jar
 
 # Package Files #
-Scrabble*/bin/*
-UserInteractions/bin/*
+Scrabble*/target/*
+UserInteractions/target/*
+out/res/*
