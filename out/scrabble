@@ -112,5 +112,9 @@ logInfo "Launching Java" 115
 $JAVA_BIN -cp $CLASSPATH $JAVACLASS $ARGS
 
 RETURN_CODE=$?
-logInfo "Java exited with code $RETURN_CODE"
+if [ "$RETURN_CODE" -eq 0 ];then
+  logInfo "Java exited with code $RETURN_CODE"
+else
+  logStop "Java exited with code $RETURN_CODE"
+fi
 exit $RETURN_CODE

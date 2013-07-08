@@ -4,8 +4,6 @@
     <classpathentry kind="src" path="src/test/resources"/>
     <classpathentry kind="src" path="src/main/resources"/>
     <classpathentry kind="src" path="src/test/java"/>
-	<classpathentry kind="src" path="res/logging"/>
-	<classpathentry excluding="logging/" kind="src" path="res"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/UserInteractions"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/ScrabbleCommons"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/Scrabble3D"/>
