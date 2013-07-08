@@ -98,7 +98,8 @@ public final class ScrabbleGUI
     Constructor<?> [] constrs = this.clazz.getConstructors ();
     for (Constructor<?> constr : constrs)
     {
-      if (constr.getParameterTypes ().length == 1)
+      if (constr.getParameterTypes ().length == 1
+          && constr.getParameterTypes ()[0].equals (Object.class))
       {
         return constr;
       }

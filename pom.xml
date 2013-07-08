@@ -18,16 +18,30 @@
 
     <repositories>
         <repository>
+          <id>sonatype-repository</id>
+          <url>https://oss.sonatype.org/content/groups/public</url>
+          <snapshots>
+                <enabled>false</enabled>
+          </snapshots>
+        </repository>
+
+        <repository>
             <id>gael-main</id>
             <name>GAEL Main Repository</name>
             <url>http://repository.gael.fr:8081/nexus/content/repositories/public/</url>
             <layout>default</layout>
         </repository>
+
         <repository>
             <id>imagej</id>
             <name>imagej</name>
             <url>http://maven.imagej.net/content/repositories/public/</url>
             <layout>default</layout>
+        </repository>
+
+        <repository>
+            <id>google-swixml2</id>
+            <url>http://swixml2.googlecode.com/svn/mavenrepo</url>
         </repository>
     </repositories>
     <build>
