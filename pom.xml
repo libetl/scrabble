@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.toilelibre.libe.scrabble</groupId>
-	<artifactId>scrabble</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>pom</packaging>
-	<name>scrabble</name>
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.toilelibre.libe.scrabble</groupId>
+    <artifactId>scrabble</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>scrabble</name>
     <modules>
         <module>ScrabbleMain</module>
         <module>ScrabbleUI</module>
@@ -16,41 +16,62 @@
         <module>UserInteractions</module>
     </modules>
 
-<repositories>
-      <repository>
-         <id>gael-main</id>
-         <name>GAEL Main Repository</name>
-         <url>http://repository.gael.fr:8081/nexus/content/repositories/public/</url>
-         <layout>default</layout>
-      </repository>
-      <repository>
-         <id>imagej</id>
-         <name>imagej</name>
-         <url>http://maven.imagej.net/content/repositories/public/</url>
-         <layout>default</layout>
-      </repository>
-	</repositories>
+    <repositories>
+        <repository>
+            <id>gael-main</id>
+            <name>GAEL Main Repository</name>
+            <url>http://repository.gael.fr:8081/nexus/content/repositories/public/</url>
+            <layout>default</layout>
+        </repository>
+        <repository>
+            <id>imagej</id>
+            <name>imagej</name>
+            <url>http://maven.imagej.net/content/repositories/public/</url>
+            <layout>default</layout>
+        </repository>
+    </repositories>
     <build>
-    <sourceDirectory>${basedir}/src/</sourceDirectory>
-    <outputDirectory>${basedir}/bin</outputDirectory>
-    <pluginManagement>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.12.4</version>
-            </plugin>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.1</version>
-            <configuration>
-                <source>1.7</source>
-                <target>1.7</target>
-            </configuration>
-        </plugin>
-    </plugins>
-    </pluginManagement>
+        <outputDirectory>target</outputDirectory>
     </build>
+    <profiles>
+        <profile>
+            <id>build</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>2.12.4</version>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <version>3.1</version>
+                        <configuration>
+                            <source>1.7</source>
+                            <target>1.7</target>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <artifactId>maven-dependency-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <phase>install</phase>
+                                <goals>
+                                    <goal>copy-dependencies</goal>
+                                </goals>
+                                <configuration>
+                                    <outputDirectory>../out/lib</outputDirectory>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>
 
 </project>
