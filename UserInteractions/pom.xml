@@ -8,8 +8,8 @@
 	<name>User Interactions "framework"</name>
 
     <build>
-    <sourceDirectory>${basedir}/src/</sourceDirectory>
-    <outputDirectory>${basedir}/bin</outputDirectory>
+    <sourceDirectory>${basedir}/src/main/java</sourceDirectory>
+    <outputDirectory>${basedir}/target</outputDirectory>
     <pluginManagement>
         <plugins>
             <plugin>
