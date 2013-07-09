@@ -8,7 +8,7 @@
     	<property name="targetMethod"><value>setLookAndFeel</value></property>
     	<property name="targetObject"><null/></property>
     	<property name="arguments">
-    		<value>org.pushingpixels.substance.api.skin.SubstanceMagellanLookAndFeel</value>
+    		<value type="java.lang.String">org.pushingpixels.substance.api.skin.SubstanceMagellanLookAndFeel</value>
     	</property>
     </bean>
     
