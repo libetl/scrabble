@@ -2,18 +2,18 @@ package org.toilelibre.libe.scrabble.s3d.model;
 
 public interface ILetterBranchGroup extends IBranchGroup {
 
-    void affectLetter (char name);
+	void affectLetter(char name);
 
-    int getIdTray ();
+	int getIdTray();
 
-    char getLetter ();
+	char getLetter();
 
-    void setIdTray (int i);
+	void setIdTray(int i);
 
-    void setOld ();
+	void setOld();
 
-    void setPoints (int value);
+	void setPoints(int value);
 
-    void setTransform (ITransform ist);
+	void setTransform(ITransform ist);
 
 }

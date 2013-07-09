@@ -7,17 +7,17 @@ import org.toilelibre.libe.scrabble.model.ModelElement;
 
 public interface Dictionary extends ModelElement {
 
-    void add (String word);
+	void add(String word);
 
-    boolean contains (String word);
+	boolean contains(String word);
 
-    Object getImpl ();
+	Object getImpl();
 
-    @Override
-    Locale getLocale ();
+	@Override
+	Locale getLocale();
 
-    void setLocale (Locale l);
+	void setLocale(Locale l);
 
-    List<String> similarWords (String word);
+	List<String> similarWords(String word);
 
 }

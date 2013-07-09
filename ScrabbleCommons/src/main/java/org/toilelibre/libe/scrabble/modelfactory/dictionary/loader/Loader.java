@@ -4,5 +4,5 @@ import org.toilelibre.libe.scrabble.model.dictionary.Dictionary;
 
 public interface Loader {
 
-    void load (Dictionary d, String fileName);
+	void load(Dictionary d, String fileName);
 }

@@ -18,6 +18,7 @@ public final class InitBeans implements IScrabbleInit
   {
     InitBeans.LOG.info ("Beans Spring");
     ScrabbleBeansHelper
-        .setImpl (new org.springframework.context.support.ClassPathXmlApplicationContext (ScrabbleMessages.getMessage ("locations.applicationcontext")));
+        .setImpl (new org.springframework.context.support.ClassPathXmlApplicationContext (
+            ScrabbleMessages.getMessage ("locations.applicationcontext")));
   }
 }

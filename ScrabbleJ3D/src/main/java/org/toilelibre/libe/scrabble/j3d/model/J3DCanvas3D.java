@@ -19,66 +19,66 @@ import com.sun.j3d.utils.universe.SimpleUniverse;
 
 public class J3DCanvas3D extends Canvas3D implements ICanvas3D {
 
-    private static J3DCanvas3D instance;
+	private static J3DCanvas3D instance;
 
-    /**
+	/**
    * 
    */
-    private static final long  serialVersionUID = -988165494640861951L;
+	private static final long serialVersionUID = -988165494640861951L;
 
-    /**
-     * @return the instance
-     */
-    public static J3DCanvas3D getCurrentInstance () {
-        return J3DCanvas3D.instance;
-    }
+	/**
+	 * @return the instance
+	 */
+	public static J3DCanvas3D getCurrentInstance() {
+		return J3DCanvas3D.instance;
+	}
 
-    private final J3DBranchGroup sbg;
+	private final J3DBranchGroup sbg;
 
-    public J3DCanvas3D() {
-        super (SimpleUniverse.getPreferredConfiguration ());
-        this.sbg = new J3DBranchGroup ();
-        this.sbg.setComponent (this);
-        Canvas3DKeeper.setCanvas (this);
-    }
+	public J3DCanvas3D() {
+		super(SimpleUniverse.getPreferredConfiguration());
+		this.sbg = new J3DBranchGroup();
+		this.sbg.setComponent(this);
+		Canvas3DKeeper.setCanvas(this);
+	}
 
-    @Override
-    public final ITransformGroup getCameraTransformGroup () {
-        return this.sbg.getUnivers ().getTransformGroup ();
-    }
+	@Override
+	public final ITransformGroup getCameraTransformGroup() {
+		return this.sbg.getUnivers().getTransformGroup();
+	}
 
-    @Override
-    public final IPoint3D getPickedCoordinate (final int x, final int y) {
+	@Override
+	public final IPoint3D getPickedCoordinate(final int x, final int y) {
 
-        final Locale locale = ((TransformGroup) ((J3DTransformGroup) this.sbg
-                .getUnivers ().getTransformGroup ()).getImpl ()).getLocale ();
-        final PickCanvas po = new PickCanvas (this, locale);
-        po.setShapeLocation (x, y);
-        final PickConeRay pr = (PickConeRay) po.getPickShape ();
-        final SceneGraphPath sgp = locale.pickClosest (pr);
-        if (sgp != null) {
-            final double [] dist = new double [1];
-            final Shape3D shape = (Shape3D) sgp.getObject ();
+		final Locale locale = ((TransformGroup) ((J3DTransformGroup) this.sbg
+				.getUnivers().getTransformGroup()).getImpl()).getLocale();
+		final PickCanvas po = new PickCanvas(this, locale);
+		po.setShapeLocation(x, y);
+		final PickConeRay pr = (PickConeRay) po.getPickShape();
+		final SceneGraphPath sgp = locale.pickClosest(pr);
+		if (sgp != null) {
+			final double[] dist = new double[1];
+			final Shape3D shape = (Shape3D) sgp.getObject();
 
-            shape.intersect (sgp, pr, dist);
-            final Point3d org = new Point3d ();
-            final Vector3d dir = new Vector3d ();
-            pr.getDirection (dir);
-            pr.getOrigin (org);
-            dir.scaleAdd (dist [0], org);
-            org.set (dir);
-            return new J3DPoint3D (org);
-        }
-        return null;
-    }
+			shape.intersect(sgp, pr, dist);
+			final Point3d org = new Point3d();
+			final Vector3d dir = new Vector3d();
+			pr.getDirection(dir);
+			pr.getOrigin(org);
+			dir.scaleAdd(dist[0], org);
+			org.set(dir);
+			return new J3DPoint3D(org);
+		}
+		return null;
+	}
 
-    @Override
-    public final ITransformGroup getSceneTransformGroup () {
-        return this.sbg.getTransformGroup ();
-    }
+	@Override
+	public final ITransformGroup getSceneTransformGroup() {
+		return this.sbg.getTransformGroup();
+	}
 
-    @Override
-    public final J3DBranchGroup getScrabbleBranchGroup () {
-        return this.sbg;
-    }
+	@Override
+	public final J3DBranchGroup getScrabbleBranchGroup() {
+		return this.sbg;
+	}
 }

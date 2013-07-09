@@ -71,4 +71,22 @@
       <ref bean="scrabbleData"/>
     </property>
   </bean>
+
+  <bean id="componentBeforeLogging" class="org.toilelibre.libe.scrabble.aop.ComponentBeforeLogging"/>
+  <bean id="componentAfterLogging" class="org.toilelibre.libe.scrabble.aop.ComponentAfterLogging"/>
+
+  <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+    <property name="beanNames">
+      <list>
+        <value>*Component</value>
+      </list>
+    </property>
+    <property name="interceptorNames">
+      <list>
+        <value>componentBeforeLogging</value>
+        <value>componentAfterLogging</value>
+      </list>
+    </property>
+  </bean>
+  
 </beans>
