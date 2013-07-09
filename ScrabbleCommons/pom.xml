@@ -11,6 +11,11 @@
 	
 	<artifactId>ScrabbleCommons</artifactId>
 	<name>Scrabble Common Logic</name>
+
+    <properties>
+      <main.basedir>${project.parent.basedir}</main.basedir>
+    </properties>
+
 	<dependencies>
 	
 		<!-- LOG4J -->

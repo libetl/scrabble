@@ -12,6 +12,11 @@
     <artifactId>ScrabbleMain</artifactId>
     <packaging>jar</packaging>
     <name>Scrabble Main Artefact</name>
+
+    <properties>
+      <main.basedir>${project.parent.basedir}</main.basedir>
+    </properties>
+
     <dependencies>
 
         <dependency>

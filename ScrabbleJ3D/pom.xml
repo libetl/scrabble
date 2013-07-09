@@ -9,11 +9,11 @@
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 	<artifactId>ScrabbleJ3D</artifactId>
-
-
 	<name>Scrabble Java3D Concrete Program</name>
 	
-     
+    <properties>
+      <main.basedir>${project.parent.basedir}</main.basedir>
+    </properties>     
 	
 	<dependencies>
 	

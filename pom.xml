@@ -16,6 +16,10 @@
         <module>UserInteractions</module>
     </modules>
 
+    <properties>
+      <main.basedir>${project.basedir}</main.basedir>
+    </properties>
+
     <repositories>
         <repository>
             <id>sonatype-repository</id>
@@ -113,7 +117,7 @@
                                     <goal>copy-dependencies</goal>
                                 </goals>
                                 <configuration>
-                                    <outputDirectory>../out/lib</outputDirectory>
+                                    <outputDirectory>${main.basedir}/out/lib</outputDirectory>
                                 </configuration>
                             </execution>
                             <execution>
@@ -131,7 +135,7 @@
                                             <type>${project.packaging}</type>
                                         </artifactItem>
                                     </artifactItems>
-                                    <outputDirectory>../out/lib</outputDirectory>
+                                    <outputDirectory>${main.basedir}/out/lib</outputDirectory>
                                     <stripVersion>false</stripVersion>
                                 </configuration>
                             </execution>
