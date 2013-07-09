@@ -11,6 +11,11 @@
 
     <artifactId>Scrabble3D</artifactId>
     <name>Scrabble Abstract 3D Program</name>
+
+    <properties>
+        <main.basedir>${project.parent.basedir}</main.basedir>
+    </properties>
+
     <dependencies>
 
         <!-- LOG4J -->
