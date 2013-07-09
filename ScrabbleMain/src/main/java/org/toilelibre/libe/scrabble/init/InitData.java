@@ -14,6 +14,7 @@ public final class InitData implements IScrabbleInit
     super ();
   }
 
+  @Override
   public void init ()
   {
     InitData.LOG.info ("Données du jeu");

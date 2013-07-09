@@ -49,10 +49,12 @@ public abstract class AbstractLetterBranchGroup implements ILetterBranchGroup {
 
     private ITransformGroup stg;
 
+    @Override
     public final void addBranchGraph (final IBranchGroup o) {
         // Implemented, but empty
     }
 
+    @Override
     public abstract void affectLetter (char letter1);
 
     protected abstract ILetterBranchGroup cloneImpl ();
@@ -60,6 +62,7 @@ public abstract class AbstractLetterBranchGroup implements ILetterBranchGroup {
     /**
      * @return the idTray
      */
+    @Override
     public final int getIdTray () {
         return this.idTray;
     }
@@ -74,10 +77,12 @@ public abstract class AbstractLetterBranchGroup implements ILetterBranchGroup {
     /**
      * @return the letter
      */
+    @Override
     public final char getLetter () {
         return this.letter;
     }
 
+    @Override
     public final ITransformGroup getTransformGroup () {
         return this.stg;
     }
@@ -86,6 +91,7 @@ public abstract class AbstractLetterBranchGroup implements ILetterBranchGroup {
         sbg.addBranchGraph (this);
     }
 
+    @Override
     public final void setIdTray (final int idTray1) {
         this.idTray = idTray1;
     }
@@ -102,10 +108,13 @@ public abstract class AbstractLetterBranchGroup implements ILetterBranchGroup {
         this.letter = letter1;
     }
 
+    @Override
     public abstract void setOld ();
 
+    @Override
     public abstract void setPoints (final int points);
 
+    @Override
     public final void setTransform (final ITransform ist) {
         try {
             this.stg.setTransform (ist);

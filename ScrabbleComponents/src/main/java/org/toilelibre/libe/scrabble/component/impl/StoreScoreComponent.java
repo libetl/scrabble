@@ -22,6 +22,7 @@ public class StoreScoreComponent extends AbstractComponent implements
      * @see org.toilelibre.libe.scrabble.component.iface.IStoreScoreComponent
      *      #store(int)
      */
+    @Override
     public final void store (final int turn, final String word, final int score) {
 
         final ScrabbleData sd = this.getData ();

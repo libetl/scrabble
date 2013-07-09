@@ -86,8 +86,6 @@
             <scope>system</scope>
             <systemPath>${java.home}/lib/javaws.jar</systemPath>
         </dependency>
-
-
         <dependency>
             <groupId>rhino</groupId>
             <artifactId>js</artifactId>

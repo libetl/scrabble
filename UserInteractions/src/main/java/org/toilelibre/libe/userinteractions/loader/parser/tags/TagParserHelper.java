@@ -34,6 +34,7 @@ public class TagParserHelper implements TagParser {
         this.tagParsers.put (UIConstants.TIMER_TAG, new TimerTagParser ());
     }
 
+    @Override
     public final void parse (final UserInteractions ui,
             final String [] currentAction, final String name,
             final Attributes atts) {

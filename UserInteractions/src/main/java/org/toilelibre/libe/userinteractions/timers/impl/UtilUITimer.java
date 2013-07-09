@@ -35,6 +35,7 @@ public class UtilUITimer implements IUITimer {
      * @param delay1
      *            the delay to set
      */
+    @Override
     public final void setDelay (final long delay1) {
         this.delay = delay1;
     }
@@ -43,10 +44,12 @@ public class UtilUITimer implements IUITimer {
      * @param initialDelay1
      *            the initialDelay to set
      */
+    @Override
     public final void setInitialDelay (final long initialDelay1) {
         this.initialDelay = initialDelay1;
     }
 
+    @Override
     public final void start () {
         this.timer = new Timer ();
         this.uial = new UIActionListener (this.uial.getAction (),
@@ -61,6 +64,7 @@ public class UtilUITimer implements IUITimer {
         }
     }
 
+    @Override
     public final void stop () {
         this.timer.cancel ();
         this.uial.cancel ();

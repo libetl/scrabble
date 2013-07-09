@@ -20,6 +20,7 @@ public class SetDictionary implements Dictionary {
         this.sortedLettersHm = new HashMap<String, List<String>> ();
     }
 
+    @Override
     public final void add (final String word) {
         final char [] table = new char [word.length ()];
         for (int i = 0 ; i < table.length ; i += 1) {
@@ -35,6 +36,7 @@ public class SetDictionary implements Dictionary {
         lHomonymes.add (word);
     }
 
+    @Override
     public final boolean contains (final String word) {
         final char [] sortedMatch = word.toCharArray ();
         String sorted;
@@ -44,18 +46,22 @@ public class SetDictionary implements Dictionary {
         return (listeResultats != null) && listeResultats.contains (word);
     }
 
+    @Override
     public final Object getImpl () {
         return this.sortedLettersHm;
     }
 
+    @Override
     public final Locale getLocale () {
         return this.locale;
     }
 
+    @Override
     public final void setLocale (final Locale locale1) {
         this.locale = locale1;
     }
 
+    @Override
     public final List<String> similarWords (final String word) {
         final Set<String> similarWords = new HashSet<String> ();
         final Set<String> sortedMatches = Combinations.listMatches (word);

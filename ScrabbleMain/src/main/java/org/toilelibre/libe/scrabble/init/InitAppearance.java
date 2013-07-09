@@ -95,6 +95,7 @@ public final class InitAppearance implements IScrabbleInit
 
   }
 
+  @Override
   public void init () throws ScrabbleException
   {
     if (InitAppearance.javaVersionFromVM >= InitAppearance.SIX)

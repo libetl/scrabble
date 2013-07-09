@@ -38,6 +38,7 @@ public class Board implements ModelElement {
         return this.points [col] [row];
     }
 
+    @Override
     public final Locale getLocale () {
         return this.locale;
     }

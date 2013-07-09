@@ -23,32 +23,45 @@ public abstract class AbstractTransform implements ITransform {
 
     public abstract Object getImpl ();
 
+    @Override
     public abstract double getRotX ();
 
+    @Override
     public abstract double getRotY ();
 
+    @Override
     public abstract double getRotZ ();
 
+    @Override
     public abstract double getX ();
 
+    @Override
     public abstract double getY ();
 
+    @Override
     public abstract double getZ ();
 
+    @Override
     public abstract void mul (final ITransform arg0);
 
+    @Override
     public abstract void normalize ();
 
+    @Override
     public abstract void rotX (final double arg0);
 
+    @Override
     public abstract void rotY (final double arg0);
 
+    @Override
     public abstract void rotZ (final double arg0);
 
     protected abstract void set (final double [][] matrix);
 
+    @Override
     public abstract void setIdentity ();
 
+    @Override
     public abstract void setTranslation (final double x, final double y,
             final double z);
 

@@ -22,6 +22,7 @@ public abstract class AbstractBranchGroup implements IBranchGroup {
     public AbstractBranchGroup(final Object [] bg1, final int i) {
     }
 
+    @Override
     public abstract void addBranchGraph (final IBranchGroup brgr);
 
     public final Object getImpl () {
@@ -35,6 +36,7 @@ public abstract class AbstractBranchGroup implements IBranchGroup {
         return this.stg;
     }
 
+    @Override
     public final ITransformGroup getTransformGroup () {
         return this.stg;
     }

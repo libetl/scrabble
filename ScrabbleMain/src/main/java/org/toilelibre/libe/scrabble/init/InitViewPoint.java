@@ -12,6 +12,7 @@ public final class InitViewPoint implements IScrabbleInit
 
   }
 
+  @Override
   public void init ()
   {
     final int threadSleep = 1000;

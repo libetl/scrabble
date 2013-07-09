@@ -23,6 +23,7 @@ public final class NewPlayerComponent extends AbstractComponent implements
      * @see org.toilelibre.libe.scrabble.component.iface.INewPlayerComponent
      *      #newPlayers(java.lang.String[], java.lang.Boolean[])
      */
+    @Override
     public int newPlayers (final String [] players1, final Boolean [] computers1) {
         String player1Name = players1 [0];
         final Boolean computerPlayer1 = computers1 [0];

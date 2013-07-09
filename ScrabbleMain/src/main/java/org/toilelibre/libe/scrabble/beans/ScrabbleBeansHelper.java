@@ -21,7 +21,7 @@ public final class ScrabbleBeansHelper
 
   public static IComponent getComponent (final String name)
   {
-    return (IComponent) ((org.springframework.beans.factory.ListableBeanFactory) ScrabbleBeansHelper.bf)
+    return ((org.springframework.beans.factory.ListableBeanFactory) ScrabbleBeansHelper.bf)
         .getBeansOfType (IComponent.class).get (
             name + ScrabbleBeansHelper.COMPONENT);
   }

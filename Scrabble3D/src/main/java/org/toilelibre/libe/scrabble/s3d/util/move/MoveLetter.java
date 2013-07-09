@@ -63,6 +63,7 @@ public class MoveLetter implements IMoveObject {
         return new double [] { coef, offset };
     }
 
+    @Override
     public final void move (final ICanvas3D sc3d, final ITransformGroup stg,
             final int... params) {
         final int trois = 3;

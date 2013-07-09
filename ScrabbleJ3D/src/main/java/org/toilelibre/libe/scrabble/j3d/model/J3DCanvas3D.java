@@ -19,12 +19,12 @@ import com.sun.j3d.utils.universe.SimpleUniverse;
 
 public class J3DCanvas3D extends Canvas3D implements ICanvas3D {
 
+    private static J3DCanvas3D instance;
+
     /**
    * 
    */
     private static final long  serialVersionUID = -988165494640861951L;
-
-    private static J3DCanvas3D instance;
 
     /**
      * @return the instance
@@ -42,10 +42,12 @@ public class J3DCanvas3D extends Canvas3D implements ICanvas3D {
         Canvas3DKeeper.setCanvas (this);
     }
 
+    @Override
     public final ITransformGroup getCameraTransformGroup () {
         return this.sbg.getUnivers ().getTransformGroup ();
     }
 
+    @Override
     public final IPoint3D getPickedCoordinate (final int x, final int y) {
 
         final Locale locale = ((TransformGroup) ((J3DTransformGroup) this.sbg
@@ -70,10 +72,12 @@ public class J3DCanvas3D extends Canvas3D implements ICanvas3D {
         return null;
     }
 
+    @Override
     public final ITransformGroup getSceneTransformGroup () {
         return this.sbg.getTransformGroup ();
     }
 
+    @Override
     public final J3DBranchGroup getScrabbleBranchGroup () {
         return this.sbg;
     }

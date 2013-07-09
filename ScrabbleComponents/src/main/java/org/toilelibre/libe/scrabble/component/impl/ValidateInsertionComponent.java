@@ -169,7 +169,7 @@ public class ValidateInsertionComponent extends AbstractComponent implements
         }
     }
 
-    private String findWordAroundDirX (Placement p, Insertion i) {
+    private String findWordAroundDirX (final Placement p, final Insertion i) {
         final Board b = this.getData ().getBoards ().get (0);
         final StringBuffer sb = new StringBuffer ("" + p.getLetter ());
         int x = p.getX ();
@@ -195,7 +195,7 @@ public class ValidateInsertionComponent extends AbstractComponent implements
         return sb.toString ();
     }
 
-    private String findWordAroundDirY (Placement p, Insertion i) {
+    private String findWordAroundDirY (final Placement p, final Insertion i) {
         final Board b = this.getData ().getBoards ().get (0);
         final StringBuffer sb = new StringBuffer ("" + p.getLetter ());
         int y = p.getY ();
@@ -221,7 +221,7 @@ public class ValidateInsertionComponent extends AbstractComponent implements
         return sb.toString ();
     }
 
-    private Set<String> findWordsAround (Insertion i) {
+    private Set<String> findWordsAround (final Insertion i) {
         final Set<String> words = new HashSet<String> ();
 
         final Board b = this.getData ().getBoards ().get (0);
@@ -267,6 +267,7 @@ public class ValidateInsertionComponent extends AbstractComponent implements
      * @see org.toilelibre.libe.scrabble.component.iface.
      *      IValidateInsertionComponent#validate()
      */
+    @Override
     public final String [] validate (final Insertion i)
             throws ScrabbleModelException {
         String word = "";

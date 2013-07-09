@@ -24,10 +24,6 @@ import org.toilelibre.libe.scrabble.s3d.model.ILetterBranchGroup;
 public final class J3DLetterBranchGroup extends AbstractLetterBranchGroup {
     private static Font3D     fontLetter3d;
 
-    private final BranchGroup bg;
-
-    private final BranchGroup shape;
-
     static {
         final Map<java.awt.font.TextAttribute, Object> map = new HashMap<java.awt.font.TextAttribute, Object> ();
         map.put (java.awt.font.TextAttribute.FOREGROUND, new java.awt.Color (0,
@@ -38,6 +34,10 @@ public final class J3DLetterBranchGroup extends AbstractLetterBranchGroup {
                 (Font) AbstractLetterBranchGroup.getFontLetter (),
                 new FontExtrusion ());
     }
+
+    private final BranchGroup bg;
+
+    private final BranchGroup shape;
 
     public J3DLetterBranchGroup(final Object branchgroup) {
         super ();

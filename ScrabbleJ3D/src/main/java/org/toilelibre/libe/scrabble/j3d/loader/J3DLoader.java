@@ -17,6 +17,7 @@ public final class J3DLoader implements IS3DLoader {
 
     }
 
+    @Override
     public Object init (final String clazzName, final String fichier3D)
             throws S3DLoaderException {
         try {

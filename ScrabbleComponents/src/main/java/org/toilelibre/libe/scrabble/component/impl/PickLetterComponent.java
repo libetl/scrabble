@@ -22,6 +22,7 @@ public class PickLetterComponent extends AbstractComponent implements
      * @see org.toilelibre.libe.scrabble.component.iface.IPickLetterComponent
      *      #pick()
      */
+    @Override
     public final Character pick (final int turn, final int position) {
         final ScrabbleData sd = this.getData ();
         final Tray t = sd.getPlayers ().get (turn).getTray ();

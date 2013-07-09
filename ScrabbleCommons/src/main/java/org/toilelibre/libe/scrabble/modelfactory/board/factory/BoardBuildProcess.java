@@ -17,14 +17,17 @@ public class BoardBuildProcess implements BuildProcess {
 
     }
 
+    @Override
     public final String getFile () {
         return this.xmlFileName;
     }
 
+    @Override
     public final Locale getLocale () {
         return this.locale;
     }
 
+    @Override
     public final ModelElement process () {
         final Board board = new Board ();
         final Locale l = LocaleChecker.check (this.locale, this.xmlFileName);
@@ -36,10 +39,12 @@ public class BoardBuildProcess implements BuildProcess {
         return board;
     }
 
+    @Override
     public final void setFile (final String file) {
         this.xmlFileName = file;
     }
 
+    @Override
     public final void setLocale (final Locale l) {
         this.locale = l;
     }

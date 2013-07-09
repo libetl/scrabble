@@ -19,6 +19,7 @@ public class ActionTagParser implements TagParser {
 
     }
 
+    @Override
     public final void parse (final UserInteractions ui,
             final String [] currentAction, final String name,
             final Attributes atts) {

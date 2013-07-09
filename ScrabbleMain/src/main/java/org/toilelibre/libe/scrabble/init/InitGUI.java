@@ -25,6 +25,7 @@ public class InitGUI implements IScrabbleInit
   /**
    * @see org.toilelibre.libe.scrabble.init.IScrabbleInit#init()
    */
+  @Override
   public final void init () throws ScrabbleException
   {
     InitGUI.LOG.info ("Contrôles graphiques");

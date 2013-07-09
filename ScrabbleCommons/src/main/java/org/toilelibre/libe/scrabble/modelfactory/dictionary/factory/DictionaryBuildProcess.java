@@ -37,10 +37,12 @@ public final class DictionaryBuildProcess implements BuildProcess {
 
     }
 
+    @Override
     public String getFile () {
         return this.filename;
     }
 
+    @Override
     public Locale getLocale () {
         return this.locale;
     }
@@ -49,6 +51,7 @@ public final class DictionaryBuildProcess implements BuildProcess {
         df.load ();
     }
 
+    @Override
     public ModelElement process () {
         Dictionary d = null;
         try {
@@ -83,10 +86,12 @@ public final class DictionaryBuildProcess implements BuildProcess {
         return d;
     }
 
+    @Override
     public void setFile (final String file) {
         this.filename = file;
     }
 
+    @Override
     public void setLocale (final Locale l) {
         this.locale = l;
     }

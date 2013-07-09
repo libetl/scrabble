@@ -13,6 +13,7 @@ public interface Dictionary extends ModelElement {
 
     Object getImpl ();
 
+    @Override
     Locale getLocale ();
 
     void setLocale (Locale l);

@@ -19,6 +19,7 @@ public class TxtToTreeLoader implements Loader {
 
     }
 
+    @Override
     public final void load (final Dictionary d, final String fileName) {
         BufferedReader bfr = null;
         try {

@@ -22,6 +22,7 @@ public final class InitS3d implements IScrabbleInit
 
   }
 
+  @Override
   public void init () throws ScrabbleException
   {
     try

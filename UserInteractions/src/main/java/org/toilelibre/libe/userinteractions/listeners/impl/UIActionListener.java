@@ -25,6 +25,7 @@ public class UIActionListener extends TimerTask implements ActionListener {
         this.bean = bean2;
     }
 
+    @Override
     public final void actionPerformed (final ActionEvent e) {
         ListenerHelper.fireAction (UIConstants.ACTIONLISTENER_TYPE,
                 UIActionListener.ACTION_PERFORMED, this.bean, this.methods,

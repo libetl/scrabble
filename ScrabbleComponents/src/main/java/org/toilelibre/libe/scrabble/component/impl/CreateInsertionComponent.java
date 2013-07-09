@@ -21,6 +21,7 @@ public final class CreateInsertionComponent extends AbstractComponent implements
      * @see org.toilelibre.libe.scrabble.component.iface.ICreateInsertionComponent
      *      #createObject(int[][],char[])
      */
+    @Override
     public Insertion createObject (final int [][] alignment,
             final char [] letters) {
 

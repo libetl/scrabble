@@ -1,8 +1,6 @@
 package org.toilelibre.libe.scrabble.j3d.model;
 
 import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 
 import javax.media.j3d.Transform3D;
 import javax.vecmath.AxisAngle4d;
@@ -20,10 +18,10 @@ public class J3DTransform extends AbstractTransform {
 
     private static final int  ROWS = 4;
 
-    private final Transform3D t;
+    private final AxisAngle4d aa4d;
 
     private final Matrix4d    matrix4d;
-    private final AxisAngle4d aa4d;
+    private final Transform3D t;
     private final Vector3d    vector3d;
 
     public J3DTransform() {
@@ -158,7 +156,7 @@ public class J3DTransform extends AbstractTransform {
                     this.displayException (e);
                 } catch (final IllegalAccessException e) {
                     this.displayException (e);
-                } catch (NoSuchFieldException e) {
+                } catch (final NoSuchFieldException e) {
                     this.displayException (e);
                 }
             }

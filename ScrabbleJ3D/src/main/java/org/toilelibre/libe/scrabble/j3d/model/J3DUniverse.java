@@ -16,18 +16,22 @@ public class J3DUniverse implements IUniverse {
         this.su = new SimpleUniverse ((Canvas3D) c);
     }
 
+    @Override
     public final void addBranchGraph (final IBranchGroup bg) {
         this.su.addBranchGraph ((BranchGroup) ((J3DBranchGroup) bg).getImpl ());
     }
 
+    @Override
     public final J3DTransformGroup getTransformGroup () {
         return new J3DTransformGroup (this.su);
     }
 
+    @Override
     public final void setAdditionalParameters () {
         this.su.getViewingPlatform ().setNominalViewingTransform ();
     }
 
+    @Override
     public final void setClipDistances (final double d1, final double d2) {
         this.su.getViewer ().getView ().setFrontClipDistance (d1);
         this.su.getViewer ().getView ().setBackClipDistance (d2);

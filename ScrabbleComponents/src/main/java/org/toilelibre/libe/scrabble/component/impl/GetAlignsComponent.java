@@ -17,6 +17,7 @@ public final class GetAlignsComponent extends AbstractComponent implements
     public GetAlignsComponent() {
     }
 
+    @Override
     public void get (final ILetterBranchGroup [] lbgs,
             final int [][] alignment, final char [] letters) {
         for (int j = 0 ; j < lbgs.length ; j++) {

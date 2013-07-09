@@ -12,6 +12,7 @@ public final class MoveCamera implements IMoveObject {
 
     }
 
+    @Override
     public void move (final ICanvas3D sc3d, final ITransformGroup stg,
             final int... params) {
         final int trois = 3;

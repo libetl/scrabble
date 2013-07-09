@@ -31,14 +31,17 @@ public class J3DTransformGroup implements ITransformGroup {
         return this.tg;
     }
 
+    @Override
     public final void getTransform (final ITransform st) {
         this.tg.getTransform ((Transform3D) ((J3DTransform) st).getImpl ());
     }
 
+    @Override
     public final boolean isTheSame (final ITransformGroup stg1) {
         return this.tg == ((J3DTransformGroup) stg1).getImpl ();
     }
 
+    @Override
     public final void setTransform (final ITransform st) throws S3DException {
         try {
             this.tg.setTransform ((Transform3D) ((J3DTransform) st).getImpl ());

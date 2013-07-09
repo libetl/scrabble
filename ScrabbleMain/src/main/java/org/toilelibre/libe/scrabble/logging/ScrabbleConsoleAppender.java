@@ -46,6 +46,7 @@ public final class ScrabbleConsoleAppender extends AppenderSkeleton
   /**
    * @see org.apache.log4j.Appender#close()
    */
+  @Override
   public void close ()
   {
     if (ScrabbleConsoleAppender.dlm != null)
@@ -57,6 +58,7 @@ public final class ScrabbleConsoleAppender extends AppenderSkeleton
   /**
    * @see org.apache.log4j.Appender#requiresLayout()
    */
+  @Override
   public boolean requiresLayout ()
   {
     return false;

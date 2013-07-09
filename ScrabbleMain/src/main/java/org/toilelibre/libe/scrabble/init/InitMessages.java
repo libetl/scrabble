@@ -23,6 +23,7 @@ public final class InitMessages implements IScrabbleInit
    * 
    * @see org.toilelibre.libe.scrabble.init.IScrabbleInit#init()
    */
+  @Override
   public void init () throws ScrabbleException
   {
     InitMessages.LOG.info ("Propriétés d'application");

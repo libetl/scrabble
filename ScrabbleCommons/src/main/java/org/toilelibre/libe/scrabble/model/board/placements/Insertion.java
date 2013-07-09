@@ -37,6 +37,7 @@ public class Insertion implements Iterable<Placement> {
         return this.placements;
     }
 
+    @Override
     public final Iterator<Placement> iterator () {
         return this.placements.iterator ();
     }

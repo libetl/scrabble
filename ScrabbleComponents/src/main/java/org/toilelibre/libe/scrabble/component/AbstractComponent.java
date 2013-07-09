@@ -20,6 +20,7 @@ public abstract class AbstractComponent implements IComponent {
      * @see org.toilelibre.libe.scrabble.component.IComponent#execute
      *      (java.lang.Object[])
      */
+    @Override
     public final Object execute (final Object... parameters1) {
         final Method [] methods = this.getClass ().getInterfaces () [0]
                 .getDeclaredMethods ();
@@ -42,6 +43,7 @@ public abstract class AbstractComponent implements IComponent {
      * @see org.toilelibre.libe.scrabble.component.IComponent#execute
      *      (java.lang.Object[])
      */
+    @Override
     public final Object executeAndThrow (final Object... parameters1)
             throws InvocationTargetException {
         final Method [] methods = this.getClass ().getInterfaces () [0]
@@ -62,6 +64,7 @@ public abstract class AbstractComponent implements IComponent {
     /**
      * @see org.toilelibre.libe.scrabble.component.IComponent#getData()
      */
+    @Override
     public final ScrabbleData getData () {
         return this.data;
     }
@@ -70,6 +73,7 @@ public abstract class AbstractComponent implements IComponent {
      * @see org.toilelibre.libe.scrabble.component.IComponent#setData
      *      (org.toilelibre.libe.scrabble.model.ScrabbleData)
      */
+    @Override
     public final void setData (final ScrabbleData sd) {
         this.data = sd;
     }

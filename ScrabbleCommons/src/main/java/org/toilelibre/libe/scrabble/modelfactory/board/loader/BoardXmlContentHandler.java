@@ -31,6 +31,7 @@ public class BoardXmlContentHandler implements ContentHandler {
      *            le rang du dernier caractere a traiter effectivement
      * @see org.xml.sax.ContentHandler#characters(char[], int, int)
      */
+    @Override
     public void characters (final char [] ch, final int start, final int length)
             throws SAXException {
     }
@@ -43,6 +44,7 @@ public class BoardXmlContentHandler implements ContentHandler {
      *             considerer l'analyse du document comme etant complete.
      * @see org.xml.sax.ContentHandler#endDocument()
      */
+    @Override
     public void endDocument () throws SAXException {
     }
 
@@ -52,6 +54,7 @@ public class BoardXmlContentHandler implements ContentHandler {
      * @see org.xml.sax.ContentHandler#endElement(java.lang.String,
      *      java.lang.String, java.lang.String)
      */
+    @Override
     public void endElement (final String uri, final String localName,
             final String name) throws SAXException {
     }
@@ -64,6 +67,7 @@ public class BoardXmlContentHandler implements ContentHandler {
      *            nommage.
      * @see org.xml.sax.ContentHandler#endPrefixMapping(java.lang.String)
      */
+    @Override
     public void endPrefixMapping (final String prefix) throws SAXException {
     }
 
@@ -81,6 +85,7 @@ public class BoardXmlContentHandler implements ContentHandler {
      *            le rang du dernier caractere a traiter effectivement
      * @see org.xml.sax.ContentHandler#ignorableWhitespace(char[], int, int)
      */
+    @Override
     public void ignorableWhitespace (final char [] ch, final int start,
             final int length) throws SAXException {
     }
@@ -96,6 +101,7 @@ public class BoardXmlContentHandler implements ContentHandler {
      * @see org.xml.sax.ContentHandler#processingInstruction(java.lang.String,
      *      java.lang.String)
      */
+    @Override
     public void processingInstruction (final String target, final String data)
             throws SAXException {
     }
@@ -110,6 +116,7 @@ public class BoardXmlContentHandler implements ContentHandler {
      *            le locator a utiliser.
      * @see org.xml.sax.ContentHandler#setDocumentLocator(org.xml.sax.Locator)
      */
+    @Override
     public void setDocumentLocator (final Locator locator) {
     }
 
@@ -120,6 +127,7 @@ public class BoardXmlContentHandler implements ContentHandler {
      * 
      * @see org.xml.sax.ContentHandler#skippedEntity(java.lang.String)
      */
+    @Override
     public void skippedEntity (final String name) throws SAXException {
     }
 
@@ -131,6 +139,7 @@ public class BoardXmlContentHandler implements ContentHandler {
      *             dans l'analyse du document.
      * @see org.xml.sax.ContentHandler#startDocument()
      */
+    @Override
     public void startDocument () throws SAXException {
     }
 
@@ -151,6 +160,7 @@ public class BoardXmlContentHandler implements ContentHandler {
      * @see org.xml.sax.ContentHandler#startElement(java.lang.String,
      *      java.lang.String, java.lang.String, org.xml.sax.Attributes)
      */
+    @Override
     public final void startElement (final String uri, final String localName,
             final String name, final Attributes atts) throws SAXException {
         if ("row".equals (localName)) {
@@ -187,6 +197,7 @@ public class BoardXmlContentHandler implements ContentHandler {
      * @see org.xml.sax.ContentHandler#startPrefixMapping(java.lang.String,
      *      java.lang.String)
      */
+    @Override
     public void startPrefixMapping (final String prefix, final String uri)
             throws SAXException {
     }

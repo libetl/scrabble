@@ -20,12 +20,14 @@ public abstract class AbstractDictionaryFactory implements IDictionaryFactory {
     private String              name;
     private String              type;
 
+    @Override
     public final Dictionary getDictionary () {
         return this.dict;
     }
 
     public abstract String getExtension ();
 
+    @Override
     public final Locale getLocale () {
         return this.l;
     }
@@ -34,6 +36,7 @@ public abstract class AbstractDictionaryFactory implements IDictionaryFactory {
         return this.name;
     }
 
+    @Override
     public final void load () {
         final String extension2 = this.getExtension ().substring (0, 1)
                 .toUpperCase ()

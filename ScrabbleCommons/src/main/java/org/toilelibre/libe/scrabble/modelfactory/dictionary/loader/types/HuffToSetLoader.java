@@ -57,6 +57,7 @@ public class HuffToSetLoader implements Loader {
 
     }
 
+    @Override
     public final void load (final Dictionary d, final String fileName) {
         InputStreamReader isr;
         try {

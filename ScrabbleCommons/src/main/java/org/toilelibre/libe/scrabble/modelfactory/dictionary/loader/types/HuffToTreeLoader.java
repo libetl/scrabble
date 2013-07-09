@@ -21,6 +21,7 @@ public final class HuffToTreeLoader implements Loader {
         super ();
     }
 
+    @Override
     public void load (final Dictionary d, final String fileName) {
 
         InputStreamReader isr;

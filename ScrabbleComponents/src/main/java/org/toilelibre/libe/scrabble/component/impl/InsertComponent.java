@@ -22,6 +22,7 @@ public class InsertComponent extends AbstractComponent implements
      * @see org.toilelibre.libe.scrabble.component.iface.IInsertComponent#insert
      *      (org.toilelibre.libe.scrabble.model.board.placements.Insertion)
      */
+    @Override
     public final void insert (final Insertion i) {
 
         final Board b = this.getData ().getBoards ().get (0);

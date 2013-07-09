@@ -67,6 +67,7 @@ public final class J3DScenePicker implements IScenePicker {
 
     }
 
+    @Override
     public IBranchGroup getNameAt (final ICanvas3D sc3d, final String name,
             final int x, final int y) {
 
@@ -89,6 +90,7 @@ public final class J3DScenePicker implements IScenePicker {
         return J3DScenePicker.lookForElement (sgp, name);
     }
 
+    @Override
     public ITransformGroup getTransformGroupAt (final ICanvas3D sc3d,
             final String name, final int x, final int y) {
         final IBranchGroup sbg = this.getNameAt (sc3d, name, x, y);

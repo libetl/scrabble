@@ -13,6 +13,7 @@ public final class InitBeans implements IScrabbleInit
 
   }
 
+  @Override
   public void init ()
   {
     InitBeans.LOG.info ("Beans Spring");

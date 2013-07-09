@@ -16,6 +16,7 @@ public final class InitUserInteractions implements IScrabbleInit
     super ();
   }
 
+  @Override
   public void init ()
   {
     InitUserInteractions.LOG.info ("Interactions");

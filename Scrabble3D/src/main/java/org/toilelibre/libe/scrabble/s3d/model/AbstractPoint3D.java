@@ -20,14 +20,17 @@ public abstract class AbstractPoint3D implements IPoint3D {
 
     public abstract Object getObj ();
 
+    @Override
     public final double getX () {
         return this.x;
     }
 
+    @Override
     public final double getY () {
         return this.y;
     }
 
+    @Override
     public final double getZ () {
         return this.z;
     }

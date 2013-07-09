@@ -19,6 +19,7 @@ public class GetLetterValueComponent extends AbstractComponent implements
      * @see org.toilelibre.libe.scrabble.component.iface.IGetLetterValueComponent
      *      #valueOf(char)
      */
+    @Override
     public final int valueOf (final char c1) {
         return this.getData ().getBallotBoxes ().get (0).getValue (c1);
     }

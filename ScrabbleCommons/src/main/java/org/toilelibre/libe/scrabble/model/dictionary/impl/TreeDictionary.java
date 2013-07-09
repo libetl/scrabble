@@ -29,6 +29,7 @@ public class TreeDictionary implements Dictionary {
         }
     }
 
+    @Override
     public final void add (final String word) {
         if (word != null) {
             this.add (this.root, word);
@@ -51,6 +52,7 @@ public class TreeDictionary implements Dictionary {
                         n.getChild (word.charAt (0)), word.substring (1)));
     }
 
+    @Override
     public final boolean contains (final String word) {
         return this.contains (this.root, word);
     }
@@ -76,18 +78,22 @@ public class TreeDictionary implements Dictionary {
         return res;
     }
 
+    @Override
     public final Object getImpl () {
         return this.root;
     }
 
+    @Override
     public final Locale getLocale () {
         return this.locale;
     }
 
+    @Override
     public final void setLocale (final Locale locale1) {
         this.locale = locale1;
     }
 
+    @Override
     public final List<String> similarWords (final String word) {
         int numLettersMissing = 1;
         String word2 = word;

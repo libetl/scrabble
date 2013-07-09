@@ -20,7 +20,7 @@ public final class CountScoreComponent extends AbstractComponent implements
 
     }
 
-    private int coeffPosition (int x, int y) {
+    private int coeffPosition (final int x, final int y) {
         final Board b = this.getData ().getBoards ().get (0);
         int coeff = 1;
         if (Board.DW == b.getCellPoints (x, y)) {
@@ -35,6 +35,7 @@ public final class CountScoreComponent extends AbstractComponent implements
      * @see org.toilelibre.libe.scrabble.component.iface.ICountScoreComponent
      *      #count(org.toilelibre.libe.scrabble.model.board.placements.Insertion)
      */
+    @Override
     public int count (final Insertion i1) {
         int bonus = 0;
         final Map<String, Integer> counts = this.countWordsAround (i1);
@@ -44,7 +45,7 @@ public final class CountScoreComponent extends AbstractComponent implements
         return this.sumValues (counts) + bonus;
     }
 
-    private int countPosition (int x, int y) {
+    private int countPosition (final int x, final int y) {
         final BallotBox bb = this.getData ().getBallotBoxes ().get (0);
         final Board b = this.getData ().getBoards ().get (0);
         int scoreIncr = 0;
@@ -58,7 +59,7 @@ public final class CountScoreComponent extends AbstractComponent implements
         return scoreIncr;
     }
 
-    private String countWordAroundDirX (Placement p, Insertion i) {
+    private String countWordAroundDirX (final Placement p, final Insertion i) {
         int score = this.countPosition (p.getX (), p.getY ());
         int coeff = this.coeffPosition (p.getX (), p.getY ());
         final BallotBox bb = this.getData ().getBallotBoxes ().get (0);
@@ -94,7 +95,7 @@ public final class CountScoreComponent extends AbstractComponent implements
                 + sb.toString () + "/" + score;
     }
 
-    private String countWordAroundDirY (Placement p, Insertion i) {
+    private String countWordAroundDirY (final Placement p, final Insertion i) {
         int score = this.countPosition (p.getX (), p.getY ());
         int coeff = this.coeffPosition (p.getX (), p.getY ());
         final Board b = this.getData ().getBoards ().get (0);
@@ -132,7 +133,7 @@ public final class CountScoreComponent extends AbstractComponent implements
                 + sb.toString () + "/" + score;
     }
 
-    private Map<String, Integer> countWordsAround (Insertion i) {
+    private Map<String, Integer> countWordsAround (final Insertion i) {
         final Map<String, Integer> counts = new HashMap<String, Integer> ();
 
         final Board b = this.getData ().getBoards ().get (0);
@@ -160,7 +161,7 @@ public final class CountScoreComponent extends AbstractComponent implements
         return counts;
     }
 
-    private int sumValues (Map<String, Integer> counts) {
+    private int sumValues (final Map<String, Integer> counts) {
         int value = 0;
         for (final Integer i : counts.values ()) {
             value += i.intValue ();

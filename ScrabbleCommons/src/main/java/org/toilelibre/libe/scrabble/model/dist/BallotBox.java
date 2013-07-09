@@ -32,6 +32,7 @@ public class BallotBox implements ModelElement {
         }
     }
 
+    @Override
     public final Locale getLocale () {
         return this.locale;
     }

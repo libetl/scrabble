@@ -21,16 +21,19 @@ public class UIKeyListener implements KeyListener {
         this.bean = bean2;
     }
 
+    @Override
     public final void keyPressed (final KeyEvent e) {
         ListenerHelper.fireAction (UIConstants.ACTIONLISTENER_TYPE, "pressed",
                 this.bean, this.methods, this.action, e);
     }
 
+    @Override
     public final void keyReleased (final KeyEvent e) {
         ListenerHelper.fireAction (UIConstants.ACTIONLISTENER_TYPE, "released",
                 this.bean, this.methods, this.action, e);
     }
 
+    @Override
     public final void keyTyped (final KeyEvent e) {
         ListenerHelper.fireAction (UIConstants.ACTIONLISTENER_TYPE, "typed",
                 this.bean, this.methods, this.action, e);
