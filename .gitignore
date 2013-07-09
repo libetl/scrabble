@@ -3,4 +3,10 @@
 
 # Package Files #
 Scrabble*/target/*
+Scrabble*/.project
+Scrabble*/.classpath
+Scrabble*/.wtpmodules
 UserInteractions/target/*
+UserInteractions/.project
+UserInteractions/.classpath
+UserInteractions/.wtpmodules
