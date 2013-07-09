@@ -2,6 +2,7 @@ package org.toilelibre.libe.scrabble.aop;
 
 import java.lang.reflect.Method;
 
+import org.apache.commons.lang.builder.ReflectionToStringBuilder;
 import org.apache.log4j.Logger;
 import org.springframework.aop.AfterReturningAdvice;
 
@@ -15,8 +16,13 @@ public class ComponentAfterLogging implements AfterReturningAdvice
   public void afterReturning (final Object arg0, final Method arg1,
       final Object [] arg2, final Object arg3) throws Throwable
   {
-    ComponentAfterLogging.LOG.info ("<-[C]" + arg3.getClass ().getSimpleName ()
-        + " ; retour : " + arg0);
+    if (arg0 != null && arg0.getClass ().isArray ()){
+      ComponentAfterLogging.LOG.info ("<-[C]" + arg3.getClass ().getSimpleName ()
+          + " ; retour : " + ReflectionToStringBuilder.toString (arg0));
+    }else{
+      ComponentAfterLogging.LOG.info ("<-[C]" + arg3.getClass ().getSimpleName ()
+          + " ; retour : " + arg0);      
+    }
   }
 
 }

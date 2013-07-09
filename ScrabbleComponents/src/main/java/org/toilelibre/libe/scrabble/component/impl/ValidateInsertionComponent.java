@@ -231,11 +231,10 @@ public class ValidateInsertionComponent extends AbstractComponent implements
 							p.getX(), p.getY() + 1)))) {
 				words.add(this.findWordAroundDirY(p, i));
 			}
-			if ((((p.getX() - 1) > 0) && ((b.getCellLetter(p.getX() - 1,
-					p.getY()) != 0) || i.contains(p.getX() - 1, p.getY())))
-					|| (((p.getX() + 1) < Board.COLS) && ((b.getCellLetter(
-							p.getX() + 1, p.getY()) != 0) || i.contains(
-							p.getX() + 1, p.getY())))) {
+			if ((((p.getX() - 1) > 0) && 
+					((b.getCellLetter(p.getX() - 1,p.getY()) != 0) || i.contains(p.getX() - 1, p.getY())))
+					|| (((p.getX() + 1) < Board.COLS) && 
+							((b.getCellLetter(p.getX() + 1, p.getY()) != 0) || i.contains(p.getX() + 1, p.getY())))) {
 				words.add(this.findWordAroundDirX(p, i));
 			}
 		}
