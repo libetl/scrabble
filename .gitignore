@@ -1,5 +1,6 @@
 *.class
 *.jar
+out/lib/pom.xml
 
 # Package Files #
 Scrabble*/target/*
