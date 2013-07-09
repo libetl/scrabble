@@ -1,72 +1,72 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>org.toilelibre.libe.scrabble</groupId>
-		<artifactId>scrabble</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-		<relativePath>../pom.xml</relativePath>
-	</parent>
+    <parent>
+        <groupId>org.toilelibre.libe.scrabble</groupId>
+        <artifactId>scrabble</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
 
-	<artifactId>ScrabbleUI</artifactId>
-	<name>Scrabble User Interactions Implementation</name>
-	
+    <artifactId>ScrabbleUI</artifactId>
+    <name>Scrabble User Interactions Implementation</name>
+
 
     <properties>
-      <main.basedir>${project.parent.basedir}</main.basedir>
+        <main.basedir>${project.parent.basedir}</main.basedir>
     </properties>
 
-	<dependencies>
-	
-	    <dependency>
-			<groupId>org.toilelibre.libe.scrabble</groupId>
-			<artifactId>Scrabble3D</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.toilelibre.libe.scrabble</groupId>
-			<artifactId>ScrabbleCommons</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.toilelibre.libe.scrabble</groupId>
-			<artifactId>ScrabbleComponents</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.toilelibre.libe.scrabble</groupId>
-			<artifactId>ScrabbleMain</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.toilelibre.libe.userinteractions</groupId>
-			<artifactId>UserInteractions</artifactId>
-			<version>0.1-SNAPSHOT</version>
-		</dependency>
-	
-		<!-- LOG4J -->
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.17</version>
-		</dependency>
+    <dependencies>
+
+        <dependency>
+            <groupId>org.toilelibre.libe.scrabble</groupId>
+            <artifactId>Scrabble3D</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.toilelibre.libe.scrabble</groupId>
+            <artifactId>ScrabbleCommons</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.toilelibre.libe.scrabble</groupId>
+            <artifactId>ScrabbleComponents</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.toilelibre.libe.scrabble</groupId>
+            <artifactId>ScrabbleMain</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.toilelibre.libe.userinteractions</groupId>
+            <artifactId>UserInteractions</artifactId>
+            <version>0.1-SNAPSHOT</version>
+        </dependency>
+
+        <!-- LOG4J -->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
 
 
-		<dependency>
-			<groupId>javax.jnlp</groupId>
-			<artifactId>jnlp-api</artifactId>
-			<version>7.0</version>
-			<scope>system</scope>
-			<systemPath>${java.home}/lib/javaws.jar</systemPath>
-		</dependency>
-		<dependency>
-			<groupId>javax.jnlp</groupId>
-			<artifactId>jnlp</artifactId>
-			<version>7.0</version>
-			<scope>system</scope>
-			<systemPath>${java.home}/lib/javaws.jar</systemPath>
-		</dependency>
-		
-	</dependencies>
+        <dependency>
+            <groupId>javax.jnlp</groupId>
+            <artifactId>jnlp-api</artifactId>
+            <version>7.0</version>
+            <scope>system</scope>
+            <systemPath>${java.home}/lib/javaws.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>javax.jnlp</groupId>
+            <artifactId>jnlp</artifactId>
+            <version>7.0</version>
+            <scope>system</scope>
+            <systemPath>${java.home}/lib/javaws.jar</systemPath>
+        </dependency>
+
+    </dependencies>
 </project>

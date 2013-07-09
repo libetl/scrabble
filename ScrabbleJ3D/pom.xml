@@ -1,214 +1,214 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	
-	<parent>
-		<groupId>org.toilelibre.libe.scrabble</groupId>
-		<artifactId>scrabble</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-		<relativePath>../pom.xml</relativePath>
-	</parent>
-	<artifactId>ScrabbleJ3D</artifactId>
-	<name>Scrabble Java3D Concrete Program</name>
-	
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.toilelibre.libe.scrabble</groupId>
+        <artifactId>scrabble</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+    <artifactId>ScrabbleJ3D</artifactId>
+    <name>Scrabble Java3D Concrete Program</name>
+
     <properties>
-      <main.basedir>${project.parent.basedir}</main.basedir>
-    </properties>     
-	
-	<dependencies>
-	
-	    <dependency>
-			<groupId>org.toilelibre.libe.scrabble</groupId>
-			<artifactId>Scrabble3D</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		
-		<!-- LOG4J -->
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.17</version>
-		</dependency>
+        <main.basedir>${project.parent.basedir}</main.basedir>
+    </properties>
 
-		<!-- XJ3D -->
-		<dependency>
-			<groupId>org.web3d</groupId>
-			<artifactId>disxml</artifactId>
-			<version>2-M1</version>
-		</dependency>
+    <dependencies>
 
-		<dependency>
-			<groupId>org.web3d</groupId>
-			<artifactId>xj3d-cefx3d</artifactId>
-			<version>2-M1</version>
-		</dependency>
+        <dependency>
+            <groupId>org.toilelibre.libe.scrabble</groupId>
+            <artifactId>Scrabble3D</artifactId>
+            <version>${project.version}</version>
+        </dependency>
 
-		<dependency>
-			<groupId>org.web3d</groupId>
-			<artifactId>xj3d-common</artifactId>
-			<version>2-M1</version>
-		</dependency>
+        <!-- LOG4J -->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
 
-		<dependency>
-			<groupId>org.web3d</groupId>
-			<artifactId>xj3d-config</artifactId>
-			<version>2-M1</version>
-		</dependency>
+        <!-- XJ3D -->
+        <dependency>
+            <groupId>org.web3d</groupId>
+            <artifactId>disxml</artifactId>
+            <version>2-M1</version>
+        </dependency>
 
-		<dependency>
-			<groupId>org.web3d</groupId>
-			<artifactId>xj3d-core</artifactId>
-			<version>2-M1</version>
-		</dependency>
+        <dependency>
+            <groupId>org.web3d</groupId>
+            <artifactId>xj3d-cefx3d</artifactId>
+            <version>2-M1</version>
+        </dependency>
 
-		<dependency>
-			<groupId>org.web3d</groupId>
-			<artifactId>xj3d-eai</artifactId>
-			<version>2-M1</version>
-		</dependency>
+        <dependency>
+            <groupId>org.web3d</groupId>
+            <artifactId>xj3d-common</artifactId>
+            <version>2-M1</version>
+        </dependency>
 
-		<dependency>
-			<groupId>org.web3d</groupId>
-			<artifactId>xj3d-ecmascript</artifactId>
-			<version>2-M1</version>
-		</dependency>
+        <dependency>
+            <groupId>org.web3d</groupId>
+            <artifactId>xj3d-config</artifactId>
+            <version>2-M1</version>
+        </dependency>
 
-		<dependency>
-			<groupId>org.web3d</groupId>
-			<artifactId>xj3d-external-sai</artifactId>
-			<version>2-M1</version>
-		</dependency>
+        <dependency>
+            <groupId>org.web3d</groupId>
+            <artifactId>xj3d-core</artifactId>
+            <version>2-M1</version>
+        </dependency>
 
-		<dependency>
-			<groupId>org.web3d</groupId>
-			<artifactId>xj3d-images</artifactId>
-			<version>2-M1</version>
-		</dependency>
+        <dependency>
+            <groupId>org.web3d</groupId>
+            <artifactId>xj3d-eai</artifactId>
+            <version>2-M1</version>
+        </dependency>
 
-		<dependency>
-			<groupId>org.web3d</groupId>
-			<artifactId>xj3d-j3d</artifactId>
-			<version>2-M1</version>
-		</dependency>
+        <dependency>
+            <groupId>org.web3d</groupId>
+            <artifactId>xj3d-ecmascript</artifactId>
+            <version>2-M1</version>
+        </dependency>
 
-		<dependency>
-			<groupId>org.web3d</groupId>
-			<artifactId>xj3d-java-sai</artifactId>
-			<version>2-M1</version>
-		</dependency>
+        <dependency>
+            <groupId>org.web3d</groupId>
+            <artifactId>xj3d-external-sai</artifactId>
+            <version>2-M1</version>
+        </dependency>
 
-		<dependency>
-			<groupId>org.web3d</groupId>
-			<artifactId>xj3d-jaxp</artifactId>
-			<version>2-M1</version>
-		</dependency>
+        <dependency>
+            <groupId>org.web3d</groupId>
+            <artifactId>xj3d-images</artifactId>
+            <version>2-M1</version>
+        </dependency>
 
-		<dependency>
-			<groupId>org.web3d</groupId>
-			<artifactId>xj3d-jsai</artifactId>
-			<version>2-M1</version>
-		</dependency>
+        <dependency>
+            <groupId>org.web3d</groupId>
+            <artifactId>xj3d-j3d</artifactId>
+            <version>2-M1</version>
+        </dependency>
 
-		<dependency>
-			<groupId>org.web3d</groupId>
-			<artifactId>xj3d-net</artifactId>
-			<version>2-M1</version>
-		</dependency>
+        <dependency>
+            <groupId>org.web3d</groupId>
+            <artifactId>xj3d-java-sai</artifactId>
+            <version>2-M1</version>
+        </dependency>
 
-		<dependency>
-			<groupId>org.web3d</groupId>
-			<artifactId>xj3d-norender</artifactId>
-			<version>2-M1</version>
-		</dependency>
+        <dependency>
+            <groupId>org.web3d</groupId>
+            <artifactId>xj3d-jaxp</artifactId>
+            <version>2-M1</version>
+        </dependency>
 
-		<dependency>
-			<groupId>org.web3d</groupId>
-			<artifactId>xj3d-ogl</artifactId>
-			<version>2-M1</version>
-		</dependency>
+        <dependency>
+            <groupId>org.web3d</groupId>
+            <artifactId>xj3d-jsai</artifactId>
+            <version>2-M1</version>
+        </dependency>
 
-		<dependency>
-			<groupId>org.web3d</groupId>
-			<artifactId>xj3d-parser</artifactId>
-			<version>2-M1</version>
-		</dependency>
+        <dependency>
+            <groupId>org.web3d</groupId>
+            <artifactId>xj3d-net</artifactId>
+            <version>2-M1</version>
+        </dependency>
 
-		<dependency>
-			<groupId>org.web3d</groupId>
-			<artifactId>xj3d-render</artifactId>
-			<version>2-M1</version>
-		</dependency>
+        <dependency>
+            <groupId>org.web3d</groupId>
+            <artifactId>xj3d-norender</artifactId>
+            <version>2-M1</version>
+        </dependency>
 
-		<dependency>
-			<groupId>org.web3d</groupId>
-			<artifactId>xj3d-runtime</artifactId>
-			<version>2-M1
+        <dependency>
+            <groupId>org.web3d</groupId>
+            <artifactId>xj3d-ogl</artifactId>
+            <version>2-M1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.web3d</groupId>
+            <artifactId>xj3d-parser</artifactId>
+            <version>2-M1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.web3d</groupId>
+            <artifactId>xj3d-render</artifactId>
+            <version>2-M1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.web3d</groupId>
+            <artifactId>xj3d-runtime</artifactId>
+            <version>2-M1
        </version>
-		</dependency>
+        </dependency>
 
-		<dependency>
-			<groupId>org.web3d</groupId>
-			<artifactId>xj3d-sai</artifactId>
-			<version>2-M1</version>
-		</dependency>
+        <dependency>
+            <groupId>org.web3d</groupId>
+            <artifactId>xj3d-sai</artifactId>
+            <version>2-M1</version>
+        </dependency>
 
-		<dependency>
-			<groupId>org.web3d</groupId>
-			<artifactId>xj3d-sav</artifactId>
-			<version>2-M1</version>
-		</dependency>
+        <dependency>
+            <groupId>org.web3d</groupId>
+            <artifactId>xj3d-sav</artifactId>
+            <version>2-M1</version>
+        </dependency>
 
-		<dependency>
-			<groupId>org.web3d</groupId>
-			<artifactId>xj3d-script-base</artifactId>
-			<version>2-M1</version>
-		</dependency>
+        <dependency>
+            <groupId>org.web3d</groupId>
+            <artifactId>xj3d-script-base</artifactId>
+            <version>2-M1</version>
+        </dependency>
 
-		<dependency>
-			<groupId>org.web3d</groupId>
-			<artifactId>xj3d-xml</artifactId>
-			<version>2-M1</version>
-		</dependency>
+        <dependency>
+            <groupId>org.web3d</groupId>
+            <artifactId>xj3d-xml</artifactId>
+            <version>2-M1</version>
+        </dependency>
 
-		<dependency>
-			<groupId>org.web3d</groupId>
-			<artifactId>xj3d-xml-util</artifactId>
-			<version>2-M1</version>
-		</dependency>
+        <dependency>
+            <groupId>org.web3d</groupId>
+            <artifactId>xj3d-xml-util</artifactId>
+            <version>2-M1</version>
+        </dependency>
 
-		<dependency>
-			<groupId>org.web3d</groupId>
-			<artifactId>j3d-org</artifactId>
-			<version>2-M1</version>
-		</dependency>
+        <dependency>
+            <groupId>org.web3d</groupId>
+            <artifactId>j3d-org</artifactId>
+            <version>2-M1</version>
+        </dependency>
 
-		<dependency>
-			<groupId>org.web3d</groupId>
-			<artifactId>uri</artifactId>
-			<version>2-M1</version>
-		</dependency>
+        <dependency>
+            <groupId>org.web3d</groupId>
+            <artifactId>uri</artifactId>
+            <version>2-M1</version>
+        </dependency>
 
-		<dependency>
-			<groupId>org.web3d</groupId>
-			<artifactId>vecmath</artifactId>
-			<version>2-M1</version>
-		</dependency>
+        <dependency>
+            <groupId>org.web3d</groupId>
+            <artifactId>vecmath</artifactId>
+            <version>2-M1</version>
+        </dependency>
 
-		<dependency>
-			<groupId>java3d</groupId>
-			<artifactId>j3d-core-utils</artifactId>
-			<version>1.5.2</version>
-		</dependency>
-		<dependency>
-			<groupId>java3d</groupId>
-			<artifactId>j3d-core</artifactId>
-			<version>1.5.2</version>
-		</dependency>
-		<dependency>
-			<groupId>org.web3d</groupId>
-			<artifactId>vlc_uri</artifactId>
-			<version>2-M1</version>
-		</dependency>
+        <dependency>
+            <groupId>java3d</groupId>
+            <artifactId>j3d-core-utils</artifactId>
+            <version>1.5.2</version>
+        </dependency>
+        <dependency>
+            <groupId>java3d</groupId>
+            <artifactId>j3d-core</artifactId>
+            <version>1.5.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.web3d</groupId>
+            <artifactId>vlc_uri</artifactId>
+            <version>2-M1</version>
+        </dependency>
 
-	</dependencies>
+    </dependencies>
 </project>
