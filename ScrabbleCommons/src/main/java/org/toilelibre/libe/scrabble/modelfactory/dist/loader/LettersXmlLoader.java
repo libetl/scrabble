@@ -13,25 +13,25 @@ import org.xml.sax.helpers.XMLReaderFactory;
 
 public final class LettersXmlLoader {
 
-	private static final Logger LOG = Logger.getLogger(LettersXmlLoader.class);
+    private static final Logger LOG = Logger.getLogger (LettersXmlLoader.class);
 
-	public static void load(final BallotBox bb, final String xmlFileName) {
-		try {
-			final URL u = Thread.currentThread().getContextClassLoader()
-					.getResource(xmlFileName);
-			final XMLReader xr = XMLReaderFactory.createXMLReader();
-			xr.setContentHandler(new LettersXmlContentHandler(bb));
-			xr.parse(new InputSource(u.openStream()));
-		} catch (final SAXException e) {
-			LettersXmlLoader.LOG.error(e.getMessage());
-		} catch (final FileNotFoundException e) {
-			LettersXmlLoader.LOG.error(e.getMessage());
-		} catch (final IOException e) {
-			LettersXmlLoader.LOG.error(e.getMessage());
-		}
-	}
+    public static void load (final BallotBox bb, final String xmlFileName) {
+        try {
+            final URL u = Thread.currentThread ().getContextClassLoader ()
+                    .getResource (xmlFileName);
+            final XMLReader xr = XMLReaderFactory.createXMLReader ();
+            xr.setContentHandler (new LettersXmlContentHandler (bb));
+            xr.parse (new InputSource (u.openStream ()));
+        } catch (final SAXException e) {
+            LettersXmlLoader.LOG.error (e.getMessage ());
+        } catch (final FileNotFoundException e) {
+            LettersXmlLoader.LOG.error (e.getMessage ());
+        } catch (final IOException e) {
+            LettersXmlLoader.LOG.error (e.getMessage ());
+        }
+    }
 
-	private LettersXmlLoader() {
+    private LettersXmlLoader () {
 
-	}
+    }
 }

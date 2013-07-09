@@ -12,5 +12,5 @@ import org.toilelibre.libe.scrabble.model.board.placements.Insertion;
  */
 public interface IInsertComponent extends IComponent {
 
-	void insert(Insertion i);
+    void insert (Insertion i);
 }

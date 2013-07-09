@@ -7,5 +7,5 @@ import org.toilelibre.libe.scrabble.component.IComponent;
 
 public interface IPickLetterComponent extends IComponent {
 
-	Character pick(int turn, int position);
+    Character pick (int turn, int position);
 }

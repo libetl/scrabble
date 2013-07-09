@@ -8,5 +8,5 @@ import org.toilelibre.libe.scrabble.model.board.placements.Insertion;
 
 public interface ICountScoreComponent extends IComponent {
 
-	int count(Insertion i);
+    int count (Insertion i);
 }
