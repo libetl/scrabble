@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # PARAMETRES - PARTIE A EDITER
 APPLICATION_NAME="Scrabble"
@@ -10,7 +10,6 @@ APPLICATION_JAR_FOLDERS="lib"
 RSRC_CLASSPATH="res/:res/logging"
 JAVACLASS="org.toilelibre.libe.scrabble.ScrabbleMain"
 
-
 # INITIALISATION DU SCRIPT
 HASNT_ALREADY_JAVA='1'
 HASNT_ALREADY_JAVA_IN_PATH=$(which java >/dev/null;echo $?)
@@ -20,6 +19,8 @@ JAVA_PROVIDER="unknown"
 GOOD_JAVA_VERSION='0'
 JAVA_BIN="java"
 ARGS=$*
+LAST_DIR=$(pwd)
+NEW_DIR=$(echo $(pwd)"$0" | sed 's/\.\//\//' | sed "s/${0##*/}$//")
 
 formatText ()
 {
@@ -73,10 +74,15 @@ if [ $GOOD_JAVA_VERSION = '0' ]; then
 fi
 
 logInfo "Java $JAVA_VERSION installed ($JAVA_PROVIDER $JAVA_EXACT_VERSION)"
+
+logInfo "Changing directory to $NEW_DIR"
+cd $NEW_DIR
+
 logInfo "Setting library path for native libraries"
 for FOLDER in $APPLICATION_NATIVE_LIBS_FOLDERS; do
   if [ ! -d $FOLDER ]; then
     logStop "$APPLICATION_NAME is not correctly installed. Native Libs Folder $FOLDER is missing"
+    cd $LAST_DIR
     exit 1
   fi
   export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$FOLDER
@@ -90,6 +96,7 @@ for FOLDER in $APPLICATION_FOLDERS; do
   PROJECT_FOLDERS_NOT_EXIST=$([ -d $FOLDER ] && [ -d $FOLDER/$BIN_FOLDER ];echo $?)
   if [ $PROJECT_FOLDERS_NOT_EXIST = '1' ]; then
     logStop "$APPLICATION_NAME is not correctly installed. $FOLDER or $FOLDER/$BIN_FOLDER is missing"
+    cd $LAST_DIR
     exit 1
   fi
   CLASSPATH="$CLASSPATH:$FOLDER/$BIN_FOLDER"
@@ -100,6 +107,7 @@ logInfo "Adding libraries to classpath"
 for FOLDER in $APPLICATION_JAR_FOLDERS; do
   if [ ! -d $FOLDER ]; then
     logStop "$APPLICATION_NAME is not correctly installed. JAR Folder $FOLDER is missing"
+    cd $LAST_DIR
     exit 1
   fi
   for file in $FOLDER/*; do
