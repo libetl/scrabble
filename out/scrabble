@@ -20,7 +20,7 @@ GOOD_JAVA_VERSION='0'
 JAVA_BIN="java"
 ARGS=$*
 LAST_DIR=$(pwd)
-NEW_DIR=$(echo $(pwd)"$0" | sed 's/\.\//\//' | sed "s/${0##*/}$//")
+NEW_DIR=$(echo "$0" | sed "s/^\.\//$(echo $LAST_DIR/ | sed 's/\//\\\//g')/" | sed "s/${0##*/}$//")
 
 formatText ()
 {
