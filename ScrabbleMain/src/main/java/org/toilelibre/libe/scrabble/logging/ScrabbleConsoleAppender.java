@@ -3,16 +3,23 @@
  */
 package org.toilelibre.libe.scrabble.logging;
 
-import org.apache.log4j.AppenderSkeleton;
-import org.apache.log4j.spi.LoggingEvent;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.core.StringLayout;
+import org.apache.logging.log4j.core.appender.AbstractWriterAppender;
+import org.apache.logging.log4j.core.appender.WriterManager;
+import org.apache.logging.log4j.core.filter.LevelMatchFilter;
+import org.apache.logging.log4j.core.layout.SyslogLayout;
 import org.toilelibre.libe.userinteractions.util.BeansComponents;
 import org.toilelibre.libe.userinteractions.util.ListModel;
+
+import java.io.IOException;
+import java.io.Writer;
 
 /**
  * @author lionel
  * 
  */
-public final class ScrabbleConsoleAppender extends AppenderSkeleton
+public final class ScrabbleConsoleAppender extends AbstractWriterAppender
 {
 
   private static ListModel<String> dlm;
@@ -25,43 +32,41 @@ public final class ScrabbleConsoleAppender extends AppenderSkeleton
     BeansComponents.setListModel (console1, ScrabbleConsoleAppender.dlm);
   }
 
+  private static final StringLayout layout =
+          new SyslogLayout.Builder<>().setIncludeNewLine(true)
+                  .setEscapeNL("\n")
+                  .build();
   public ScrabbleConsoleAppender ()
   {
+    super("Console Appender", layout,
+            LevelMatchFilter.newBuilder().setLevel(Level.ALL).build(),
+            true,
+            true,
+            new WriterManager(new Writer() {
+              @Override
+              public void write(char[] chars, int i, int i1) throws IOException {
+
+                if (ScrabbleConsoleAppender.dlm != null)
+                {
+                  ScrabbleConsoleAppender.dlm.addElement (new String(chars));
+                }
+              }
+
+              @Override
+              public void flush() throws IOException {
+
+              }
+
+              @Override
+              public void close() throws IOException {
+
+                if (ScrabbleConsoleAppender.dlm != null)
+                {
+                  ScrabbleConsoleAppender.dlm.clear ();
+                }
+              }
+            }, "listmodelWriter", layout, false)
+    );
     ScrabbleConsoleAppender.dlm = new ListModel<String> ();
   }
-
-  /**
-   * @see org.apache.log4j.AppenderSkeleton
-   *      #append(org.apache.log4j.spi.LoggingEvent)
-   */
-  @Override
-  protected void append (final LoggingEvent le)
-  {
-    if (ScrabbleConsoleAppender.dlm != null)
-    {
-      ScrabbleConsoleAppender.dlm.addElement (this.layout.format (le));
-    }
-  }
-
-  /**
-   * @see org.apache.log4j.Appender#close()
-   */
-  @Override
-  public void close ()
-  {
-    if (ScrabbleConsoleAppender.dlm != null)
-    {
-      ScrabbleConsoleAppender.dlm.clear ();
-    }
-  }
-
-  /**
-   * @see org.apache.log4j.Appender#requiresLayout()
-   */
-  @Override
-  public boolean requiresLayout ()
-  {
-    return false;
-  }
-
 }

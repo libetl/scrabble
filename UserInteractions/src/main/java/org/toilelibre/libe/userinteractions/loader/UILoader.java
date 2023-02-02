@@ -7,7 +7,8 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.toilelibre.libe.userinteractions.loader.parser.UIXmlContentHandler;
 import org.toilelibre.libe.userinteractions.model.UserInteractions;
 import org.xml.sax.InputSource;
@@ -16,7 +17,7 @@ import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.XMLReaderFactory;
 
 public final class UILoader {
-    private static final Logger LOG = Logger.getLogger (UILoader.class);
+    private static final Logger LOG = LogManager.getLogger (UILoader.class);
 
     public static void load (final UserInteractions ui, final String xmlFileName) {
         try {

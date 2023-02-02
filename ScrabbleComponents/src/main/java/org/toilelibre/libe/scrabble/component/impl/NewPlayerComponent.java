@@ -3,7 +3,8 @@
  */
 package org.toilelibre.libe.scrabble.component.impl;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.toilelibre.libe.scrabble.component.AbstractComponent;
 import org.toilelibre.libe.scrabble.component.iface.INewPlayerComponent;
 import org.toilelibre.libe.scrabble.model.ScrabbleData;
@@ -11,7 +12,7 @@ import org.toilelibre.libe.scrabble.model.player.Player;
 
 public final class NewPlayerComponent extends AbstractComponent implements
         INewPlayerComponent {
-    private static final Logger LOG = Logger.getLogger (NewPlayerComponent.class);
+    private static final Logger LOG = LogManager.getLogger (NewPlayerComponent.class);
 
     /**
    * 

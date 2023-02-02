@@ -1,11 +1,12 @@
 package org.toilelibre.libe.scrabble.s3d.model;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public abstract class AbstractTransform implements ITransform {
 
     private static final String DURING_TRANSFORM_EXCEPTION = "During Transform";
-    private static final Object LOG                        = Logger.getLogger (AbstractTransform.class);
+    private static final Object LOG                        = LogManager.getLogger (AbstractTransform.class);
 
     public AbstractTransform () {
     }

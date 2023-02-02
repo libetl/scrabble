@@ -2,7 +2,8 @@ package org.toilelibre.libe.scrabble.modelfactory.dictionary.factory;
 
 import java.util.Locale;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.toilelibre.libe.scrabble.model.dictionary.Dictionary;
 import org.toilelibre.libe.scrabble.modelfactory.BuildProcessException;
 import org.toilelibre.libe.scrabble.modelfactory.dictionary.DictionaryHelper;
@@ -10,9 +11,7 @@ import org.toilelibre.libe.scrabble.modelfactory.dictionary.loader.Loader;
 
 public abstract class AbstractDictionaryFactory implements IDictionaryFactory {
 
-    private static final Logger LOG = Logger
-
-                                    .getLogger (AbstractDictionaryFactory.class);
+    private static final Logger LOG = LogManager.getLogger (AbstractDictionaryFactory.class);
 
     private Dictionary          dict;
     private String              fileName;

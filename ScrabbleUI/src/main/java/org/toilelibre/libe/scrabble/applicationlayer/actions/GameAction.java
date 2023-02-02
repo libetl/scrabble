@@ -4,7 +4,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.EventObject;
 import java.util.Map;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.toilelibre.libe.scrabble.Scrabble;
 import org.toilelibre.libe.scrabble.applicationlayer.actions.party.ChangeTurnAction;
 import org.toilelibre.libe.scrabble.applicationlayer.beans.GameBean;
@@ -28,7 +29,7 @@ import org.toilelibre.libe.userinteractions.model.beans.IUIBean;
 
 public final class GameAction extends Action {
 
-    private static final Logger LOG = Logger.getLogger (GameAction.class);
+    private static final Logger LOG = LogManager.getLogger (GameAction.class);
 
     public GameAction () {
 

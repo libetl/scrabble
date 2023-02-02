@@ -3,7 +3,8 @@
  */
 package org.toilelibre.libe.scrabble.init;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.toilelibre.libe.scrabble.beans.ScrabbleBeansHelper;
 import org.toilelibre.libe.scrabble.exception.ScrabbleException;
 import org.toilelibre.libe.scrabble.gui.ScrabbleGUI;
@@ -15,7 +16,7 @@ import org.toilelibre.libe.scrabble.gui.ScrabbleGUI;
 public class InitGUI implements IScrabbleInit
 {
 
-  private static final Logger LOG = Logger.getLogger (InitGUI.class);
+  private static final Logger LOG = LogManager.getLogger (InitGUI.class);
 
   public InitGUI ()
   {

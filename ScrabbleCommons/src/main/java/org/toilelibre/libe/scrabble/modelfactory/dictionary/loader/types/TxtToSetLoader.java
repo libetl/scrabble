@@ -9,13 +9,14 @@ import java.io.InputStreamReader;
 import java.net.URISyntaxException;
 import java.net.URL;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.toilelibre.libe.scrabble.model.dictionary.Dictionary;
 import org.toilelibre.libe.scrabble.modelfactory.dictionary.loader.Loader;
 
 public class TxtToSetLoader implements Loader {
 
-    private static final Logger LOG = Logger.getLogger (TxtToSetLoader.class);
+    private static final Logger LOG = LogManager.getLogger (TxtToSetLoader.class);
 
     public TxtToSetLoader () {
 

@@ -8,12 +8,13 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URISyntaxException;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.toilelibre.libe.scrabble.model.dictionary.Dictionary;
 import org.toilelibre.libe.scrabble.modelfactory.dictionary.loader.Loader;
 
 public class TxtToTreeLoader implements Loader {
-    private static final Logger LOG = Logger.getLogger (TxtToTreeLoader.class);
+    private static final Logger LOG = LogManager.getLogger (TxtToTreeLoader.class);
 
     public TxtToTreeLoader () {
 

@@ -4,7 +4,8 @@ import java.util.EventListener;
 import java.util.HashMap;
 import java.util.LinkedList;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.toilelibre.libe.userinteractions.constants.UIConstants;
 import org.toilelibre.libe.userinteractions.model.UserInteractions;
 import org.toilelibre.libe.userinteractions.model.actions.Action;
@@ -13,7 +14,7 @@ import org.toilelibre.libe.userinteractions.timers.impl.IUITimer;
 import org.xml.sax.Attributes;
 
 public class ActionTagParser implements TagParser {
-    private static final Logger LOG = Logger.getLogger (ActionTagParser.class);
+    private static final Logger LOG = LogManager.getLogger (ActionTagParser.class);
 
     public ActionTagParser () {
 

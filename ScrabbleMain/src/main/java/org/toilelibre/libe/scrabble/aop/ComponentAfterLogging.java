@@ -3,14 +3,14 @@ package org.toilelibre.libe.scrabble.aop;
 import java.lang.reflect.Method;
 
 import org.apache.commons.lang.builder.ReflectionToStringBuilder;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.aop.AfterReturningAdvice;
 
 public class ComponentAfterLogging implements AfterReturningAdvice
 {
 
-  private static final Logger LOG = Logger
-                                      .getLogger (ComponentBeforeLogging.class);
+  private static final Logger LOG = LogManager.getLogger (ComponentBeforeLogging.class);
 
   @Override
   public void afterReturning (final Object arg0, final Method arg1,

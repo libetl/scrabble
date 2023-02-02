@@ -1,6 +1,7 @@
 package org.toilelibre.libe.scrabble.modelfactory.board.loader;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.toilelibre.libe.scrabble.model.board.Board;
 import org.xml.sax.Attributes;
 import org.xml.sax.ContentHandler;
@@ -8,7 +9,7 @@ import org.xml.sax.Locator;
 import org.xml.sax.SAXException;
 
 public class BoardXmlContentHandler implements ContentHandler {
-    private static final Logger LOG = Logger.getLogger (BoardXmlContentHandler.class);
+    private static final Logger LOG = LogManager.getLogger (BoardXmlContentHandler.class);
     private final Board         board;
     private int                 col;
     private int                 row;

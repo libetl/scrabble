@@ -4,14 +4,15 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Locale;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.toilelibre.libe.scrabble.model.ModelElement;
 import org.toilelibre.libe.scrabble.model.dictionary.Dictionary;
 import org.toilelibre.libe.scrabble.modelfactory.BuildProcess;
 
 public final class DictionaryBuildProcess implements BuildProcess {
 
-    private static final Logger LOG = Logger.getLogger (DictionaryBuildProcess.class);
+    private static final Logger LOG = LogManager.getLogger (DictionaryBuildProcess.class);
 
     @SuppressWarnings ("unchecked")
     private static Class<AbstractDictionaryFactory> getFactoryClass (

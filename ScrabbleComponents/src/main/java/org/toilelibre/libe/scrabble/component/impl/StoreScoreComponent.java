@@ -3,14 +3,15 @@
  */
 package org.toilelibre.libe.scrabble.component.impl;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.toilelibre.libe.scrabble.component.AbstractComponent;
 import org.toilelibre.libe.scrabble.component.iface.IStoreScoreComponent;
 import org.toilelibre.libe.scrabble.model.ScrabbleData;
 
 public class StoreScoreComponent extends AbstractComponent implements
         IStoreScoreComponent {
-    private static final Logger LOG = Logger.getLogger (StoreScoreComponent.class);
+    private static final Logger LOG = LogManager.getLogger (StoreScoreComponent.class);
 
     /**
    * 

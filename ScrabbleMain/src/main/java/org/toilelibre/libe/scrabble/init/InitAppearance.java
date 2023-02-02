@@ -4,7 +4,8 @@ import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.toilelibre.libe.scrabble.Scrabble;
 import org.toilelibre.libe.scrabble.beans.ScrabbleBeansHelper;
 import org.toilelibre.libe.scrabble.exception.ScrabbleException;
@@ -15,8 +16,7 @@ public final class InitAppearance implements IScrabbleInit
   private static final double FIVE           = 1.5;
   private static final String JAVA_VERSION   = "java.version";
   private static double       javaVersionFromVM;
-  private static final Logger LOG            = Logger
-                                                 .getLogger (InitAppearance.class);
+  private static final Logger LOG            = LogManager.getLogger (InitAppearance.class);
   private static final String SET_LAF_METHOD = "setSexyLookAndFeel";
   private static final double SIX            = 1.6;
 

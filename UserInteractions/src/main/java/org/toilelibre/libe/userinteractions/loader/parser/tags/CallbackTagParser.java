@@ -1,13 +1,14 @@
 package org.toilelibre.libe.userinteractions.loader.parser.tags;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.toilelibre.libe.userinteractions.constants.UIConstants;
 import org.toilelibre.libe.userinteractions.exception.UIException;
 import org.toilelibre.libe.userinteractions.model.UserInteractions;
 import org.xml.sax.Attributes;
 
 public class CallbackTagParser implements TagParser {
-    private static final Logger LOG = Logger.getLogger (CallbackTagParser.class);
+    private static final Logger LOG = LogManager.getLogger (CallbackTagParser.class);
 
     public CallbackTagParser () {
 

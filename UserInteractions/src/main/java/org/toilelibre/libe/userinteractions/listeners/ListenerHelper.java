@@ -7,7 +7,8 @@ import java.lang.reflect.Method;
 import java.util.EventObject;
 import java.util.Map;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.toilelibre.libe.userinteractions.constants.UIConstants;
 import org.toilelibre.libe.userinteractions.exception.UIException;
 import org.toilelibre.libe.userinteractions.listeners.callback.Callback;
@@ -16,7 +17,7 @@ import org.toilelibre.libe.userinteractions.model.actions.ActionRedirect;
 import org.toilelibre.libe.userinteractions.model.beans.IUIBean;
 
 public final class ListenerHelper {
-    private static final Logger LOG = Logger.getLogger (ListenerHelper.class);
+    private static final Logger LOG = LogManager.getLogger (ListenerHelper.class);
 
     private static void doRedirect (final ActionRedirect ar,
             final IUIBean bean, final EventObject e) throws UIException {

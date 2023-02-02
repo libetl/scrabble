@@ -5,12 +5,13 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.List;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.toilelibre.libe.scrabble.model.ModelElement;
 import org.toilelibre.libe.scrabble.model.ScrabbleData;
 
 public final class ScrabbleDataLoader {
-    private static final Logger LOG = Logger.getLogger (ScrabbleDataLoader.class);
+    private static final Logger LOG = LogManager.getLogger (ScrabbleDataLoader.class);
 
     private List<String>        locations;
     private List<BuildProcess>  processes;

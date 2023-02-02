@@ -6,12 +6,13 @@ import java.lang.reflect.Method;
 import java.util.EventListener;
 import java.util.Map;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.toilelibre.libe.userinteractions.model.actions.Action;
 import org.toilelibre.libe.userinteractions.model.beans.IUIBean;
 
 public final class ListenerBinder {
-    private static final Logger LOG = Logger.getLogger (ListenerBinder.class);
+    private static final Logger LOG = LogManager.getLogger (ListenerBinder.class);
 
     @SuppressWarnings ("unchecked")
     public static EventListener bind (final Object component,

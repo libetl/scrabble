@@ -4,13 +4,13 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.Map;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public final class ScrabbleSessionsHandler
 {
   private static final char           AT          = '@';
-  private static final Logger         LOG         = Logger
-                                                      .getLogger (ScrabbleSessionsHandler.class);
+  private static final Logger         LOG         = LogManager.getLogger (ScrabbleSessionsHandler.class);
   private static Map<String, Session> sessions;
   private static final String         USERNAMEKEY = "user.name";
 

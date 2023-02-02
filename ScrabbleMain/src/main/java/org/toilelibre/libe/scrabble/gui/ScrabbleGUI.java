@@ -5,15 +5,15 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.toilelibre.libe.scrabble.beans.ScrabbleBeansHelper;
 import org.toilelibre.libe.userinteractions.model.UserInteractions;
 
 public final class ScrabbleGUI
 {
   private static final String CREATING_GUI_ERROR = "Erreur lors de la création de l'interface";
-  private static final Logger LOG                = Logger
-                                                     .getLogger (ScrabbleGUI.class);
+  private static final Logger LOG                = LogManager.getLogger (ScrabbleGUI.class);
 
   private static ScrabbleGUI  sgui;
 

@@ -1,6 +1,7 @@
 package org.toilelibre.libe.scrabble.init;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.toilelibre.libe.scrabble.beans.ScrabbleBeansHelper;
 import org.toilelibre.libe.scrabble.exception.ScrabbleException;
 import org.toilelibre.libe.scrabble.properties.ScrabbleMessages;
@@ -15,7 +16,7 @@ import org.toilelibre.libe.scrabble.s3d.model.ICanvas3D;
 public final class InitS3d implements IScrabbleInit
 {
 
-  private static final Logger LOG = Logger.getLogger (InitS3d.class);
+  private static final Logger LOG = LogManager.getLogger (InitS3d.class);
 
   public InitS3d ()
   {
