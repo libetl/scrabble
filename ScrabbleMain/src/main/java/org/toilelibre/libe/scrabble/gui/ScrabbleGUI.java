@@ -1,5 +1,6 @@
 package org.toilelibre.libe.scrabble.gui;
 
+import java.awt.*;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
@@ -90,11 +91,11 @@ public final class ScrabbleGUI
 
   private Constructor<?> getGoodGuiEngineConstructor ()
   {
-    final Constructor<?> [] constrs = this.clazz.getConstructors ();
+    final Constructor<?> [] constrs = this.clazz.getDeclaredConstructors();
     for (final Constructor<?> constr : constrs)
     {
       if ((constr.getParameterTypes ().length == 1)
-          && constr.getParameterTypes ()[0].equals (Object.class))
+          && constr.getParameterTypes ()[0].equals (Container.class))
       {
         return constr;
       }

@@ -100,7 +100,7 @@ public final class InitAppearance implements IScrabbleInit
   {
     if (InitAppearance.javaVersionFromVM >= InitAppearance.SIX)
     {
-      InitAppearance.init60 ();
+      InitAppearance.init50 ();
     } else if (InitAppearance.javaVersionFromVM >= InitAppearance.FIVE)
     {
       InitAppearance.init50 ();

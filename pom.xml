@@ -30,23 +30,21 @@
         </repository>
 
         <repository>
-            <id>gael-main</id>
-            <name>GAEL Main Repository</name>
-            <url>http://repository.gael.fr:8081/nexus/content/repositories/public/</url>
-            <layout>default</layout>
+            <id>gael</id>
+            <url>https://repository.gael-systems.com/repository/public/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
         </repository>
 
         <repository>
             <id>imagej</id>
-            <name>imagej</name>
-            <url>http://maven.imagej.net/content/repositories/public/</url>
-            <layout>default</layout>
+            <url>https://maven.imagej.net/content/repositories/public/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
         </repository>
 
-        <repository>
-            <id>google-swixml2</id>
-            <url>http://swixml2.googlecode.com/svn/mavenrepo</url>
-        </repository>
     </repositories>
     <build>
         <outputDirectory>target</outputDirectory>

@@ -1,8 +1,9 @@
 package org.toilelibre.libe.userinteractions.model.beans;
 
+import javax.swing.JFrame;
 import java.util.EventObject;
 
-public abstract class AbstractUIBean implements IUIBean {
+public abstract class AbstractUIBean extends JFrame implements IUIBean {
     private EventObject event;
     private String      name;
 

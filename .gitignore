@@ -1,6 +1,7 @@
 *.class
 *.jar
 out/lib/pom.xml
+out/lib/*.pom
 
 # Package Files #
 Scrabble*/target/*
@@ -11,3 +12,6 @@ UserInteractions/target/*
 UserInteractions/.project
 UserInteractions/.classpath
 UserInteractions/.wtpmodules
+*.iml
+.idea
+!.idea/runConfigurations

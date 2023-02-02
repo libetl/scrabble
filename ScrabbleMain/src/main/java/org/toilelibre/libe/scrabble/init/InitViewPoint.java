@@ -3,6 +3,7 @@ package org.toilelibre.libe.scrabble.init;
 import org.toilelibre.libe.scrabble.beans.ScrabbleBeansHelper;
 import org.toilelibre.libe.userinteractions.model.UserInteractions;
 import org.toilelibre.libe.userinteractions.model.interactions.Interaction;
+import org.toilelibre.libe.userinteractions.timers.impl.IUITimer;
 
 public final class InitViewPoint implements IScrabbleInit
 {
@@ -31,6 +32,7 @@ public final class InitViewPoint implements IScrabbleInit
         e.hashCode ();
       }
     }
-    interaction.getAction ().getTimers ().get ("movement").start ();
+    IUITimer timer = interaction.getAction ().getTimers ().get ("movement");
+    if (timer != null) timer.start ();
   }
 }

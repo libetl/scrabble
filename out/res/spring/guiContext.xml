@@ -11,7 +11,7 @@
     		<value type="java.lang.String">org.pushingpixels.substance.api.skin.SubstanceMagellanLookAndFeel</value>
     	</property>
     </bean>
-    
+
     <bean id="skinListBean" class="org.toilelibre.libe.scrabble.applicationlayer.beans.SkinListBean">
  	   <constructor-arg>
  	   	<list>
