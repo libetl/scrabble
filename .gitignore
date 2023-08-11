@@ -2,6 +2,9 @@
 *.jar
 out/lib/pom.xml
 out/lib/*.pom
+!out/lib/*.jar
+out/lib/Scrabble*.jar
+out/lib/UserInteractions*.jar
 
 # Package Files #
 Scrabble*/target/*

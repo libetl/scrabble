@@ -16,7 +16,7 @@ HASNT_ALREADY_JAVA_IN_PATH=$(which java >/dev/null;echo $?)
 HASNT_ALREADY_JAVA_WITH_JAVA_HOME=$(which $JAVA_HOME/bin/java >/dev/null;echo $?)
 JAVA_VERSION='0'
 JAVA_PROVIDER="unknown"
-JVM_OPTIONS="--add-exports=java.desktop/sun.awt=ALL-UNNAMED"
+JVM_OPTIONS="--add-exports=java.desktop/sun.awt=ALL-UNNAMED -Dpolyglot.engine.WarnInterpreterOnly=false"
 GOOD_JAVA_VERSION='0'
 JAVA_BIN="java"
 ARGS=$*

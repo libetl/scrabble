@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
-<beans default-autowire="autodetect">
+<beans>
 
     <bean id="setSexyLookAndFeel" class="org.springframework.util.MethodInvoker" 
          init-method="prepare">
-    	<property name="targetClass"><value>javax.swing.UIManager</value></property>
-    	<property name="targetMethod"><value>setLookAndFeel</value></property>
+    	<property name="targetClass" value="javax.swing.UIManager"/>
+    	<property name="targetMethod" value="setLookAndFeel"/>
     	<property name="targetObject"><null/></property>
     	<property name="arguments">
     		<value type="java.lang.String">org.pushingpixels.substance.api.skin.SubstanceMagellanLookAndFeel</value>
@@ -25,34 +25,30 @@
     
     <bean id="setDefaultLookAndFeelDecorated" class="org.springframework.util.MethodInvoker" 
          init-method="prepare">
-    	<property name="targetClass"><value>javax.swing.JFrame</value></property>
-    	<property name="targetMethod"><value>setDefaultLookAndFeelDecorated</value></property>
+    	<property name="targetClass" value="javax.swing.JFrame"/>
+    	<property name="targetMethod" value="setDefaultLookAndFeelDecorated"/>
     	<property name="targetObject"><null/></property>
     	<property name="arguments"><value type="boolean">true</value></property>
     </bean>
     
     <bean id="fireLoadRunnable" class="org.springframework.util.MethodInvoker" init-method="prepare">
-    	<property name="targetClass"><value>javax.swing.SwingUtilities</value></property>
-    	<property name="targetMethod"><value>invokeLater</value></property>
+    	<property name="targetClass" value="javax.swing.SwingUtilities"/>
+    	<property name="targetMethod" value="invokeLater"/>
     	<property name="targetObject"><null/></property>
-    	<property name="arguments"><ref bean="loadRunnable"/></property>
+    	<property name="arguments" ref="loadRunnable"/>
     </bean>
    
 
 	<bean id="uiManager" class="javax.swing.UIManager" />
 
 	<bean id="laf" class="java.lang.String">
-		<constructor-arg>
-			<value>javax.swing.LookAndFeel</value>
-		</constructor-arg>
+		<constructor-arg value="javax.swing.LookAndFeel"/>
 	</bean>
 	
-	<bean id="synthLaf" class="javax.swing.plaf.synth.SynthLookAndFeel" singleton="true" />
+	<bean id="synthLaf" class="javax.swing.plaf.synth.SynthLookAndFeel" />
 	
-	<bean id="guiEngineClass" class="java.lang.Class" factory-method="forName" singleton="true">
-		<constructor-arg>
-			<value>org.swixml.SwingEngine</value>
-		</constructor-arg>
+	<bean id="guiEngineClass" class="java.lang.Class" factory-method="forName">
+		<constructor-arg value="org.swixml.SwingEngine"/>
 	</bean>
 
 	<bean id="loadRunnable" class="org.toilelibre.libe.scrabble.gui.LoadRunnable"/>
@@ -63,9 +59,7 @@
 		class="org.toilelibre.libe.scrabble.sessions.ScrabbleSessionsHandler">
 		<property name="sessions">
 			<map>
-				<entry key="default">
-					<ref bean="defaultSession" />
-				</entry>
+				<entry key="default" value-ref="defaultSession"/>
 			</map>
 		</property>
 	</bean>

@@ -5,13 +5,17 @@ import java.net.URL;
 
 import javax.media.j3d.BranchGroup;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.toilelibre.libe.scrabble.s3d.loader.IS3DLoader;
 import org.toilelibre.libe.scrabble.s3d.loader.S3DLoaderException;
 import org.web3d.j3d.loaders.BaseLoader;
 
 import com.sun.j3d.loaders.Scene;
+import org.web3d.util.ErrorReporter;
 
 public final class J3DLoader implements IS3DLoader {
+    private static final Logger LOG = LogManager.getLogger (J3DLoader.class);
 
     public J3DLoader () {
 

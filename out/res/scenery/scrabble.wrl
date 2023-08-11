@@ -109939,7 +109939,7 @@ Group
   DEF GlobalAmbientLight PointLight { 
    ambientIntensity  1.0000
    color  1.0 1.0 1.0
-   intensity  0.0 on TRUE
+   intensity  1.0 on TRUE
   }
   DEF persp Viewpoint
   {
@@ -109993,7 +109993,7 @@ Group
       material USE pasted__pasted__lambert6_1
       texture ImageTexture
       {
-       url  "boardPhoto.jpg"
+       url "boardPhoto.jpg"
        repeatS TRUE
        repeatT TRUE
       }
@@ -110112,7 +110112,7 @@ Group
      material USE oceanShader3_2
      texture ImageTexture
      {
-      url  "glouglou.jpg"
+      url "glouglou.jpg"
       repeatS TRUE
       repeatT TRUE
      }
@@ -110199,7 +110199,7 @@ Group
      material USE lambert5_3
      texture ImageTexture
      {
-      url  "sand008.jpg"
+      url "sand008.jpg"
       repeatS TRUE
       repeatT TRUE
      }
@@ -110226,7 +110226,7 @@ Group
      material USE lambert5_3
      texture ImageTexture
      {
-      url  "sand008.jpg"
+      url "sand008.jpg"
       repeatS TRUE
       repeatT TRUE
      }
@@ -110253,7 +110253,7 @@ Group
      material USE lambert5_3
      texture ImageTexture
      {
-      url  "sand008.jpg"
+      url "sand008.jpg"
       repeatS TRUE
       repeatT TRUE
      }
@@ -110280,7 +110280,7 @@ Group
      material USE lambert5_3
      texture ImageTexture
      {
-      url  "sand008.jpg"
+      url "sand008.jpg"
       repeatS TRUE
       repeatT TRUE
      }
@@ -110307,7 +110307,7 @@ Group
      material USE lambert5_3
      texture ImageTexture
      {
-      url  "sand008.jpg"
+      url "sand008.jpg"
       repeatS TRUE
       repeatT TRUE
      }
@@ -110334,7 +110334,7 @@ Group
      material USE anisotropic1_4
      texture ImageTexture
      {
-      url  "pioche.jpg"
+      url "pioche.jpg"
       repeatS TRUE
       repeatT TRUE
      }
@@ -110361,7 +110361,7 @@ Group
      material USE anisotropic1_4
      texture ImageTexture
      {
-      url  "pioche.jpg"
+      url "pioche.jpg"
       repeatS TRUE
       repeatT TRUE
      }
